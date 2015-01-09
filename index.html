@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+<title>OB CommonAccord</title>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<script>
+function Working ($scope){
+	$scope.FullName = 'Your full name';
+	$scope.Handle = 'Handle';
+	$scope.Email = 'Email'
+	$scope.Address = 'address'
+	$scope.theDate = 'YMD'
+	$scope.webAddress = '#'
+	}
+</script>
+
+
+</head>
+
+<body>
+
+<!-- NHMRC NAVBAR -->
+<div class="container">
+	<div class="navbar navbar-default">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#">OpenBazaar</a>
+	</div>
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+		<li><a href="https://openbazaar.org" target="_blank">About</a></li>
+		<li><a href="#">Guide</a></li>
+		<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other tools <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		<li><a href="#">Create contract</a></li>
+		<li><a href="#">Import contract</a></li>
+		</ul>
+		</li>
+		<li class="active"><a href="#">CommonAccord</a></li>
+		</ul>
+		<form class="navbar-form navbar-right">
+			<input type="text" class="form-control col-lg-8" placeholder="Search">
+		</form>
+	</div>
+	</div>
+</div>
+
+<!-- NHMRC Grant Jumbotron -->
+<div class="container">
+<div class="jumbotron" style="background: url('assets/img/background4.jpg') no-repeat center center;">
+<h1 class="strokeme" style="color:white;">OpenBazaar + CommonAccord</h1>
+<h4 class="strokeme" style="color:white;">A beautiful tool to help you write legally enforceable OpenBazaar contracts.</h4>
+<p><a class="btn btn-primary btn-lg" href="http://commonaccord.org/" target="_blank">Learn more</a></p>
+</div>
+</div>
+
+
+
+<style>
+.strokeme
+{
+color: black;
+text-shadow:
+-1px -1px 0 #000,
+1px -1px 0 #000,
+-1px 1px 0 #000,
+1px 1px 0 #000;
+}
+</style>
+
+<div ng-app="">
+<div class="container" ng-controller="Working">
+
+
+<style>
+.wordwrap {
+white-space: pre-wrap;      /* CSS3 */
+white-space: -moz-pre-wrap; /* Firefox */
+white-space: -pre-wrap;     /* Opera <7 */
+white-space: -o-pre-wrap;   /* Opera 7 */
+word-wrap: break-word;      /* IE */
+}
+</style>
+
+</br>
+
+
+<div class="container">
+<div class="row">
+<h1 style="font-size:48px">CommonAccord Contracts</h1>
+</br>
+<h2>Privacy Policy</h2>
+<hr></hr>
+</br>
+</div>
+
+<div class="row">
+
+<div class="col-lg-12">
+<div class="well bs-component">
+<form class="form-horizontal" _lpchecked="1">
+<fieldset>
+	<legend>Contract Details</legend>
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Full Name</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="FullName" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Handle</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="Handle" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Email</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="Email" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Address</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="Address" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Date</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="theDate" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+	<div class="form-group">
+	<label class="col-lg-2 control-label">Website</label>
+	<div class="col-lg-10">
+	<input type="text" class="form-control" ng-model="webAddress" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+	</div>
+	</div>
+
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+<div class="panel panel-primary">
+<div class="panel-heading">
+	<h3 class="panel-title">{{Handle}} Privacy Policy</h3>
+</div>
+<div class="panel-body">
+
+<p class="wordwrap">
+<span style="color:green;">{{FullName}}</span> ("<span style="color:blue;">{{Handle}}</span>," "we", "us," "our,") provide online and mobile services, including but not limited to, the <span style="color:blue;">{{Handle}}</span> website (the "Site") widgets, computer programs and mobile applications hosted by or on behalf of us (collectively, the "Services") intended to enhance your use of the sleep and body monitoring electronic products offered by us (the "Products"). We are committed to maintaining the privacy, integrity and security of any personal information about our users. This Privacy Policy ("Policy") explains how we protect personal information we collect in connection with your use of the Services and how we use and in some cases disclose that information. "Personal Information" for purposes of this Policy means information that identifies you, such as your name, address, phone number, fax number or email address.
+
+This Policy is subject to the provisions our Terms of Use (the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">"Terms of Use"</a>), which are incorporated by reference. To see the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">Terms of Use</a>, please visit our <a href="{{webAddress}}" target="_blank">website</a>.
+<ol type="1">
+<li><h4>What Personal Information We Collect</h4></li>
+Products work in conjunction with a user account on the Site (a "User Account").
+    <ol type="1">
+        <li>When you sign up for a User Account, you are required to provide an email address (which will be used as your login ID) and to create an account password (collectively the "Registration Information").</li>
+        <li>In order to benefit fully from the Products and Services, you can also add additional personal details to your User Account, such as height, weight, gender, and age.</li>
+        <li>Information that you add manually to one of the Services is stored in your User Account.</li>
+    </ol>
+<li><h4>How We Use Your Personal Information</h4></li>
+Company uses your personal information to:
+    <ol type="1">
+        <li>Provide you with the Services;</li>
+        <li>Analyze Site usage and improve the Products and Services;</li>
+        <li>Deliver to you any administrative notices and communications relevant to your use of the Products and Services;</li>
+		<li>Provide you with updates regarding the Products and Services;</li>
+		<li>Perform internal market research, project planning, troubleshooting problems, and to detect and protect against error, fraud or other criminal activity.</li>
+	</ol>
+<li><h4>Disclosure to Third Parties</h4></li>
+	<ol type="1">
+		<li>At times we may make certain Personal Information available to strategic partners that work with us to provide services to you. In such cases, your account with such third party will continue to be subject to that third party's privacy policy and your User Account will continue to be governed by this Policy.</li>
+		<li>We may also share your personal information with companies who provide services to us such as information processing, order fulfillment, product delivery, customer data management, customer research and the like. These companies are obligated to protect your information and may be located wherever we do business.</li>
+		<li>We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our Terms of Use or protect our operations or users if we are required to do so by any applicable law, rule, regulation, subpoena or other legal process.</li>
+		<li>In the event of a reorganization, merger or sale, we may transfer any and all personal information we collect to the relevant third party.</li>
+	</ol>
+<li><h4>Use of Aggregated Anonymous User Data</h4></li>
+We may disclose non-personally identifiable aggregated user data, such as aggregated gender, age, height, weight, and usage data gathered from the Products and Services (without the inclusion of a user's name or other identifying information) to:
+	<ol type="1">
+		<li>Organizations that conduct consumer research into health and wellness;</li>
+		<li>Users of the Products or Services for purposes of comparison of their personal health and wellness situation relative to the broader community; and</li>
+		<li>Advertisers and other third parties for their marketing and promotional purposes.</li>
+	</ol>
+<li><h4>Cookies and Other Technology</h4></li>
+	<ol type="1">
+		<li>The Services may use "cookies" and other technologies such as pixel tags and web beacons.</li>
+		<li>Cookies are alphanumeric identifiers in the form of text files that are inserted and stored by your Web browser on your computer's hard drive. These technologies tell us which parts of our website you have visited, limit the number of times you see an offer, or help us better determine which offers you may like to see or to alert you to software compatibility issues. They are also used to analyze and improve the design and functionality of the Products and Services.</li>
+		<li>If you choose to delete cookies from your device or block them from being stored on your device, please note that the full functionality of the Services may not be available to you.</li>
+		<li>"Web Beacons" are images embedded in a Web page or email for the purpose of measuring and analyzing site usage and activity. We, or third party service providers acting on our behalf, may use Web Beacons to help us analyze Site usage and improve the Services.</li>
+		<li>We may use third party service providers to help us analyze certain online activities and improve the Products and Services. For example, these service providers may help us measure the performance of our online campaigns or analyze visitor activity on the Site. We may permit these service providers to use cookies and other technologies to perform these services for us. We do not share any personal information about our customers with these third party service providers, and these service providers do not collect such information on our behalf. Our third party service providers are required to comply fully with this Policy.</li>
+	</ol>
+<li><h4>Information You Elect to Share With Others</h4></li>
+If you use a message board, blog, journal or any other method of posting user-generated content on the Site or through the Services, you should be aware that such information can be read, collected or used by others and could be used to send you unsolicited messages. We are not responsible for the personal information you choose to submit in these areas.
+<li><h4>Surveys</h4></li>
+We may ask you to participate in surveys designed to help us improve the Products and Services. Any personal information provided to us in connection with any survey will be used only in relation to that survey and as elsewhere set forth in this Policy.
+<li><h4>Children</h4></li>
+We do not knowingly collect any personal information from children under 13. If we discover that a child under the age of 13 has provided us with personally identifying information, we will take steps to delete the information as soon as possible.
+<li><h4>Your Right to Delete Your Data</h4></li>
+If you would like to cancel your User Account you may do so by emailing us at contact. When you request cancellation of your account, your personally identifiable information will be deleted, including but not limited your email address, name, and photo(s). Archival copies of your account information that exist within our back-up system will be deleted in accordance with our normal back-up expiration schedule. Following cancellation or termination of your account, we may continue to utilize de-identified and anonymized historical data associated with your use of the Products and Services.
+<li><h4>Email Communications From Us</h4></li>
+	<ol type="1">
+		<li>We may provide you with summaries of your User Account data and email alerts. We also allow you to subscribe to email newsletters and from time to time may transmit emails promoting Acme and third-party goods or services.</li>
+		<li>You have the ability to opt-out of receiving our weekly summaries and promotional emails and to terminate your newsletter subscriptions by following the instructions provided in such emails.</li>
+		<li>Opting out in this manner will not end transmission of service-related emails, such as email alerts.</li>
+	</ol>
+<li><h4>Acme Privacy Policy</h4></li>
+	<ol type="1">
+		<li>We use a combination of firewall barriers, encryption techniques and authentication procedures, among others, to maintain the security of your data and to protect accounts and systems from unauthorized access.</li>
+		<li>When you register for the Site, we require a password from you for your privacy and security. This password is stored in an encrypted fashion on our systems.</li>
+		<li>It is important to understand that these precautions apply only to our Site and systems. We exercise no control over how your information is stored, maintained or displayed by third parties or on third-party sites.</li>
+	</ol>
+<li><h4>International Users</h4></li>
+	<ol type="1">
+		<li>Services are hosted and operated entirely in the United States and are subject to United States law. Any personal information that you provide to us is being provided to us solely in the United States and will be hosted on United States servers. You consent to the transfer of your personal information to the United States. If you are accessing the Services from outside the United States, please be advised that United States law may not offer the same privacy protections as the law of your jurisdiction.</li>
+		<li>If you have a security related concern, please contact us by <a href="mailto:{{Email}}?Subject=Help%me%Obi-Wan%Kenobi" target="_top" style="color:orange;">by email</a> or mail us at our {{Address}}.</li>
+	</ol>
+<li><h4>Updates to this Policy</h4></li>
+We may update this Policy periodically. The date last revised is <span style="color:cyan;">{{theDate}}</span>. Changes take effect immediately upon posting.
+<li><h4>Contact us if you have any questions or concerns</h4></li>
+If you have questions, comments, concerns or feedback regarding this Policy or any other privacy or security concern, send an e-mail to our support services.
+</ol>
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Load my crap faster -->
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
