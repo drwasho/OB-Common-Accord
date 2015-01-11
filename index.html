@@ -244,50 +244,15 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						<legend>OpenBazaar Ricardian Contract</legend>
 
 						<div class="form-group">
-							<label for="textArea" class="col-lg-2 control-label">OpenBazaar Contract</label>
+							<label for="textArea" class="col-lg-2 control-label"><i>OpenBazaar</i> Contract</label>
 							<div class="col-lg-10">
-								<textarea class="form-control" rows="3" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
+								<textarea class="form-control" rows="5" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
 								<span class="help-block">Paste in your <span><i>OpenBazaar</i></span> Richardian Contract formatted in JSON.</span>
-								<h4>Test dump of each key value pair in the contract below</h4>
-								{{contractinput_final.GenesisPart.metadata.OBCv}}
-								{{contractinput_final.GenesisPart.metadata.Category}}
-								{{contractinput_final.GenesisPart.metadata.subCategory}}
-								{{contractinput_final.GenesisPart.metadata.Expiration_Date}}
-								{{contractinput_final.GenesisPart.nonce}}
-								{{contractinput_final.GenesisPart.item_data.item_title}}
-								{{contractinput_final.GenesisPart.item_data.item_description}}
-								{{contractinput_final.GenesisPart.item_data.btcprice}}
-								{{contractinput_final.GenesisPart.item_data.item_image}}
-								{{contractinput_final.GenesisPart.item_data.quantity}}
-								{{contractinput_final.GenesisPart.item_data.keywords.join(", ")}}
-								{{contractinput_final.GenesisPart.item_data.region}}
-								{{contractinput_final.GenesisPart.item_data.est_delivery}}
-								{{contractinput_final.GenesisPart.item_data.shipping_fee}}
-								{{contractinput_final.MerchantPart.Merchant_ID}}
-								{{contractinput_final.MerchantPart.signatures.Hash}}
-								{{contractinput_final.MerchantPart.signatures.GPG}}
-								{{contractinput_final.MerchantPart.signatures.secp256k1}}
-								{{contractinput_final.BuyerPart.Buyer_ID}}
-								{{contractinput_final.BuyerPart.signatures.Hash}}
-								{{contractinput_final.BuyerPart.signatures.GPG}}
-								{{contractinput_final.BuyerPart.signatures.secp256k1}}
-								{{contractinput_final.NotaryPart.Notary_ID}}
-								{{contractinput_final.NotaryPart.signatures.Hash}}
-								{{contractinput_final.NotaryPart.signatures.GPG}}
-								{{contractinput_final.NotaryPart.signatures.secp256k1}}
-								{{contractinput_final.EscrowPart.escrow_address}}
-								{{contractinput_final.EscrowPart.escrow_redemption}}
-								<h4>Test dump of each contract part in JSON</h4>
-								<h5>GenesisPart</h5>
-								{{contractinput_final.GenesisPart}}
-								<h5>MerchantPart</h5>
-								{{contractinput_final.MerchantPart}}
-								<h5>BuyerPart</h5>
-								{{contractinput_final.BuyerPart}}
-								<h5>NotaryPart</h5>
-								{{contractinput_final.NotaryPart}}
-								<h5>EscrowPart</h5>
-								{{contractinput_final.EscrowPart}}
+								<button type="button" class="btn btn-default" ng-click="TryContract()">Try an Example Contract</button>
+								<p>
+								{{contractinput_final.genesis}}
+								{{example}}
+								</p>
 							</div>
 						</div>
 
@@ -314,7 +279,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 					on 2014-08-13:12:05 by and among:</p>
 
 					<ul>
-					<li><font color="{mcolor}">Roberta Robinson</font>, an individual whose business
+					<li><font color="{mcolor}">Roberta Whatsherface</font>, an individual whose business
 					address is 666 Winding Drive, Woodstock, NY 12498,
 					(&ldquo;Purchaser&rdquo;),</li>
 
@@ -601,6 +566,11 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 </div>
 </div>
 
+<div class="container" ng-controller="dude">
+{{zorro.genesis}}
+</div>
+
+
 <!-- Load my crap faster -->
 <script src="assets/js/angular.min.js"></script>
 <script src="assets/js/angular-route.js"></script>
@@ -621,9 +591,15 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 			$scope.contractinput_final = JSON.parse($scope.contractinput);
 			console.log($scope.contractinput_final);
 		};
-
 	}
+</script>
 
+<script>
+	function dude($http, $scope){
+	$http.get('examplecontract.json').success(function(data){
+			$scope.examplecontract = data;
+		});
+	}
 </script>
 
 </body>
