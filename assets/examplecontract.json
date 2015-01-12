@@ -4,15 +4,15 @@
             "obcv": "0.0.2",
             "category": "Physical Item",
             "subcategory": "Fixed price",
-            "expiration_date_YYYYMMDD": "20150101"
+            "expiration_date_YYYYMMDD": "2015-01-01"
         },
         "nonce": "0000000000000000",
         "item_data": {
             "title": "Grape Preserves",
             "description": "18 cases of the finest grape preserve.",
-            "data":{
-                "btcprice": "0.185",
-                "fiatprice": {
+            "price":{
+                "btc": "0.185",
+                "fiat": {
                     "price":"18.5",
                     "currency":"USD"
                 }
@@ -56,7 +56,7 @@
     "notary": {
         "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c",
         "handle":"Safe Hands Faciliated Transaction, Inc",
-        "notary_legal_address" : "1550 Bay Street, San Francisco, CA, 94123",
+        "legal_address" : "1550 Bay Street, San Francisco, CA, 94123",
         "pubkeys": {
             "pgp": "PGP Pubkey",
             "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
@@ -72,7 +72,7 @@
         }
     },
     "escrow": {
-        "btcaddress": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs",
+        "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs",
         "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae"
     }
 }

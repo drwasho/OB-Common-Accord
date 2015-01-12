@@ -9,31 +9,38 @@
 </head>
 
 <body>
-<div class="container">
+
 <!-- Style data -->
 <style>
-.strokeme
-{
-color: black;
-text-shadow:
--1px -1px 0 #000,
-1px -1px 0 #000,
--1px 1px 0 #000,
-1px 1px 0 #000;
-}
-.wordwrap {
-white-space: pre-wrap;      /* CSS3 */
-white-space: -moz-pre-wrap; /* Firefox */
-white-space: -pre-wrap;     /* Opera <7 */
-white-space: -o-pre-wrap;   /* Opera 7 */
-word-wrap: break-word;      /* IE */
-}
+	.strokeme
+	{
+	color: black;
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+	}
+	.wordwrap {
+	white-space: pre-wrap;      /* CSS3 */
+	white-space: -moz-pre-wrap; /* Firefox */
+	white-space: -pre-wrap;     /* Opera 7 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	word-wrap: break-word;      /* IE */
+	}
+	.sample-show-hide {
+	  padding:10px;
+	  border:1px solid black;
+	  background:white;
+	}
 </style>
 
-<!-- NHMRC NAVBAR -->
-<div class="container">
-	<div class="navbar navbar-default">
-		<div class="navbar-header">
+
+
+<!-- Navbar -->
+<div class="navbar navbar-default">
+	
+	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -41,6 +48,7 @@ word-wrap: break-word;      /* IE */
 		</button>
 		<a class="navbar-brand" href="#">OpenBazaar</a>
 	</div>
+	
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
 		<ul class="nav navbar-nav">
 		<li><a href="https://openbazaar.org" target="_blank">About</a></li>
@@ -58,397 +66,489 @@ word-wrap: break-word;      /* IE */
 			<input type="text" class="form-control col-lg-8" placeholder="Search">
 		</form>
 	</div>
-	</div>
+	
 </div>
 
-<!-- NHMRC Grant Jumbotron -->
 <div class="container">
 <div class="container">
+
+<!-- Jumbotron -->
+<div class="row">
 	<div class="jumbotron" style="background: url('assets/img/background4.jpg') no-repeat center center;">
 		<h1 class="strokeme" style="color:white;">OpenBazaar + CommonAccord</h1>
-		<h4 class="strokeme" style="color:white;">A beautiful tool to help you write legally enforceable OpenBazaar contracts.</h4>
+		<h3 class="strokeme" style="color:white;">A beautiful tool to help you write legally enforceable OpenBazaar contracts.</h3>
+		<h4 class="strokeme" style="color:white;">For testing purposes only!</h4>
+		<br />
 		<p><a class="btn btn-primary btn-lg" href="http://commonaccord.org/" target="_blank">Learn more</a></p>
 	</div>
 </div>
 
-<!-- Controller 1: Privacy Policy -->
-<div class="container" ng-controller="Working">
-	
-<!-- Row 1: Section Title -->
 <div class="row">
-	<h1 style="font-size:48px">CommonAccord Contracts</h1>
-	<h2>1. Privacy Policy</h2>
+	<h1 style="font-size:48px">What is this?</h1>
 	<hr>
+	<blockquote>
+	<p>Client-side tools created with AngularJS to parse <i>OpenBazaar</i> Ricardian Contracts formatted in JSON, displaying them in stylish HTML (twitter bootstrap, responsive design), and also automagically populate the fields of <i>CommonAccord's</i> legally enforceable escrow contract template.</p>
+	<br />
+	Please note that this is for <b>testing only</b>, using a yet unimplemented version of the <i>OpenBazaar</i> contract schema.
+	</blockquote>
 </div>
 
-<!-- Row 2: Privacy Policy Input -->
-<div class="row">
-	<div class="col-lg-12">
-	<div class="well bs-component">
-	<form class="form-horizontal" _lpchecked="1">
-	<fieldset>
-		<legend>Contract Details</legend>
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Full Name</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="FullName" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Handle</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="Handle" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Email</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="Email" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Address</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="Address" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Date</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="theDate" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<label class="col-lg-2 control-label">Website</label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" ng-model="webAddress" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-		</div>
-		</div>
-
-	</fieldset>
-	</form>
+<!-- Controller 1: Privacy Policy -->
+<div ng-controller="Working">
+	
+	<!-- Row 1: Section Title -->
+	<div class="row">
+		<h1 style="font-size:48px">CommonAccord Contracts</h1>
+		<hr>
+		<h2>1. Privacy Policy</h2>
+		<br />
 	</div>
+
+	<!-- Row 2: Privacy Policy Input -->
+	<div class="row">
+		<div class="well bs-component">
+		<form class="form-horizontal" _lpchecked="1">
+		<fieldset>
+			<legend>Contract Details</legend>
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Full Name</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="FullName" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			</div>
+			</div>
+
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Handle</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="Handle" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			</div>
+			</div>
+
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Email</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="Email" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			</div>
+			</div>
+
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Address</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="Address" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			</div>
+			</div>
+
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Date</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="theDate" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			</div>
+			</div>
+
+			<div class="form-group">
+			<label class="col-lg-2 control-label">Website</label>
+			<div class="col-lg-10">
+			<input type="text" class="form-control" ng-model="webAddress" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<br />
+			<button type="button" class="btn btn-primary" ng-click="toggle()">View Privacy Policy</button>
+			</div>
+			</div>
+
+		</fieldset>
+		</form>
+
+		</div>
 	</div>
+
+	<!-- Row 3: Privacy Policy Statement -->
+	<div class="row" ng-show="peek">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{Handle}} Privacy Policy</h3>
+			</div>
+			<div class="panel-body">
+
+			<p class="wordwrap"><span style="color:green;">{{FullName}}</span> ("<span style="color:blue;">{{Handle}}</span>," "we", "us," "our,") provide online and mobile services, including but not limited to, the <span style="color:blue;">{{Handle}}</span> website (the "Site") widgets, computer programs and mobile applications hosted by or on behalf of us (collectively, the "Services") intended to enhance your use of the sleep and body monitoring electronic products offered by us (the "Products"). We are committed to maintaining the privacy, integrity and security of any personal information about our users. This Privacy Policy ("Policy") explains how we protect personal information we collect in connection with your use of the Services and how we use and in some cases disclose that information. "Personal Information" for purposes of this Policy means information that identifies you, such as your name, address, phone number, fax number or email address.</p>
+			
+			<p>This Policy is subject to the provisions our Terms of Use (the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">"Terms of Use"</a>), which are incorporated by reference. To see the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">Terms of Use</a>, please visit our <a href="{{webAddress}}" target="_blank">website</a>.</p>
+			
+			<ol type="1">
+				<li><h4>What Personal Information We Collect</h4></li>
+				<p>Products work in conjunction with a user account on the Site (a "User Account").</p>
+				
+				<ol type="1">
+					<li>When you sign up for a User Account, you are required to provide an email address (which will be used as your login ID) and to create an account password (collectively the "Registration Information").</li>
+					<li>In order to benefit fully from the Products and Services, you can also add additional personal details to your User Account, such as height, weight, gender, and age.</li>
+					<li>Information that you add manually to one of the Services is stored in your User Account.</li>
+				</ol>
+				
+				<li><h4>How We Use Your Personal Information</h4></li>
+				<p>Company uses your personal information to:</p>
+				
+				<ol type="1">
+					<li>Provide you with the Services;</li>
+					<li>Analyze Site usage and improve the Products and Services;</li>
+					<li>Deliver to you any administrative notices and communications relevant to your use of the Products and Services;</li>
+					<li>Provide you with updates regarding the Products and Services;</li>
+					<li>Perform internal market research, project planning, troubleshooting problems, and to detect and protect against error, fraud or other criminal activity.</li>
+				</ol>
+				
+				<li><h4>Disclosure to Third Parties</h4></li>
+
+				<ol type="1">
+					<li>At times we may make certain Personal Information available to strategic partners that work with us to provide services to you. In such cases, your account with such third party will continue to be subject to that third party's privacy policy and your User Account will continue to be governed by this Policy.</li>
+					<li>We may also share your personal information with companies who provide services to us such as information processing, order fulfillment, product delivery, customer data management, customer research and the like. These companies are obligated to protect your information and may be located wherever we do business.</li>
+					<li>We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our Terms of Use or protect our operations or users if we are required to do so by any applicable law, rule, regulation, subpoena or other legal process.</li>
+					<li>In the event of a reorganization, merger or sale, we may transfer any and all personal information we collect to the relevant third party.</li>
+				</ol>
+				
+				<li><h4>Use of Aggregated Anonymous User Data</h4></li>
+				<p>We may disclose non-personally identifiable aggregated user data, such as aggregated gender, age, height, weight, and usage data gathered from the Products and Services (without the inclusion of a user's name or other identifying information) to:</p>
+				
+				<ol type="1">
+					<li>Organizations that conduct consumer research into health and wellness;</li>
+					<li>Users of the Products or Services for purposes of comparison of their personal health and wellness situation relative to the broader community; and</li>
+					<li>Advertisers and other third parties for their marketing and promotional purposes.</li>
+				</ol>
+				
+				<li><h4>Cookies and Other Technology</h4></li>
+				
+				<ol type="1">
+					<li>The Services may use "cookies" and other technologies such as pixel tags and web beacons.</li>
+					<li>Cookies are alphanumeric identifiers in the form of text files that are inserted and stored by your Web browser on your computer's hard drive. These technologies tell us which parts of our website you have visited, limit the number of times you see an offer, or help us better determine which offers you may like to see or to alert you to software compatibility issues. They are also used to analyze and improve the design and functionality of the Products and Services.</li>
+					<li>If you choose to delete cookies from your device or block them from being stored on your device, please note that the full functionality of the Services may not be available to you.</li>
+					<li>"Web Beacons" are images embedded in a Web page or email for the purpose of measuring and analyzing site usage and activity. We, or third party service providers acting on our behalf, may use Web Beacons to help us analyze Site usage and improve the Services.</li>
+					<li>We may use third party service providers to help us analyze certain online activities and improve the Products and Services. For example, these service providers may help us measure the performance of our online campaigns or analyze visitor activity on the Site. We may permit these service providers to use cookies and other technologies to perform these services for us. We do not share any personal information about our customers with these third party service providers, and these service providers do not collect such information on our behalf. Our third party service providers are required to comply fully with this Policy.</li>
+				</ol>
+				
+				<li><h4>Information You Elect to Share With Others</h4></li>
+				<p>If you use a message board, blog, journal or any other method of posting user-generated content on the Site or through the Services, you should be aware that such information can be read, collected or used by others and could be used to send you unsolicited messages. We are not responsible for the personal information you choose to submit in these areas.</p>
+				
+				<li><h4>Surveys</h4></li>
+				<p>We may ask you to participate in surveys designed to help us improve the Products and Services. Any personal information provided to us in connection with any survey will be used only in relation to that survey and as elsewhere set forth in this Policy.</p>
+				
+				<li><h4>Children</h4></li>
+				<p>We do not knowingly collect any personal information from children under 13. If we discover that a child under the age of 13 has provided us with personally identifying information, we will take steps to delete the information as soon as possible.</p>
+				
+				<li><h4>Your Right to Delete Your Data</h4></li>
+				<p>If you would like to cancel your User Account you may do so by emailing us at contact. When you request cancellation of your account, your personally identifiable information will be deleted, including but not limited your email address, name, and photo(s). Archival copies of your account information that exist within our back-up system will be deleted in accordance with our normal back-up expiration schedule. Following cancellation or termination of your account, we may continue to utilize de-identified and anonymized historical data associated with your use of the Products and Services.</p>
+				
+				<li><h4>Email Communications From Us</h4></li>
+				
+				<ol type="1">
+					<li>We may provide you with summaries of your User Account data and email alerts. We also allow you to subscribe to email newsletters and from time to time may transmit emails promoting Acme and third-party goods or services.</li>
+					<li>You have the ability to opt-out of receiving our weekly summaries and promotional emails and to terminate your newsletter subscriptions by following the instructions provided in such emails.</li>
+					<li>Opting out in this manner will not end transmission of service-related emails, such as email alerts.</li>
+				</ol>
+
+				<li><h4>Acme Privacy Policy</h4></li>
+				
+				<ol type="1">
+					<li>We use a combination of firewall barriers, encryption techniques and authentication procedures, among others, to maintain the security of your data and to protect accounts and systems from unauthorized access.</li>
+					<li>When you register for the Site, we require a password from you for your privacy and security. This password is stored in an encrypted fashion on our systems.</li>
+					<li>It is important to understand that these precautions apply only to our Site and systems. We exercise no control over how your information is stored, maintained or displayed by third parties or on third-party sites.</li>
+				</ol>
+				
+				<li><h4>International Users</h4></li>
+				
+				<ol type="1">
+					<li>Services are hosted and operated entirely in the United States and are subject to United States law. Any personal information that you provide to us is being provided to us solely in the United States and will be hosted on United States servers. You consent to the transfer of your personal information to the United States. If you are accessing the Services from outside the United States, please be advised that United States law may not offer the same privacy protections as the law of your jurisdiction.</li>
+					<li>If you have a security related concern, please contact us by <a href="mailto:{{Email}}?Subject=Help%me%Obi-Wan%Kenobi" target="_top" style="color:orange;">by email</a> or mail us at our {{Address}}.</li>
+				</ol>
+
+				<li><h4>Updates to this Policy</h4></li>
+				<p>We may update this Policy periodically. The date last revised is <span style="color:cyan;">{{theDate}}</span>. Changes take effect immediately upon posting.</p>
+				
+				<li><h4>Contact us if you have any questions or concerns</h4></li>
+				<p>If you have questions, comments, concerns or feedback regarding this Policy or any other privacy or security concern, send an e-mail to our support services.</p>
+
+			</ol>
+			</p>
+			
+			</div>
+			
+		<!-- End of the panel-->
+		</div>
+	<!-- End of the row -->
+	</div>
+<!-- End of the Working controller -->
 </div>
 
-<!-- Row 3: Privacy Policy Statement -->
-<div class="row">
-<div class="col-lg-12">
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h3 class="panel-title">{{Handle}} Privacy Policy</h3>
-</div>
-<div class="panel-body">
-
-<p class="wordwrap">
-<span style="color:green;">{{FullName}}</span> ("<span style="color:blue;">{{Handle}}</span>," "we", "us," "our,") provide online and mobile services, including but not limited to, the <span style="color:blue;">{{Handle}}</span> website (the "Site") widgets, computer programs and mobile applications hosted by or on behalf of us (collectively, the "Services") intended to enhance your use of the sleep and body monitoring electronic products offered by us (the "Products"). We are committed to maintaining the privacy, integrity and security of any personal information about our users. This Privacy Policy ("Policy") explains how we protect personal information we collect in connection with your use of the Services and how we use and in some cases disclose that information. "Personal Information" for purposes of this Policy means information that identifies you, such as your name, address, phone number, fax number or email address.
-
-This Policy is subject to the provisions our Terms of Use (the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">"Terms of Use"</a>), which are incorporated by reference. To see the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">Terms of Use</a>, please visit our <a href="{{webAddress}}" target="_blank">website</a>.
-<ol type="1">
-<li><h4>What Personal Information We Collect</h4></li>
-Products work in conjunction with a user account on the Site (a "User Account").
-<ol type="1">
-<li>When you sign up for a User Account, you are required to provide an email address (which will be used as your login ID) and to create an account password (collectively the "Registration Information").</li>
-<li>In order to benefit fully from the Products and Services, you can also add additional personal details to your User Account, such as height, weight, gender, and age.</li>
-<li>Information that you add manually to one of the Services is stored in your User Account.</li>
-</ol>
-<li><h4>How We Use Your Personal Information</h4></li>
-Company uses your personal information to:
-<ol type="1">
-<li>Provide you with the Services;</li>
-<li>Analyze Site usage and improve the Products and Services;</li>
-<li>Deliver to you any administrative notices and communications relevant to your use of the Products and Services;</li>
-<li>Provide you with updates regarding the Products and Services;</li>
-<li>Perform internal market research, project planning, troubleshooting problems, and to detect and protect against error, fraud or other criminal activity.</li>
-</ol>
-<li><h4>Disclosure to Third Parties</h4></li>
-<ol type="1">
-<li>At times we may make certain Personal Information available to strategic partners that work with us to provide services to you. In such cases, your account with such third party will continue to be subject to that third party's privacy policy and your User Account will continue to be governed by this Policy.</li>
-<li>We may also share your personal information with companies who provide services to us such as information processing, order fulfillment, product delivery, customer data management, customer research and the like. These companies are obligated to protect your information and may be located wherever we do business.</li>
-<li>We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our Terms of Use or protect our operations or users if we are required to do so by any applicable law, rule, regulation, subpoena or other legal process.</li>
-<li>In the event of a reorganization, merger or sale, we may transfer any and all personal information we collect to the relevant third party.</li>
-</ol>
-<li><h4>Use of Aggregated Anonymous User Data</h4></li>
-We may disclose non-personally identifiable aggregated user data, such as aggregated gender, age, height, weight, and usage data gathered from the Products and Services (without the inclusion of a user's name or other identifying information) to:
-<ol type="1">
-<li>Organizations that conduct consumer research into health and wellness;</li>
-<li>Users of the Products or Services for purposes of comparison of their personal health and wellness situation relative to the broader community; and</li>
-<li>Advertisers and other third parties for their marketing and promotional purposes.</li>
-</ol>
-<li><h4>Cookies and Other Technology</h4></li>
-<ol type="1">
-<li>The Services may use "cookies" and other technologies such as pixel tags and web beacons.</li>
-<li>Cookies are alphanumeric identifiers in the form of text files that are inserted and stored by your Web browser on your computer's hard drive. These technologies tell us which parts of our website you have visited, limit the number of times you see an offer, or help us better determine which offers you may like to see or to alert you to software compatibility issues. They are also used to analyze and improve the design and functionality of the Products and Services.</li>
-<li>If you choose to delete cookies from your device or block them from being stored on your device, please note that the full functionality of the Services may not be available to you.</li>
-<li>"Web Beacons" are images embedded in a Web page or email for the purpose of measuring and analyzing site usage and activity. We, or third party service providers acting on our behalf, may use Web Beacons to help us analyze Site usage and improve the Services.</li>
-<li>We may use third party service providers to help us analyze certain online activities and improve the Products and Services. For example, these service providers may help us measure the performance of our online campaigns or analyze visitor activity on the Site. We may permit these service providers to use cookies and other technologies to perform these services for us. We do not share any personal information about our customers with these third party service providers, and these service providers do not collect such information on our behalf. Our third party service providers are required to comply fully with this Policy.</li>
-</ol>
-<li><h4>Information You Elect to Share With Others</h4></li>
-If you use a message board, blog, journal or any other method of posting user-generated content on the Site or through the Services, you should be aware that such information can be read, collected or used by others and could be used to send you unsolicited messages. We are not responsible for the personal information you choose to submit in these areas.
-<li><h4>Surveys</h4></li>
-We may ask you to participate in surveys designed to help us improve the Products and Services. Any personal information provided to us in connection with any survey will be used only in relation to that survey and as elsewhere set forth in this Policy.
-<li><h4>Children</h4></li>
-We do not knowingly collect any personal information from children under 13. If we discover that a child under the age of 13 has provided us with personally identifying information, we will take steps to delete the information as soon as possible.
-<li><h4>Your Right to Delete Your Data</h4></li>
-If you would like to cancel your User Account you may do so by emailing us at contact. When you request cancellation of your account, your personally identifiable information will be deleted, including but not limited your email address, name, and photo(s). Archival copies of your account information that exist within our back-up system will be deleted in accordance with our normal back-up expiration schedule. Following cancellation or termination of your account, we may continue to utilize de-identified and anonymized historical data associated with your use of the Products and Services.
-<li><h4>Email Communications From Us</h4></li>
-<ol type="1">
-<li>We may provide you with summaries of your User Account data and email alerts. We also allow you to subscribe to email newsletters and from time to time may transmit emails promoting Acme and third-party goods or services.</li>
-<li>You have the ability to opt-out of receiving our weekly summaries and promotional emails and to terminate your newsletter subscriptions by following the instructions provided in such emails.</li>
-<li>Opting out in this manner will not end transmission of service-related emails, such as email alerts.</li>
-</ol>
-<li><h4>Acme Privacy Policy</h4></li>
-<ol type="1">
-<li>We use a combination of firewall barriers, encryption techniques and authentication procedures, among others, to maintain the security of your data and to protect accounts and systems from unauthorized access.</li>
-<li>When you register for the Site, we require a password from you for your privacy and security. This password is stored in an encrypted fashion on our systems.</li>
-<li>It is important to understand that these precautions apply only to our Site and systems. We exercise no control over how your information is stored, maintained or displayed by third parties or on third-party sites.</li>
-</ol>
-<li><h4>International Users</h4></li>
-<ol type="1">
-<li>Services are hosted and operated entirely in the United States and are subject to United States law. Any personal information that you provide to us is being provided to us solely in the United States and will be hosted on United States servers. You consent to the transfer of your personal information to the United States. If you are accessing the Services from outside the United States, please be advised that United States law may not offer the same privacy protections as the law of your jurisdiction.</li>
-<li>If you have a security related concern, please contact us by <a href="mailto:{{Email}}?Subject=Help%me%Obi-Wan%Kenobi" target="_top" style="color:orange;">by email</a> or mail us at our {{Address}}.</li>
-</ol>
-<li><h4>Updates to this Policy</h4></li>
-We may update this Policy periodically. The date last revised is <span style="color:cyan;">{{theDate}}</span>. Changes take effect immediately upon posting.
-<li><h4>Contact us if you have any questions or concerns</h4></li>
-If you have questions, comments, concerns or feedback regarding this Policy or any other privacy or security concern, send an e-mail to our support services.
-</ol>
-</p>
-</div>
-</div>
-</div>
-</div>
-
-</div>
+<hr>
 
 <!-- Controller 2: Escrow Contract -->
-<div class="container" ng-controller="Escrow">
+<div ng-controller="Escrow">
 
 	<!-- Row 1: Section Title -->
 	<div class="row">
 		<h2>2. Escrow</h2>
-		<hr>
+		<br />
 	</div>
 
 	<!-- Row 2: OpenBazaar RC JSON Input -->
 	<div class="row">
-		<div class="col-lg-12">
-			<div class="well bs-component">
-				<form class="form-horizontal" _lpchecked="1">
-					<fieldset>
-						<legend>OpenBazaar Ricardian Contract</legend>
+		<div class="well bs-component">
+			<form class="form-horizontal" _lpchecked="1">
+				<fieldset>
+					<legend><i>OpenBazaar</i> Ricardian Contract</legend>
 
-						<div class="form-group">
-							<label for="textArea" class="col-lg-2 control-label"><i>OpenBazaar</i> Contract</label>
-							<div class="col-lg-10">
-								<textarea class="form-control" rows="5" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
-								<span class="help-block">Paste in your <span><i>OpenBazaar</i></span> Richardian Contract formatted in JSON.</span>
-								<button type="button" class="btn btn-default" ng-click="TryContract()">Try an Example Contract</button>
-								<p>
-								{{contractinput_final.genesis}}
-								{{example}}
-								</p>
-							</div>
+					<div class="form-group">
+						<label for="textArea" class="col-lg-2 control-label"><i>OpenBazaar</i> Contract</label>
+						<div class="col-lg-10">
+							<textarea class="form-control" rows="5" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
+							<span class="help-block">Paste in your <span><i>OpenBazaar</i></span> Richardian Contract formatted in JSON.</span>
+							<button type="button" class="btn btn-primary" ng-click="TryContract(); toggle()">Try an Example Contract</button><span> <a href="https://gist.github.com/drwasho/09b3e0a1187476ca5d2a" class="btn btn-danger "target="_blank">See Contract Template</a></span>
 						</div>
+					</div>
 
-					</fieldset>
-				</form>
-			</div>
+				</fieldset>
+			</form>
 		</div>
 	</div>
 
-	<!-- Row 3: Escrow Contract Display -->
-	<div class="row">
+	<!-- Row 3: OpenBazaar Ricardian Contract Interpreter -->
+	<div class="row" ng-show="peek">
+		
+		<div class="panel panel-primary">
+
+			<div class="panel-heading">
+				<h2 class="panel-title"><i>OpenBazaar</i> Ricardian Contract Interpreter</h2>
+			</div>
+
+			<div class="panel-body">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>{{contractinput_final.genesis.item_data.title}}</h1>
+						<hr />
+					</div>
+				</div>
+
+				<div class="row">
+					
+					<div class="col-lg-6">
+						<img class="img-responsive" ng-src="{{contractinput_final.genesis.item_data.image[0]}}" style="border:1px solid black; width:100%;" title="SHA256 Hash: {{contractinput_final.genesis.item_data.image[1]}}">
+					</div>
+
+					<div class="col-lg-6">
+						
+						<h1 class="text-primary" style="text-align:center;">{{contractinput_final.genesis.item_data.price.btc}} BTC</h1>
+						<h4 class="text-muted" style="text-align:center;">{{contractinput_final.genesis.item_data.price.fiat.price}} {{contractinput_final.genesis.item_data.price.fiat.currency}}</h4>
+						
+						<br />
+						
+						<p style="color:teal; text-align:center;">Qty</p>
+						<h4 style="color:teal; text-align:center;">{{contractinput_final.genesis.item_data.quantity}}</h4>
+						<hr />
+						
+						<h3 style="text-align:center;">DESCRIPTION</h3>
+						<p class="wordwrap" style="text-align:center;font-size:18px">{{contractinput_final.genesis.item_data.description}}</p>
+						
+						<hr />
+						
+						<p class="wordwrap"><b>Keywords: </b>{{contractinput_final.genesis.item_data.keywords.join(", ")}}</p>
+
+						<p class="wordwrap"><b>Condition: </b>{{contractinput_final.genesis.item_data.condition}}</p>
+
+						<hr />
+
+						<h4>Shipping</h4>
+
+						<p class="wordwrap"><b>Delivery region: </b>{{contractinput_final.genesis.item_data.region}}</p>
+
+						<p class="wordwrap"><b>Estimate delivery: </b>{{contractinput_final.genesis.item_data.est_delivery}}</p>
+
+						<br />
+
+						<h5>{{contractinput_final.genesis.item_data.shipper.handle}}</h5>
+						<p class="wordwrap text-muted">{{contractinput_final.genesis.item_data.shipper.legal_address}}</p>
+					</div>
+
+				</div>
+
+				<hr />
+
+				<!-- Exchange Details -->
+				<div class="row">
+					
+					<div class="col-lg-3">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Merchant</h3>
+								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.merchant.handle}}</h4>
+							</div>
+							<div class="panel-body">
+								<span class="label label-primary">GUID</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.guid}}<p>
+								<p> </p>
+								<span class="label label-primary">PGP Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.pubkeys.pgp}}<p>
+								<p> </p>
+								<span class="label label-primary">secp256k1 Bitcoin Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.pubkeys.secp256k1_uncompressed}}<p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Buyer</h3>
+								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.buyer.handle}}</h4>
+							</div>
+							<div class="panel-body">
+								<span class="label label-primary">GUID</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.guid}}<p>
+								<p> </p>
+								<span class="label label-primary">PGP Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.pubkeys.pgp}}<p>
+								<p> </p>
+								<span class="label label-primary">secp256k1 Bitcoin Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.pubkeys.secp256k1_uncompressed}}<p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Notary</h3>
+								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.notary.handle}}</h4>
+							</div>
+							<div class="panel-body">
+								<span class="label label-primary">GUID</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.guid}}<p>
+								<p> </p>
+								<span class="label label-primary">PGP Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.pubkeys.pgp}}<p>
+								<p> </p>
+								<span class="label label-danger">secp256k1 Bitcoin Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.pubkeys.secp256k1_uncompressed}}<p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Arbiter</h3>
+								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.arbiter.handle}}</h4>
+							</div>
+							<div class="panel-body">
+								<span class="label label-primary">GUID</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.guid}}<p>
+								<p> </p>
+								<span class="label label-primary">PGP Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.pubkeys.pgp}}<p>
+								<p> </p>
+								<span class="label label-danger">secp256k1 Bitcoin Public Key</span>
+								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.pubkeys.secp256k1_uncompressed}}<p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Row 4: CommonAccord Escrow Contract Display -->
+	<div class="row" ng-show="peek">
 		
 		<div class="col-lg-12">
 			<div class="panel panel-primary">
 			
 				<div class="panel-heading">
-					<h3 class="panel-title">Escrow Contract</h3>
+					<h2 class="panel-title"><i>CommonAccord</i> Escrow Contract</h2>
 				</div>
 				
 				<div class="panel-body">
 					<p class="wordwrap"><h4>ESCROW AGREEMENT</h4></p>
 
-					<p>This escrow agreement (&ldquo;Escrow Agreement&rdquo;) is made and entered into
-					on 2014-08-13:12:05 by and among:</p>
+					<p>This escrow agreement (&ldquo;Escrow Agreement&rdquo;) is made and entered into on 2014-08-13:12:05 by and among:</p>
 
 					<ul>
-					<li><font color="{mcolor}">Roberta Whatsherface</font>, an individual whose business
-					address is 666 Winding Drive, Woodstock, NY 12498,
-					(&ldquo;Purchaser&rdquo;),</li>
+					<li><font color="{mcolor}">{{contractinput_final.buyer.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.buyer.legal_address}}</font>, (&ldquo;Purchaser&rdquo;),</li>
 
-					<li><font color="magenta">Safe Hands Facilitated Transactions, Inc.</font>, a
-					legal person whose principal address is 1550 Bay Street, San Francisco, CA 94123,
-					(&ldquo;Escrow Agent&rdquo;),</li>
+					<li><font color="magenta">{{contractinput_final.notary.handle}}</font>, a legal person whose principal address is <font color="red">{{contractinput_final.notary.legal_address}}</font>, (&ldquo;Escrow Agent&rdquo;),</li>
 
-					<li><font color="green">Gerry's Grapes, LLC</font>, a legal person whose business
-					address is 1 Broadway, Cambridge, MA 02142 ("Seller"), as of 2014-08-13:12:05.</li>
+					<li><font color="green">{{contractinput_final.merchant.handle}}</font>, a legal person whose business address is <font color="red">{{contractinput_final.merchant.legal_address}}</font> ("Seller"), as of 2014-08-13:12:05.</li>
 					</ul>
 
 					<p>Additional persons referenced in this Agreement are:</p>
 
 					<ul>
-					<li><font color="blue">Fabulous Express, Inc.</font>, a legal person whose
-					business address is 333 Alamo Way, Austin, TX 75123 ("Shipper"); and</li>
+					<li><font color="blue">{{contractinput_final.genesis.item_data.shipper.handle}}</font>, a legal person whose business address is <font color="red">{{contractinput_final.genesis.item_data.shipper.legal_address}}</font> ("Shipper"); and</li>
 
-					<li>Solomon Shirley, an individual whose business address is 100 Madison Street,
-					Cambridge, MA 02144 ("Arbitrator").</li>
+					<li><font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}</font> ("Arbitrator").</li>
 					</ul>
 
 					<ul>
-					<li>WHEREAS, the Purchaser and the Seller have entered into a purchase agreement
-					(&ldquo;Purchase Agreement&rdquo;) for the sale to the Purchaser of eighteen
-					cases of grape preserves (the &ldquo;Products&rdquo;) owned by the Seller in
-					exchange for $650.00 (the "Purchase Price") (altogether, the "Transaction");</li>
+					<li>WHEREAS, the Purchaser and the Seller have entered into a purchase agreement (&ldquo;Purchase Agreement&rdquo;) for the sale of <font color="blue">{{contractinput_final.genesis.item_data.quantity}}</font> units of "<font color="red">{{contractinput_final.genesis.item_data.title}}</font>" (the &ldquo;Products&rdquo;) owned by the Seller in exchange for <font color="red">{{contractinput_final.genesis.item_data.price.btc}} BTC</font> (the "Purchase Price") (altogether, the "Transaction");</li>
 
-					<li>WHEREAS, pursuant to said Purchase Agreement, the Purchaser has agreed to
-					deposit the Purchase Price into an Escrow Account ("the Escrow Account");</li>
+					<li>WHEREAS, pursuant to said Purchase Agreement, the Purchaser has agreed to deposit the Purchase Price into an Escrow Account ("the Escrow Account");</li>
 
-					<li>WHEREAS, the Purchaser and the Seller have agreed to use the Escrow Agent to
-					hold the Purchase Price and act as Escrow Agent;</li>
+					<li>WHEREAS, the Purchaser and the Seller have agreed to use the Escrow Agent to hold the Purchase Price and act as Escrow Agent;</li>
 
-					<li>WHEREAS, the Escrow Agent has agreed to act in such capacity upon the terms
-					and conditions contained herein; and</li>
+					<li>WHEREAS, the Escrow Agent has agreed to act in such capacity upon the terms and conditions contained herein; and</li>
 
-					<li>WHEREAS, the Seller, Purchaser and Escrow Agent agree to use Solomon Shirley,
-					an individual whose business address is 100 Madison Street, Cambridge, MA 02144
-					(the "Arbitrator") to resolve any disputes among them regarding the meaning of
-					this Agreement or the performance of this Agreement, including any "Claim" as
-					defined below.</li>
+					<li>WHEREAS, the Seller, Purchaser and Escrow Agent agree to use <font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}100 Madison Street, Cambridge, MA 02144</font> (the "Arbitrator") to resolve any disputes among them regarding the meaning of this Agreement or the performance of this Agreement, including any "Claim" as defined below.</li>
 					</ul><br />
-					NOW, THEREFORE, in consideration of the mutual premises and conditions contained
-					herein, the Purchaser, the Seller and the Escrow Agent do hereby agree as follows:
+					NOW, THEREFORE, in consideration of the mutual premises and conditions contained herein, the Purchaser, the Seller and the Escrow Agent do hereby agree as follows:
 
 					<ol>
-					<li><u>Deposit of Funds</u>. The Purchaser has delivered funds equal to the
-					Purchase Price to the Escrow Agent and the Escrow Agent acknowledges receipt of
-					the Purchase Price.</li>
+					<li><u>Deposit of Funds</u>. The Purchaser has delivered funds (<span><a ng-href="https://blockchain.info/address/{{contractinput_final.escrow.btc_address}}">{{contractinput_final.escrow.btc_address}}</a></span>) equal to the Purchase Price to the Escrow Agent and the Escrow Agent acknowledges receipt of the Purchase Price.</li>
 
-					<li><u>Pickup</u>. The Seller promises to deliver the Products to the Shipper on
-					or before 2014-08-15.</li>
+					<li><u>Pickup</u>. The Seller promises to deliver the Products to the Shipper on or before <font color="blue">{{contractinput_final.genesis.item_data.est_delivery}}</font>.</li>
 
-					<li><u>Release of Payment</u>. The Escrow Agent shall release the Purchase Price
-					to the Seller not less than 24 hours and nor more than 48 hours after
-					notification from the Shipper that it has delivered the Products to the
-					Purchaser.</li>
+					<li><u>Release of Payment</u>. The Escrow Agent shall release the Purchase Price to the Seller not less than 24 hours and nor more than 48 hours after notification from the Shipper that it has delivered the Products to the Purchaser.</li>
 
-					<li><u>Cancellation</u>. If the Seller fails to deliver the Products to the
-					Shipper by 2014-08-15, the Purchaser shall have the option to cancel the
-					Transaction ("Cancellation") at any time after 2014-08-15 and before the Shipper
-					notifies the Escrow Agent that Shipper has received the Products from Seller. If
-					there is a Cancellation, the Escrow Agent shall return the Purchase Price to the
-					Purchaser and the Purchaser shall have no other obligation to the Seller.</li>
+					<li><u>Cancellation</u>. If the Seller fails to deliver the Products to the Shipper by <font color="red">{{contractinput_final.genesis.metadata.expiration_date_YYYYMMDD}}</font>, the Purchaser shall have the option to cancel the Transaction ("Cancellation") at any time after <font color="red">{{contractinput_final.genesis.metadata.expiration_date_YYYYMMDD}}</font> and before the Shipper notifies the Escrow Agent that Shipper has received the Products from Seller. If there is a Cancellation, the Escrow Agent shall return the Purchase Price to the Purchaser and the Purchaser shall have no other obligation to the Seller.</li>
 
-					<li><u>Claim</u>. If the Purchaser notifies the Escrow Agent of a claim of defect
-					in the Product (a "Claim") not later than 24 hours after notification by the
-					Shipper of delivery to the Purchaser, then the Escrow Agent shall not release the
-					Purchase Price to the Seller while the Claim is being handled. The Escrow Agent
-					shall notify the Seller, the Purchaser, and the Arbitrator of the existence of
-					the Claim.</li>
+					<li><u>Claim</u>. If the Purchaser notifies the Escrow Agent of a claim of defect in the Product (a "Claim") not later than 24 hours after notification by the Shipper of delivery to the Purchaser, then the Escrow Agent shall not release the Purchase Price to the Seller while the Claim is being handled. The Escrow Agent shall notify the Seller, the Purchaser, and the Arbitrator of the existence of the Claim.</li>
 
-					<li><u>Reliance by Escrow Agent</u>. The Escrow Agent may act in reliance upon
-					any writing, instrument, or signature that the Escrow Agent, in good faith,
-					believes to be genuine; and may assume any person purporting to give any notice,
-					writing, advice, or instructions in connection with any provision herein has been
-					duly authorized to do so.</li>
+					<li><u>Reliance by Escrow Agent</u>. The Escrow Agent may act in reliance upon any writing, instrument, or signature that the Escrow Agent, in good faith, believes to be genuine; and may assume any person purporting to give any notice, writing, advice, or instructions in connection with any provision herein has been duly authorized to do so.</li>
 
-					<li><u>Indemnification of Escrow Agent</u>. The Purchaser and the Seller agree to
-					indemnify and hold harmless the Escrow Agent from any and all claims,
-					liabilities, losses, expenses, actions, suits, or proceedings at law or in
-					equity, or any other expense, fees, or charges of any character or nature
-					whatever that it may incur by reason of acting as the Escrow Agent under this
-					Escrow Agreement except for the Escrow Agent&amp;srquo;s gross negligence, bad
-					faith or willful misconduct. The Escrow Agent shall not be required to institute
-					or maintain any litigation unless indemnified to its satisfaction for its counsel
-					fees, costs, disbursements and all other expenses and liabilities that it may be
-					subjected to in connection with the aforesaid action.</li>
+					<li><u>Indemnification of Escrow Agent</u>. The Purchaser and the Seller agree to indemnify and hold harmless the Escrow Agent from any and all claims, liabilities, losses, expenses, actions, suits, or proceedings at law or in equity, or any other expense, fees, or charges of any character or nature whatever that it may incur by reason of acting as the Escrow Agent under this Escrow Agreement except for the Escrow Agent&#39;s gross negligence, bad faith or willful misconduct. The Escrow Agent shall not be required to institute or maintain any litigation unless indemnified to its satisfaction for its counsel fees, costs, disbursements and all other expenses and liabilities that it may be subjected to in connection with the aforesaid action.</li>
 
-					<li><u>Submission of Dispute by Escrow Agent</u>. If the Seller and the Purchaser
-					disagree about the interpretation of this Escrow Agreement, about the rights and
-					obligations of the parties, or the propriety of any action contemplated by the
-					Escrow Agent hereunder, the Escrow Agent may submit such dispute to the
-					Arbitrator. The Escrow Agent shall be indemnified for any costs, including
-					reasonable attorney fees in connection with the aforesaid action.</li>
+					<li><u>Submission of Dispute by Escrow Agent</u>. If the Seller and the Purchaser disagree about the interpretation of this Escrow Agreement, about the rights and
+					obligations of the parties, or the propriety of any action contemplated by the Escrow Agent hereunder, the Escrow Agent may submit such dispute to the
+					Arbitrator. The Escrow Agent shall be indemnified for any costs, including reasonable attorney fees in connection with the aforesaid action.</li>
 
-					<li><u>Fee for Escrow Agent</u>. For its services, the Escrow Agent shall receive
-					$1.50.</li>
+					<li><u>Fee for Escrow Agent</u>. For its services, the Escrow Agent shall receive $1.50.</li>
 
-					<li><u>Fee for Arbitrator</u>. In the event that the Arbitrator is notified of a
-					Claim or otherwise informed of a dispute, the Arbitrator shall receive
-					$50.00.</li>
+					<li><u>Fee for Arbitrator</u>. In the event that the Arbitrator is notified of a Claim or otherwise informed of a dispute, the Arbitrator shall receive $50.00.</li>
 
-					<li><u>Successors</u>. The rights created by this Escrow Agreement shall inure to
-					the benefit of, and the obligations created hereby shall be binding upon the
-					successors and assigns of the Escrow Agent and all parties to this Escrow
-					Agreement.</li>
+					<li><u>Successors</u>. The rights created by this Escrow Agreement shall inure to the benefit of, and the obligations created hereby shall be binding upon the
+					successors and assigns of the Escrow Agent and all parties to this Escrow Agreement.</li>
 
-					<li><u>Limit on Liability of Escrow Agent</u>. The Escrow Agent shall not be
-					obligated to take any action that is not specifically set forth herein. In the
-					event of a disagreement or dispute concerning the validity or interpretation of
-					any condition of this Escrow Agreement, the dispute shall be resolved by the
-					Arbitrator. In such event, the Escrow Agent shall be relieved of any other and
-					further liability under this Escrow Agreement.</li>
+					<li><u>Limit on Liability of Escrow Agent</u>. The Escrow Agent shall not be obligated to take any action that is not specifically set forth herein. In the
+					event of a disagreement or dispute concerning the validity or interpretation of any condition of this Escrow Agreement, the dispute shall be resolved by the
+					Arbitrator. In such event, the Escrow Agent shall be relieved of any other and further liability under this Escrow Agreement.</li>
 
-					<li><u>Arbitration</u>. PLEASE READ THE FOLLOWING PARAGRAPH CAREFULLY BECAUSE IT
-					REQUIRES THE PARTIES TO ARBITRATE DISPUTES AND LIMITS THE MANNER IN WHICH THE
-					PARTIES CAN SEEK RELIEF.<br />
-					The parties agree to arbitrate any dispute arising from these Terms or relating
-					to the Site, except that the parties are not required to arbitrate any dispute in
-					which either party seeks equitable or other relief for the alleged unlawful use
-					of copyrights, trademarks, trade names, logos, trade secrets or patents.
-					ARBITRATION PREVENTS THE PARTIES FROM SUING IN COURT OR FROM HAVING A JURY TRIAL.
-					The parties agree that the parties will notify each other of any dispute within
-					thirty (30) days of when it arises, that the parties will attempt informal
-					resolution prior to any demand for arbitration, that any arbitration will occur
-					in Chicago, Illinois and that arbitration will be conducted confidentially by a
-					single arbitrator in accordance with the rules of JAMS. The parties also agree
-					that the state or federal courts in Cook County, Illinois have exclusive
-					jurisdiction over any appeals of an arbitration award and over any suit between
-					the parties not subject to arbitration. In any arbitration, the parties will not
-					seek discovery from each other, and the arbitrator shall not allow parties to
-					engage in discovery; rather, each party shall disclose the evidence supporting
-					their positions at some mutually agreeable time and date prior to the final
-					hearing. Other than class procedures and remedies discussed below, the arbitrator
-					has the authority to grant any remedy that would otherwise be available in court.
-					Neither party will participate in a class action or class-wide arbitration for
-					any claims covered by these Terms. The parties also agree not to participate in
-					claims brought in an private attorney general or representative capacity, or
-					consolidated claims involving another person, if the other party is a party to
-					the proceeding. If the prohibition against class actions and other claims brought
-					on behalf of third parties contained above is found to be unenforceable, then
-					that language shall be deemed to have been dropped from the Terms and the
-					remaining obligations relating to arbitration shall continue in full force and
-					effect.</li>
+					<li><u>Arbitration</u>. PLEASE READ THE FOLLOWING PARAGRAPH CAREFULLY BECAUSE IT REQUIRES THE PARTIES TO ARBITRATE DISPUTES AND LIMITS THE MANNER IN WHICH THE PARTIES CAN SEEK RELIEF.<br />
+					The parties agree to arbitrate any dispute arising from these Terms or relating to the Site, except that the parties are not required to arbitrate any dispute in
+					which either party seeks equitable or other relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets or patents. ARBITRATION PREVENTS THE PARTIES FROM SUING IN COURT OR FROM HAVING A JURY TRIAL. The parties agree that the parties will notify each other of any dispute within thirty (30) days of when it arises, that the parties will attempt informal 					resolution prior to any demand for arbitration, that any arbitration will occur in Chicago, Illinois and that arbitration will be conducted confidentially by a single arbitrator in accordance with the rules of JAMS. The parties also agree that the state or federal courts in Cook County, Illinois have exclusive jurisdiction over any appeals of an arbitration award and over any suit between the parties not subject to arbitration. In any arbitration, the parties will not seek discovery from each other, and the arbitrator shall not allow parties to engage in discovery; rather, each party shall disclose the evidence supporting their positions at some mutually agreeable time and date prior to the final hearing. Other than class procedures and remedies discussed below, the arbitrator has the authority to grant any remedy that would otherwise be available in court. Neither party will participate in a class action or class-wide arbitration for any claims covered by these Terms. The parties also agree not to participate in claims brought in an private attorney general or representative capacity, or consolidated claims involving another person, if the other party is a party to the proceeding. If the prohibition against class actions and other claims brought 					on behalf of third parties contained above is found to be unenforceable, then that language shall be deemed to have been dropped from the Terms and the remaining obligations relating to arbitration shall continue in full force and effect.</li>
 
 					<li><u>Governing Law</u><br />
-					This Escrow Agreement shall be construed and enforced in accordance with the laws
-					of Illinois without reference to its internal choice of law rules.</li>
+					This Escrow Agreement shall be construed and enforced in accordance with the laws of Illinois without reference to its internal choice of law rules.</li>
 
 					<li><u>Notices</u>.<br />
-					All notices under this Agreement shall be delivered by electronic message using
-					the "blockchain" technology through which this Agreement was entered.</li>
+					All notices under this Agreement shall be delivered by electronic message using the "blockchain" technology through which this Agreement was entered.</li>
 
 					<li><u>Construction to Conform to Technical Implementation</u><br />
-					The provisions of this Agreement are intended to express in legal language
-					("Text") the functioning of the software code that performs the transaction. Each
-					party represents that it has access to the source code ("Code") and has made such
-					inspection and analysis as it deems appropriate. In the event of any ambiguity in
-					the text or conflict between the text and operation of the Code, the Code will be
+					The provisions of this Agreement are intended to express in legal language ("Text") the functioning of the software code that performs the transaction. Each party represents that it has access to the source code ("Code") and has made such inspection and analysis as it deems appropriate. In the event of any ambiguity in the text or conflict between the text and operation of the Code, the Code will be
 					the definitive version.</li>
-					</ol>IN WITNESS WHEREOF, the undersigned being all the parties to this Escrow
-					Agreement have hereunto set their hands.<br />
+					</ol>IN WITNESS WHEREOF, the undersigned being all the parties to this Escrow Agreement have hereunto set their hands.<br />
 					&ensp;<br />
 					SELLER:<br />
 
 					<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
 						<tr>
-						  <td><strong><font color="green">Gerry's Grapes, LLC</font></strong></td>
+						  <td><strong><font color="green">{{contractinput_final.merchant.handle}}</font></strong></td>
 						</tr>
 
 						<tr>
@@ -457,7 +557,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 
 						<tr>
 						  <td>By: <u>xGERRY</u><br />
-						  Name: <font color="green">Geraldine Graber</font><br />
+						  Name: <font color="green">{{contractinput_final.buyer.handle}}</font><br />
 						  Its: Founder</td>
 						</tr>
 
@@ -466,15 +566,14 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>1 Broadway<br />
-						  Cambridge, MA 02142</td>
+						  <td><font color="red">{{contractinput_final.merchant.legal_address}}</font></td>
 						</tr>
 						</table><br />
 						PURCHASER:<br />
 
 						<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
 						<tr>
-						  <td><strong><font color="{mcolor}">Roberta Robinson</font></strong></td>
+						  <td><strong><font color="{mcolor}">{{contractinput_final.buyer.handle}}</font></strong></td>
 						</tr>
 
 						<tr>
@@ -482,7 +581,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>By: <u>xROBERTA ROBINSON</u></td>
+						  <td>By: <u>x{{contractinput_final.buyer.handle}}</u></td>
 						</tr>
 
 						<tr>
@@ -490,16 +589,14 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>666 Winding Drive<br />
-						  Woodstock, NY 12498</td>
+						  <td><font color="red">{{contractinput_final.buyer.legal_address}}</font></td>
 						</tr>
 						</table><br />
 						ESCROW AGENT:<br />
 
 						<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
 						<tr>
-						  <td><strong><font color="magenta">Safe Hands Facilitated Transactions,
-						  Inc.</font></strong></td>
+						  <td><strong><font color="magenta">{{contractinput_final.notary.handle}}</font></strong></td>
 						</tr>
 
 						<tr>
@@ -507,7 +604,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>By: <u>xSAFE HANDS</u><br />
+						  <td>By: <u>x{{contractinput_final.notary.handle}}</u><br />
 						  Name: <font color="magenta">Samuel</font> <font color=
 						  "magenta">Hardy</font><br />
 						  Its: COO</td>
@@ -518,15 +615,14 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>1550 Bay Street<br />
-						  San Francisco, CA 94123</td>
+						  <td><font color="red">{{contractinput_final.notary.legal_address}}</font></td>
 						</tr>
 						</table><br />
 						ARBITRATOR:<br />
 
 						<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
 						<tr>
-						  <td><strong>Solomon Shirley</strong></td>
+						  <td><strong>{{contractinput_final.arbiter.handle}}</strong></td>
 						</tr>
 
 						<tr>
@@ -534,7 +630,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>By: <u>xSOLOMON SHIRLEY</u></td>
+						  <td>By: <u>x{{contractinput_final.arbiter.handle}}</u></td>
 						</tr>
 
 						<tr>
@@ -542,8 +638,7 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 						</tr>
 
 						<tr>
-						  <td>100 Madison Street<br />
-						  Cambridge, MA 02144</td>
+						  <td><font color="red">{{contractinput_final.arbiter.legal_address}}</font></td>
 						</tr>
 					</table>
 
@@ -557,12 +652,13 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 </div>
 
 <!-- Footer Image -->
-<div class="container">
-	<div class="row">
+<div class="row">
 	<div class="col-lg-12">
-	<img src="assets/img/OBCA.png" style="width:100%"></div>
+		<img src="assets/img/OBCA.png" style="width:100%" />
 	</div>
 </div>
+
+<!-- End of container -->
 </div>
 </div>
 
@@ -572,8 +668,12 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 
+
 <script>
 	function Working($scope){ // Privacy Policy Controller
+		$scope.toggle = function() {
+		$scope.peek = true;
+		}
 		$scope.FullName = 'Your full name';
 		$scope.Handle = 'Handle';
 		$scope.Email = 'Email';
@@ -582,8 +682,11 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 		$scope.webAddress = '#';
 	}
 	function Escrow($scope){ // Escrow Contract Controller
+		$scope.toggle = function() {
+			$scope.peek = true;
+			}
 		$scope.TryContract = function(){
-			$scope.contractinput = '{ "genesis": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "20150101" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "data":{ "btcprice": "0.185", "fiatprice": { "price":"18.5", "currency":"USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape", "preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc", "legal_address": "333 Alamo Way, Austin, TX, 75123" } } }, "merchant": { "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address" : "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle":"Roberta Robinson", "legal_address" : "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle":"Safe Hands Faciliated Transaction, Inc", "notary_legal_address" : "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "arbiter": { "guid": "Safe Hands Facilitated Transactions Inc", "handle": "Solomon Shirley", "legal_address" : "100 Madison Street, Cambridge, MA, 02144", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "escrow": { "btcaddress": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" }}'; // OpenBazaar Ricardian Contract template example
+			$scope.contractinput = '{ "genesis": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price":{ "btc": "0.185", "fiat": { "price":"18.5", "currency":"USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape", "preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc", "legal_address": "333 Alamo Way, Austin, TX, 75123" } } }, "merchant": { "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address" : "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle":"Roberta Robinson", "legal_address" : "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle":"Safe Hands Faciliated Transaction, Inc", "legal_address" : "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "arbiter": { "guid": "Safe Hands Facilitated Transactions Inc", "handle": "Solomon Shirley", "legal_address" : "100 Madison Street, Cambridge, MA, 02144", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" }}'; // OpenBazaar Ricardian Contract template example
 			$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
 			console.log($scope.contractinput_final); // same as above
 		}
@@ -594,7 +697,11 @@ If you have questions, comments, concerns or feedback regarding this Policy or a
 	}
 </script>
 
-
+<script>
+	function viewTemplate(){
+		window.open("https://gist.github.com/drwasho/09b3e0a1187476ca5d2a");
+		}
+</script>
 
 </body>
 </html>
