@@ -297,7 +297,7 @@
 						<div class="col-lg-10">
 							<textarea class="form-control" rows="5" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
 							<span class="help-block">Paste in your <span><i>OpenBazaar</i></span> Richardian Contract formatted in JSON.</span>
-							<button type="button" class="btn btn-primary" ng-click="TryContract(); toggle()">Try an Example Contract</button><span> <a href="https://gist.github.com/drwasho/09b3e0a1187476ca5d2a" class="btn btn-danger "target="_blank">See Contract Template</a></span>
+							<span><button type="button" class="btn btn-primary" ng-click="SubmitContract(); toggle()"></span> <button type="button" class="btn btn-primary" ng-click="TryContract(); toggle1()">Try an Example Contract</button><span> <a href="https://gist.github.com/drwasho/09b3e0a1187476ca5d2a" class="btn btn-danger "target="_blank">See Contract Template</a></span>
 						</div>
 					</div>
 
@@ -681,6 +681,9 @@
 	}
 	function Escrow($scope){ // Escrow Contract Controller
 		$scope.toggle = function() {
+			$scope.peek = true;
+			}
+		$scope.toggle1 = function() {
 			$scope.peek = true;
 			}
 		$scope.TryContract = function(){
