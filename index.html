@@ -1240,8 +1240,7 @@
 			console.log($scope.contractinput_final);
 		};
 		$scope.start = function() {  // For some reason, this isn't working yet
-            $scope.createcontract = JSON.stringify($("#createcontract").text());
-			$scope.newcontract = JSON.parse($scope.createcontract);
+			$scope.newcontract = JSON.parse($("#createcontract").text());
 			console.log($scope.newcontract);
 		}
 	}
