@@ -33,9 +33,15 @@
 	  border:1px solid black;
 	  background:white;
 	}
+	.forminput
+	{
+	cursor: auto; 
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
+	background-attachment: scroll; 
+	background-position: 100% 50%; 
+	background-repeat: no-repeat;
+	}
 </style>
-
-
 
 <!-- Navbar -->
 <div class="navbar navbar-default">
@@ -46,7 +52,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">OpenBazaar</a>
+		<a class="navbar-brand" href="https://openbazaar.org">OpenBazaar</a>
 	</div>
 	
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -54,19 +60,18 @@
 		<li><a href="https://openbazaar.org" target="_blank">About</a></li>
 		<li><a href="#">Guide</a></li>
 		<li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other tools <b class="caret"></b></a>
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">CommonAccord <b class="caret"></b></a>
 		<ul class="dropdown-menu">
-		<li><a href="#">Create contract</a></li>
-		<li><a href="#">Import contract</a></li>
+		<li><a href="#">1. Privacy Policy</a></li>
+		<li><a href="#">2. Escrow Contract</a></li>
 		</ul>
 		</li>
-		<li class="active"><a href="#">CommonAccord</a></li>
+		<li><a href="#">Create Contract</a></li>
 		</ul>
 		<form class="navbar-form navbar-right">
 			<input type="text" class="form-control col-lg-8" placeholder="Search">
 		</form>
-	</div>
-	
+	</div>	
 </div>
 
 <div class="container">
@@ -83,6 +88,7 @@
 	</div>
 </div>
 
+<!-- Introduction -->
 <div class="row">
 	<h1 style="font-size:48px">What is this?</h1>
 	<hr>
@@ -113,42 +119,42 @@
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Full Name</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="FullName" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control form-input" ng-model="FullName" autocomplete="off">
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Handle</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="Handle" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control forminput" ng-model="Handle" autocomplete="off">
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Email</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="Email" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control forminput" ng-model="Email" autocomplete="off">
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Address</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="Address" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control forminput" ng-model="Address" autocomplete="off">
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Date</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="theDate" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control forminput" ng-model="theDate" autocomplete="off">
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Website</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control" ng-model="webAddress" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+			<input type="text" class="form-control forminput" ng-model="webAddress" autocomplete="off">
 			<br />
 			<button type="button" class="btn btn-primary" ng-click="toggle()">View Privacy Policy</button>
 			</div>
@@ -271,17 +277,18 @@
 		</div>
 	<!-- End of the row -->
 	</div>
-<!-- End of the Working controller -->
 </div>
 
-<hr>
+<br />
 
 <!-- Controller 2: Escrow Contract -->
 <div ng-controller="Escrow">
 
 	<!-- Row 1: Section Title -->
 	<div class="row">
-		<h2>2. Escrow</h2>
+		<h1 style="font-size:48px"><i>OpenBazaar</i> Contract Tools</h1>
+		<hr>
+		<h2>1. Import and Convert to <i>CommonAccord</i> Escrow Contract</h2>
 		<br />
 	</div>
 
@@ -452,8 +459,8 @@
 			</div>
 
 		</div>
-
 	</div>
+	<br />
 
 	<!-- Row 4: CommonAccord Escrow Contract Display -->
 	<div class="row" ng-show="peek">
@@ -494,12 +501,12 @@
 
 				<li>WHEREAS, the Escrow Agent has agreed to act in such capacity upon the terms and conditions contained herein; and</li>
 
-				<li>WHEREAS, the Seller, Purchaser and Escrow Agent agree to use <font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}100 Madison Street, Cambridge, MA 02144</font> (the "Arbitrator") to resolve any disputes among them regarding the meaning of this Agreement or the performance of this Agreement, including any "Claim" as defined below.</li>
+				<li>WHEREAS, the Seller, Purchaser and Escrow Agent agree to use <font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}</font> (the "Arbitrator") to resolve any disputes among them regarding the meaning of this Agreement or the performance of this Agreement, including any "Claim" as defined below.</li>
 				</ul><br />
 				NOW, THEREFORE, in consideration of the mutual premises and conditions contained herein, the Purchaser, the Seller and the Escrow Agent do hereby agree as follows:
 
 				<ol>
-				<li><u>Deposit of Funds</u>. The Purchaser has delivered funds (<span><a ng-href="https://blockchain.info/address/{{contractinput_final.escrow.btc_address}}">{{contractinput_final.escrow.btc_address}}</a></span>) equal to the Purchase Price to the Escrow Agent and the Escrow Agent acknowledges receipt of the Purchase Price.</li>
+				<li><u>Deposit of Funds</u>. The Purchaser has delivered funds (<span class="wordwrap"><a ng-href="https://blockchain.info/address/{{contractinput_final.escrow.btc_address}}">{{contractinput_final.escrow.btc_address}}</a></span>) equal to the Purchase Price to the Escrow Agent and the Escrow Agent acknowledges receipt of the Purchase Price.</li>
 
 				<li><u>Pickup</u>. The Seller promises to deliver the Products to the Shipper on or before <font color="blue">{{contractinput_final.genesis.item_data.est_delivery}}</font>.</li>
 
@@ -530,7 +537,7 @@
 
 				<li><u>Arbitration</u>. PLEASE READ THE FOLLOWING PARAGRAPH CAREFULLY BECAUSE IT REQUIRES THE PARTIES TO ARBITRATE DISPUTES AND LIMITS THE MANNER IN WHICH THE PARTIES CAN SEEK RELIEF.<br />
 				The parties agree to arbitrate any dispute arising from these Terms or relating to the Site, except that the parties are not required to arbitrate any dispute in
-				which either party seeks equitable or other relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets or patents. ARBITRATION PREVENTS THE PARTIES FROM SUING IN COURT OR FROM HAVING A JURY TRIAL. The parties agree that the parties will notify each other of any dispute within thirty (30) days of when it arises, that the parties will attempt informal 					resolution prior to any demand for arbitration, that any arbitration will occur in Chicago, Illinois and that arbitration will be conducted confidentially by a single arbitrator in accordance with the rules of JAMS. The parties also agree that the state or federal courts in Cook County, Illinois have exclusive jurisdiction over any appeals of an arbitration award and over any suit between the parties not subject to arbitration. In any arbitration, the parties will not seek discovery from each other, and the arbitrator shall not allow parties to engage in discovery; rather, each party shall disclose the evidence supporting their positions at some mutually agreeable time and date prior to the final hearing. Other than class procedures and remedies discussed below, the arbitrator has the authority to grant any remedy that would otherwise be available in court. Neither party will participate in a class action or class-wide arbitration for any claims covered by these Terms. The parties also agree not to participate in claims brought in an private attorney general or representative capacity, or consolidated claims involving another person, if the other party is a party to the proceeding. If the prohibition against class actions and other claims brought 					on behalf of third parties contained above is found to be unenforceable, then that language shall be deemed to have been dropped from the Terms and the remaining obligations relating to arbitration shall continue in full force and effect.</li>
+				which either party seeks equitable or other relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets or patents. ARBITRATION PREVENTS THE PARTIES FROM SUING IN COURT OR FROM HAVING A JURY TRIAL. The parties agree that the parties will notify each other of any dispute within thirty (30) days of when it arises, that the parties will attempt informal resolution prior to any demand for arbitration, that any arbitration will occur in Chicago, Illinois and that arbitration will be conducted confidentially by a single arbitrator in accordance with the rules of JAMS. The parties also agree that the state or federal courts in Cook County, Illinois have exclusive jurisdiction over any appeals of an arbitration award and over any suit between the parties not subject to arbitration. In any arbitration, the parties will not seek discovery from each other, and the arbitrator shall not allow parties to engage in discovery; rather, each party shall disclose the evidence supporting their positions at some mutually agreeable time and date prior to the final hearing. Other than class procedures and remedies discussed below, the arbitrator has the authority to grant any remedy that would otherwise be available in court. Neither party will participate in a class action or class-wide arbitration for any claims covered by these Terms. The parties also agree not to participate in claims brought in an private attorney general or representative capacity, or consolidated claims involving another person, if the other party is a party to the proceeding. If the prohibition against class actions and other claims brought on behalf of third parties contained above is found to be unenforceable, then that language shall be deemed to have been dropped from the Terms and the remaining obligations relating to arbitration shall continue in full force and effect.</li>
 
 				<li><u>Governing Law</u><br />
 				This Escrow Agreement shall be construed and enforced in accordance with the laws of Illinois without reference to its internal choice of law rules.</li>
@@ -644,10 +651,546 @@
 			</div>
 
 		</div>
-
 	</div>
 
+
+	<!-- Row 1: Section Title -->
+	<div class="row">
+		<h2>2. Create an <i>OpenBazaar</i> Ricardian Contract</h2>
+		<br />
+	</div>
+	<div class="row">
+		<div class="well bs-component col-lg-12">
+		<form class="form-horizontal">
+		  <fieldset>
+		    <legend><i>OpenBazaar</i> Contract Generator</legend>
+		    
+		    <h3>The Item</h3>
+
+			<!-- Item Title -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Title</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="item_title" ng-keyup="start()" placeholder="What is your item called?" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Description -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Description</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<textarea type="text" class="form-control forminput" ng-model="item_description" placeholder="Tell us about your item" autocomplete="off" rows="4"></textarea>
+		      	</div>
+		    </div>
+
+			<!-- Item Price -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Price (BTC)</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="item_price" placeholder="Price of the item in Bitcoin" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Price Fiat -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Price (fiat)</label>
+		      	</div>
+		     	<div class="col-lg-6">
+		        	<input type="text" class="form-control forminput" ng-model="item_fiat_price" placeholder="Price in fiat?" autocomplete="off">
+		      	</div>
+		     	<div class="col-lg-3">
+		        	<input type="text" class="form-control forminput" ng-model="item_fiat_xe" placeholder="What is the currency code?" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Image -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Item Image</label>
+		      	</div>
+		     	<div class="col-lg-6">
+		        	<input type="text" class="form-control forminput" ng-model="item_image" placeholder="Enter direct URL here" autocomplete="off">
+		      	</div>
+		     	<div class="col-lg-3">
+		        	<input type="text" class="form-control forminput" ng-model="item_image_hash" placeholder="Enter SHA256 hash of the image" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Condition -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Item Condition</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="item_condition" placeholder="What is the item's condition?" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Quantity -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Quantity</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="item_quantity" placeholder="How many units of the item are you selling?" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Keywords -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Keywords</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="item_keywords" placeholder="Separate keywords with a comma!" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Item Region and Delivery -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Region and Estimated Delivery</label>
+		      	</div>
+		     	<div class="col-lg-5">
+		        	<input type="text" class="form-control forminput" ng-model="item_region" placeholder="Regions you can ship to" autocomplete="off">
+		        </div>
+		     	<div class="col-lg-4">
+		        	<input type="text" class="form-control forminput" ng-model="item_estdelivery" placeholder="What is the estimated delivery time?" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Shipper -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Shipper</label>
+		      	</div>
+		     	<div class="col-lg-4">
+		        	<input type="text" class="form-control forminput" ng-model="item_shipper" placeholder="Who is shipping your item?" autocomplete="off">
+		      	</div>
+		     	<div class="col-lg-5">
+		        	<input type="text" class="form-control forminput" ng-model="item_shipper_legaladdress" placeholder="What is the legal address of the shipper? (CommonAccord)" autocomplete="off">
+		      	</div>
+		    </div>
+
+			<!-- Expiration date -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Contract Expiration Date</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="metadata_expdate" placeholder="When is this contract invalid?" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <br />
+
+		    <h3>The Merchant</h3>
+		    
+		    <!-- MERCHANT -->
+			<!-- Guid -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Merchant GUID</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="merchant_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Handle -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Merchant Handle</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="merchant_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Legal Address -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Legal Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="merchant_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">PGP Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="merchant_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Bitcoin Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="merchant_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <br />
+
+		    <h3>The Buyer</h3>
+
+		    <!-- BUYER -->
+			<!-- Guid -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Buyer GUID</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="buyer_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Handle -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Buyer Handle</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="buyer_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Legal Address -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Legal Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="buyer_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">PGP Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="buyer_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Bitcoin Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="buyer_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <br />
+
+		    <h3>The Notary</h3>
+		    
+		    <!-- NOTARY -->
+			<!-- Guid -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Notary GUID</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="notary_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Handle -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Notary Handle</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="notary_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Legal Address -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Legal Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="notary_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">PGP Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="notary_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Bitcoin Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="notary_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <br />
+
+			<h3>The Arbiter</h3>
+		    
+		    <!-- Arbiter -->
+			<!-- Guid -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Arbiter GUID</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="arbiter_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Handle -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Arbiter Handle</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="arbiter_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Legal Address -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Legal Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="arbiter_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">PGP Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="arbiter_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- PGP Public Key -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Bitcoin Pubkey</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="arbiter_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <br />
+
+			<h3>Multisignature Escrow</h3>
+
+			<!-- Multisig address -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Multisignature Escrow Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<input type="text" class="form-control forminput" ng-model="escrow_address" placeholder="Multisig bitcoin address" autocomplete="off">
+		      	</div>
+		    </div>
+
+		    <!-- Redemption Script -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Multisignature Escrow Address</label>
+		      	</div>
+		     	<div class="col-lg-9">
+		        	<textarea type="text" class="form-control forminput" ng-model="escrow_redemption" placeholder="Multisig redemption script" autocomplete="off"></textarea>
+		      	</div>
+		    </div>
+
+		    <br />
+
+			<h3>Digital Signatures</h3>
+
+			<!-- Digital Signatures -->
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Merchant Digital Signature</label>
+		      	</div>
+		     	
+		     	<div class="col-lg-9">
+		        	
+		        	<textarea class="form-control forminput" ng-model="merchant_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
+		        	
+		        	<p></p>
+
+		        	<pre>
+		        		{{newcontract.genesis.metadata.obcv}}
+		        	</pre>
+		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
+
+		      	</div>
+		    </div>
+		    <br />
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Buyer Digital Signature</label>
+		      	</div>
+		     	
+		     	<div class="col-lg-9">
+		        	
+		        	<textarea class="form-control forminput" ng-model="buyer_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
+		        	
+		        	<p></p>
+
+		        	<pre>
+		        		{{newcontract.genesis.metadata.obcv}}
+		        	</pre>
+		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
+
+		      	</div>
+		    </div>
+		    <br />
+		    <div class="form-group">
+		      	<div class="col-lg-3">
+		      		<label class="control-label">Notary Digital Signature</label>
+		      	</div>
+		     	
+		     	<div class="col-lg-9">
+		        	
+		        	<textarea class="form-control forminput" ng-model="notary_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
+		        	
+		        	<p></p>
+
+		        	<pre>
+		        		{{newcontract.genesis.metadata.obcv}}
+		        	</pre>
+		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
+
+		      	</div>
+		    </div>
+
+		  </fieldset>
+
+<h3><i>OpenBazaar</i> Raw Contract<h3>
+<pre ng-model="createcontract" style="background-color:white;">
+{
+    "genesis": {
+        "metadata": {
+            "obcv": "0.0.2",
+            "category": "Physical Item",
+            "subcategory": "Fixed price",
+            "expiration_date_YYYYMMDD": "{{metadata_expdate}} "
+        },
+        "nonce": "{{random_nonce}} ",
+        "item_data": {
+            "title": "{{item_title}} ",
+            "description": "{{item_description}} ",
+            "price":{
+                "btc": "{{item_price}} ",
+                "fiat": {
+                    "price":"{{item_fiat_price}} ",
+                    "currency":"{{item_fiat_xe}} "
+                }
+                },
+            "image": [
+                "<a ng-href="{{item_image}} ">{{item_image}} </a>",
+                "{{item_image_hash}} "
+                ],
+            "condition": "{{item_condition}} ",
+            "quantity": "{{item_quantity}} ",
+            "keywords": [
+                "{{item_keywords}} "
+            ],
+            "region": "{{item_region}} ",
+            "est_delivery": "{{item_estdelivery}} ",
+            "shipper": {
+                "handle": "{{item_shipper}} ",
+                "legal_address": "{{item_shipper_legaladdress}} "
+            }
+        }
+    },
+    "merchant": {
+        "guid" : "{{merchant_guid}} ",
+        "handle": "{{merchant_handle}} ",
+        "legal_address" : "{{merchant_legaladdress}} ",
+        "pubkeys": {
+            "pgp": "{{merchant_pgp_pubkey}} ",
+            "secp256k1_uncompressed": "{{merchant_secp256k1_pubkey}} "
+        }
+    },
+    "buyer": {
+        "guid" : "{{buyer_guid}} ",
+        "handle": "{{buyer_handle}} ",
+        "legal_address" : "{{buyer_legaladdress}} ",
+        "pubkeys": {
+            "pgp": "{{buyer_pgp_pubkey}} ",
+            "secp256k1_uncompressed": "{{buyer_secp256k1_pubkey}} "
+        }
+    },
+    "notary": {
+        "guid" : "{{notary_guid}} ",
+        "handle": "{{notary_handle}} ",
+        "legal_address" : "{{notary_legaladdress}} ",
+        "pubkeys": {
+            "pgp": "{{notary_pgp_pubkey}} ",
+            "secp256k1_uncompressed": "{{notary_secp256k1_pubkey}} "
+        }
+    },
+    "arbiter": {
+        "guid" : "{{arbiter_guid}} ",
+        "handle": "{{arbiter_handle}} ",
+        "legal_address" : "{{arbiter_legaladdress}} ",
+        "pubkeys": {
+            "pgp": "{{arbiter_pgp_pubkey}} ",
+            "secp256k1_uncompressed": "{{arbiter_secp256k1_pubkey}} "
+        }
+    },
+    "escrow": {
+        "btc_address": "{{escrow_address}} ",
+        "redemption_script": "{{escrow_redemption}} "
+    },
+    "signatures": {
+        "merchant":"{{merchant_sig}} ",
+        "buyer":"{{buyer_sig}} ",
+        "notary":"{{notary_sig}} "
+    }
+}
+</pre>
+
+
+		</form>
+		</div>
+
+	</div>
 </div>
+
+<hr />
 
 <!-- Footer Image -->
 <div class="row">
@@ -686,15 +1229,20 @@
 		$scope.toggle1 = function() {
 			$scope.peek = true;
 			}
+		$scope.random_nonce = Math.floor((Math.random()*1000000000000000)+1);
 		$scope.TryContract = function(){
 			$scope.contractinput = '{ "genesis": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price":{ "btc": "0.185", "fiat": { "price":"18.5", "currency":"USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape", "preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc", "legal_address": "333 Alamo Way, Austin, TX, 75123" } } }, "merchant": { "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address" : "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle":"Roberta Robinson", "legal_address" : "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle":"Safe Hands Faciliated Transaction, Inc", "legal_address" : "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "arbiter": { "guid": "Safe Hands Facilitated Transactions Inc", "handle": "Solomon Shirley", "legal_address" : "100 Madison Street, Cambridge, MA, 02144", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" }}'; // OpenBazaar Ricardian Contract template example
 			$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
 			console.log($scope.contractinput_final); // same as above
 		}
 		$scope.modifyInput = function() {
-		$scope.contractinput_final = JSON.parse($scope.contractinput);
-		console.log($scope.contractinput_final);
-		};
+			$scope.contractinput_final = JSON.parse($scope.contractinput);
+			console.log($scope.contractinput_final);
+		}
+		$scope.start = function() {  // For some reason, this isn't working yet
+			$scope.newcontract = JSON.parse($scope.createcontract);
+			console.log($scope.newcontract);
+		}
 	}
 </script>
 
@@ -705,4 +1253,5 @@
 </script>
 
 </body>
+
 </html>

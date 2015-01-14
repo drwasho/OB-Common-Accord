@@ -1,5 +1,5 @@
 {
-    "genesis": {
+    "stage_1_genesis": {
         "metadata": {
             "obcv": "0.0.2",
             "category": "Physical Item",
@@ -32,19 +32,19 @@
             "shipper": {
                 "handle": "Fabulous Express, Inc",
                 "legal_address": "333 Alamo Way, Austin, TX, 75123"
+            },
+        },
+        "merchant": {
+            "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee",
+            "handle": "Gerry's Grapes, LLC",
+            "legal_address" : "1 Broadway street, Cambridge, MA, 02142",
+            "pubkeys": {
+                "pgp": "PGP Pubkey",
+                "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
             }
         }
     },
-    "merchant": {
-        "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee",
-        "handle": "Gerry's Grapes, LLC",
-        "legal_address" : "1 Broadway street, Cambridge, MA, 02142",
-        "pubkeys": {
-            "pgp": "PGP Pubkey",
-            "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
-        }
-    },
-    "buyer": {
+    "stage_2_buyer": {
         "guid": "15b3830853a935122da418c36751b30107537c53",
         "handle":"Roberta Robinson",
         "legal_address" : "666 Winding Drive, Woodstock, NY, 12498",
@@ -53,19 +53,10 @@
             "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
         }
     },
-    "notary": {
+    "stage_3_notary": {
         "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c",
         "handle":"Safe Hands Faciliated Transaction, Inc",
         "legal_address" : "1550 Bay Street, San Francisco, CA, 94123",
-        "pubkeys": {
-            "pgp": "PGP Pubkey",
-            "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
-        }
-    },
-    "arbiter": {
-        "guid": "Safe Hands Facilitated Transactions Inc",
-        "handle": "Solomon Shirley",
-        "legal_address" : "100 Madison Street, Cambridge, MA, 02144",
         "pubkeys": {
             "pgp": "PGP Pubkey",
             "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
@@ -79,6 +70,15 @@
         "merchant":"",
         "buyer":"",
         "notary":""
+    },
+    "arbiter": {
+        "guid": "Safe Hands Facilitated Transactions Inc",
+        "handle": "Solomon Shirley",
+        "legal_address" : "100 Madison Street, Cambridge, MA, 02144",
+        "pubkeys": {
+            "pgp": "PGP Pubkey",
+            "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey"
+        }
     },
     "dispute": {
         "claim":{
