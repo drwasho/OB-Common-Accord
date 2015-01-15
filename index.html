@@ -668,7 +668,6 @@
 		    <hr />
 		    <h4>Item Details</h4>
 
-
 			<!-- Item Title -->
 		    <div class="form-group">
 		      	<div class="col-lg-3">
@@ -845,7 +844,7 @@
 		        	<input type="text" class="form-control " ng-model="merchant_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
 		      	</div>
 		    </div>
-
+			
 		    <br />
 
 		    <h3>Stage 02: The Buyer</h3>
@@ -984,53 +983,76 @@
 			<hr />
 
 			<!-- Digital Signatures -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
+		    
+
+			<h4>Stage 01: Merchant Part</h4>
+			
+			<div class="form-group">
+				
+				<div class="col-lg-3">
 		      		<label class="control-label">Merchant Digital Signature</label>
 		      	</div>
 
 		     	<div class="col-lg-9">
-
-		        	<textarea class="form-control " ng-model="merchant_sig"  autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
-
 		        	<p></p>
-		        	<pre>{{newcontract.stage01_merchant}}</pre>
-		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
-
-		      	</div>
+					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+					<p></p>
+					<pre>{{newcontract.stage01_merchant}}</pre>
+					<br />
+					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+					<textarea class="form-control " ng-model="merchant_sig"  autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+					<br />
+					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is what you are to sell)</span>
+					<input class="form-control" type="text" value="{{dashmerchanthash}}" disabled="">
+					<br />							
+				</div>
+				
 		    </div>
 		    <br />
-		    <div class="form-group">
+		   
+		   <h4>Stage 02: Buyer Part</h4>
+		   
+		   <div class="form-group">
 		      	<div class="col-lg-3">
 		      		<label class="control-label">Buyer Digital Signature</label>
 		      	</div>
 
 		     	<div class="col-lg-9">
-
-		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
-		   
 					<p></p>
-		        	<pre>{{newcontract.stage02_buyer}}</pre>
-		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
-
+		        	<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+					<pre>{{newcontract.stage02_buyer}}</pre>
+					<br />
+					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>purchase</b> the item in this contract!</span>
+		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+					<br />
+					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is what you're agreeing to)</span>
+					<input class="form-control" type="text" value="{{dasmerchanthash}}" placeholder="Hash..." disabled="">
+					<br />		
 		      	</div>
 		    </div>
 		    <br />
-		    <div class="form-group">
+
+		   <h4>Stage 03: Notary Part</h4>
+		   
+		   <div class="form-group">
 		      	<div class="col-lg-3">
 		      		<label class="control-label">Notary Digital Signature</label>
 		      	</div>
 
 		     	<div class="col-lg-9">
-
-		        	<textarea class="form-control " ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
-
-		        	<p></p>
-		        	<pre>{{newcontract.stage03_notary}}</pre>
-		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
-
+					<p></p>
+		        	<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+					<pre>{{newcontract.stage03_notary}}</pre>
+					<br />
+					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> the contract between the buyer and seller!</span>
+		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+					<br />
+					<span class="help-block">SHA256 hash of "Stage 02: Buyer Part" (i.e. this is the contract you' agree to notarise)</span>
+					<input class="form-control" type="text" placeholder="Hash..." disabled="">
+					<br />		
 		      	</div>
 		    </div>
+		    <br />
 
 		  </fieldset>
 
@@ -1138,6 +1160,8 @@
 <script src="assets/js/angular-route.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/sha256.js"</script>
+
 
 
 <script>
@@ -1172,7 +1196,7 @@
 		$scope.start = function() {
 			$scope.newcontract = JSON.parse($("#createcontract").text());
 			console.log($scope.newcontract);
-		}
+		};
 	}
 </script>
 
