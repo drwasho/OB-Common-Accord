@@ -33,7 +33,7 @@
 	  border:1px solid black;
 	  background:white;
 	}
-	.forminput
+	.
 	{
 	cursor: auto;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
@@ -119,42 +119,42 @@
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Full Name</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control form-input" ng-model="FullName" autocomplete="off">
+			<input type="text" class="form-control form-input" ng-model="FullName" >
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Handle</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control forminput" ng-model="Handle" autocomplete="off">
+			<input type="text" class="form-control " ng-model="Handle" >
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Email</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control forminput" ng-model="Email" autocomplete="off">
+			<input type="text" class="form-control " ng-model="Email" >
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Address</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control forminput" ng-model="Address" autocomplete="off">
+			<input type="text" class="form-control " ng-model="Address" >
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Date</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control forminput" ng-model="theDate" autocomplete="off">
+			<input type="text" class="form-control " ng-model="theDate" >
 			</div>
 			</div>
 
 			<div class="form-group">
 			<label class="col-lg-2 control-label">Website</label>
 			<div class="col-lg-10">
-			<input type="text" class="form-control forminput" ng-model="webAddress" autocomplete="off">
+			<input type="text" class="form-control " ng-model="webAddress" >
 			<br />
 			<button type="button" class="btn btn-primary" ng-click="toggle()">View Privacy Policy</button>
 			</div>
@@ -662,10 +662,12 @@
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 		<form class="form-horizontal">
-		  <fieldset>
-		    <legend><i>OpenBazaar</i> Contract Generator</legend>
+		  <fieldset ng-keyup="start()">
 
-		    <h3>The Item</h3>
+		    <h3>Stage 01: The Merchant</h3>
+		    <hr />
+		    <h4>Item Details</h4>
+
 
 			<!-- Item Title -->
 		    <div class="form-group">
@@ -673,7 +675,7 @@
 		      		<label class="control-label">Title</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="item_title" ng-keyup="start()" placeholder="What is your item called?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_title" autocomplete="off" placeholder="What is your item called?" >
 		      	</div>
 		    </div>
 
@@ -683,7 +685,7 @@
 		      		<label class="control-label">Description</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<textarea type="text" class="form-control forminput" ng-model="item_description" placeholder="Tell us about your item" autocomplete="off" rows="4"></textarea>
+		        	<textarea type="text" class="form-control " ng-model="item_description" autocomplete="off" placeholder="Tell us about your item"  rows="4"></textarea>
 		      	</div>
 		    </div>
 
@@ -693,7 +695,7 @@
 		      		<label class="control-label">Price (BTC)</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="item_price" placeholder="Price of the item in Bitcoin" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_price" autocomplete="off" placeholder="Price of the item in Bitcoin" >
 		      	</div>
 		    </div>
 
@@ -703,10 +705,10 @@
 		      		<label class="control-label">Price (fiat)</label>
 		      	</div>
 		     	<div class="col-lg-6">
-		        	<input type="text" class="form-control forminput" ng-model="item_fiat_price" placeholder="Price in fiat?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_fiat_price" autocomplete="off" placeholder="Price in fiat?" >
 		      	</div>
 		     	<div class="col-lg-3">
-		        	<input type="text" class="form-control forminput" ng-model="item_fiat_xe" placeholder="What is the currency code?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_fiat_xe" autocomplete="off" placeholder="What is the currency code?" >
 		      	</div>
 		    </div>
 
@@ -716,10 +718,10 @@
 		      		<label class="control-label">Item Image</label>
 		      	</div>
 		     	<div class="col-lg-6">
-		        	<input type="text" class="form-control forminput" ng-model="item_image" placeholder="Enter direct URL here" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_image" autocomplete="off" placeholder="Enter direct URL here" >
 		      	</div>
 		     	<div class="col-lg-3">
-		        	<input type="text" class="form-control forminput" ng-model="item_image_hash" placeholder="Enter SHA256 hash of the image" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_image_hash" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 		      	</div>
 		    </div>
 
@@ -729,7 +731,7 @@
 		      		<label class="control-label">Item Condition</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="item_condition" placeholder="What is the item's condition?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_condition" autocomplete="off" placeholder="What is the item's condition?" >
 		      	</div>
 		    </div>
 
@@ -739,7 +741,7 @@
 		      		<label class="control-label">Quantity</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="item_quantity" placeholder="How many units of the item are you selling?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling?" >
 		      	</div>
 		    </div>
 
@@ -749,7 +751,7 @@
 		      		<label class="control-label">Keywords</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="item_keywords" placeholder="Separate keywords with a comma!" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_keywords" autocomplete="off" placeholder="Separate keywords with a comma!" >
 		      	</div>
 		    </div>
 
@@ -759,10 +761,10 @@
 		      		<label class="control-label">Region and Estimated Delivery</label>
 		      	</div>
 		     	<div class="col-lg-5">
-		        	<input type="text" class="form-control forminput" ng-model="item_region" placeholder="Regions you can ship to" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_region" autocomplete="off" placeholder="Regions you can ship to" >
 		        </div>
 		     	<div class="col-lg-4">
-		        	<input type="text" class="form-control forminput" ng-model="item_estdelivery" placeholder="What is the estimated delivery time?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_estdelivery" autocomplete="off" placeholder="What is the estimated delivery time?" >
 		      	</div>
 		    </div>
 
@@ -772,10 +774,10 @@
 		      		<label class="control-label">Shipper</label>
 		      	</div>
 		     	<div class="col-lg-4">
-		        	<input type="text" class="form-control forminput" ng-model="item_shipper" placeholder="Who is shipping your item?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_shipper" autocomplete="off" placeholder="Who is shipping your item?" >
 		      	</div>
 		     	<div class="col-lg-5">
-		        	<input type="text" class="form-control forminput" ng-model="item_shipper_legaladdress" placeholder="What is the legal address of the shipper? (CommonAccord)" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="item_shipper_legaladdress" autocomplete="off" placeholder="What is the legal address of the shipper? (CommonAccord)" >
 		      	</div>
 		    </div>
 
@@ -785,13 +787,13 @@
 		      		<label class="control-label">Contract Expiration Date</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="metadata_expdate" placeholder="When is this contract invalid?" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="metadata_expdate" autocomplete="off" placeholder="When is this contract invalid?" >
 		      	</div>
 		    </div>
 
 		    <br />
 
-		    <h3>The Merchant</h3>
+		    <h4>The Merchant</h4>
 
 		    <!-- MERCHANT -->
 			<!-- Guid -->
@@ -800,7 +802,7 @@
 		      		<label class="control-label">Merchant GUID</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="merchant_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="merchant_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
 		      	</div>
 		    </div>
 
@@ -810,7 +812,7 @@
 		      		<label class="control-label">Merchant Handle</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="merchant_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="merchant_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
 		      	</div>
 		    </div>
 
@@ -820,7 +822,7 @@
 		      		<label class="control-label">Legal Address</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="merchant_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="merchant_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
 		      	</div>
 		    </div>
 
@@ -830,7 +832,7 @@
 		      		<label class="control-label">PGP Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="merchant_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="merchant_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
 		      	</div>
 		    </div>
 
@@ -840,13 +842,14 @@
 		      		<label class="control-label">Bitcoin Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="merchant_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="merchant_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
 		      	</div>
 		    </div>
 
 		    <br />
 
-		    <h3>The Buyer</h3>
+		    <h3>Stage 02: The Buyer</h3>
+			<hr />
 
 		    <!-- BUYER -->
 			<!-- Guid -->
@@ -855,7 +858,7 @@
 		      		<label class="control-label">Buyer GUID</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="buyer_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="buyer_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
 		      	</div>
 		    </div>
 
@@ -865,7 +868,7 @@
 		      		<label class="control-label">Buyer Handle</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="buyer_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="buyer_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
 		      	</div>
 		    </div>
 
@@ -875,7 +878,7 @@
 		      		<label class="control-label">Legal Address</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="buyer_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="buyer_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
 		      	</div>
 		    </div>
 
@@ -885,7 +888,7 @@
 		      		<label class="control-label">PGP Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="buyer_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="buyer_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
 		      	</div>
 		    </div>
 
@@ -895,13 +898,14 @@
 		      		<label class="control-label">Bitcoin Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="buyer_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="buyer_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
 		      	</div>
 		    </div>
 
 		    <br />
 
-		    <h3>The Notary</h3>
+		    <h3>Stage 03: The Notary</h3>
+			<hr />
 
 		    <!-- NOTARY -->
 			<!-- Guid -->
@@ -910,7 +914,7 @@
 		      		<label class="control-label">Notary GUID</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="notary_guid" placeholder="Should be lots of numbers" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
 		      	</div>
 		    </div>
 
@@ -920,7 +924,7 @@
 		      		<label class="control-label">Notary Handle</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="notary_handle" placeholder="(e.g. drwasho)" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
 		      	</div>
 		    </div>
 
@@ -930,7 +934,7 @@
 		      		<label class="control-label">Legal Address</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="notary_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
 		      	</div>
 		    </div>
 
@@ -940,7 +944,7 @@
 		      		<label class="control-label">PGP Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="notary_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="notary_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
 		      	</div>
 		    </div>
 
@@ -950,68 +954,9 @@
 		      		<label class="control-label">Bitcoin Pubkey</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="notary_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
 		      	</div>
 		    </div>
-
-		    <br />
-
-			<h3>The Arbiter</h3>
-
-		    <!-- Arbiter -->
-			<!-- Guid -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
-		      		<label class="control-label">Arbiter GUID</label>
-		      	</div>
-		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="arbiter_guid" placeholder="Should be lots of numbers" autocomplete="off">
-		      	</div>
-		    </div>
-
-		    <!-- Handle -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
-		      		<label class="control-label">Arbiter Handle</label>
-		      	</div>
-		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="arbiter_handle" placeholder="(e.g. drwasho)" autocomplete="off">
-		      	</div>
-		    </div>
-
-		    <!-- Legal Address -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
-		      		<label class="control-label">Legal Address</label>
-		      	</div>
-		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="arbiter_legaladdress" placeholder="For CommonAccord escrow contracts only" autocomplete="off">
-		      	</div>
-		    </div>
-
-		    <!-- PGP Public Key -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
-		      		<label class="control-label">PGP Pubkey</label>
-		      	</div>
-		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="arbiter_pgp_pubkey" placeholder="PGP public key, DO NOT INCLUDE HEADERS" autocomplete="off">
-		      	</div>
-		    </div>
-
-		    <!-- PGP Public Key -->
-		    <div class="form-group">
-		      	<div class="col-lg-3">
-		      		<label class="control-label">Bitcoin Pubkey</label>
-		      	</div>
-		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="arbiter_secp256k1_pubkey" placeholder="Uncompressed pubkey; will create multisig escrow" autocomplete="off">
-		      	</div>
-		    </div>
-
-		    <br />
-
-			<h3>Multisignature Escrow</h3>
 
 			<!-- Multisig address -->
 		    <div class="form-group">
@@ -1019,7 +964,7 @@
 		      		<label class="control-label">Multisignature Escrow Address</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<input type="text" class="form-control forminput" ng-model="escrow_address" placeholder="Multisig bitcoin address" autocomplete="off">
+		        	<input type="text" class="form-control " ng-model="escrow_address"  autocomplete="off" placeholder="Multisig bitcoin address" >
 		      	</div>
 		    </div>
 
@@ -1029,13 +974,14 @@
 		      		<label class="control-label">Multisignature Escrow Address</label>
 		      	</div>
 		     	<div class="col-lg-9">
-		        	<textarea type="text" class="form-control forminput" ng-model="escrow_redemption" placeholder="Multisig redemption script" autocomplete="off"></textarea>
+		        	<textarea type="text" class="form-control " ng-model="escrow_redemption" autocomplete="off" placeholder="Multisig redemption script" ></textarea>
 		      	</div>
 		    </div>
 
 		    <br />
 
 			<h3>Digital Signatures</h3>
+			<hr />
 
 			<!-- Digital Signatures -->
 		    <div class="form-group">
@@ -1045,13 +991,10 @@
 
 		     	<div class="col-lg-9">
 
-		        	<textarea class="form-control forminput" ng-model="merchant_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
+		        	<textarea class="form-control " ng-model="merchant_sig"  autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
 
 		        	<p></p>
-
-		        	<pre>
-		        		{{newcontract.genesis.metadata.obcv}}
-		        	</pre>
+		        	<pre>{{newcontract.stage01_merchant}}</pre>
 		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
 
 		      	</div>
@@ -1064,13 +1007,10 @@
 
 		     	<div class="col-lg-9">
 
-		        	<textarea class="form-control forminput" ng-model="buyer_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
-
-		        	<p></p>
-
-		        	<pre>
-		        		{{newcontract.genesis.metadata.obcv}}
-		        	</pre>
+		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+		   
+					<p></p>
+		        	<pre>{{newcontract.stage02_buyer}}</pre>
 		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
 
 		      	</div>
@@ -1083,13 +1023,10 @@
 
 		     	<div class="col-lg-9">
 
-		        	<textarea class="form-control forminput" ng-model="notary_sig" placeholder="Enter digital signature" autocomplete="off" row="4"></textarea>
+		        	<textarea class="form-control " ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
 
-		        	<p></p>
-
-		        	<pre>
-		        		{{newcontract.genesis.metadata.obcv}}
-		        	</pre>
+		        	<p></p>
+		        	<pre>{{newcontract.stage03_notary}}</pre>
 		        	<span class="help-block">Digitally sign what appears above with your PGP key!</span>
 
 		      	</div>
@@ -1100,85 +1037,78 @@
 <h3><i>OpenBazaar</i> Raw Contract<h3>
 <pre id="createcontract" ng-model="createcontract" style="background-color:white;">
 {
-    "genesis": {
+    "stage01_merchant": {
         "metadata": {
             "obcv": "0.0.2",
             "category": "Physical Item",
             "subcategory": "Fixed price",
-            "expiration_date_YYYYMMDD": "{{metadata_expdate}} "
+            "expiration_date_YYYYMMDD": "{{metadata_expdate}}"
         },
-        "nonce": "{{random_nonce}} ",
+        "nonce": "{{random_nonce}}",
         "item_data": {
-            "title": "{{item_title}} ",
-            "description": "{{item_description}} ",
+            "title": "{{item_title}}",
+            "description": "{{item_description}}",
             "price":{
-                "btc": "{{item_price}} ",
+                "btc": "{{item_price}}",
                 "fiat": {
-                    "price":"{{item_fiat_price}} ",
-                    "currency":"{{item_fiat_xe}} "
+                    "price":"{{item_fiat_price}}",
+                    "currency":"{{item_fiat_xe}}"
                 }
                 },
             "image": [
-                "<a ng-href="{{item_image}} ">{{item_image}} </a>",
-                "{{item_image_hash}} "
+                "<a ng-href="{{item_image}}">{{item_image}}</a>",
+                "{{item_image_hash}}"
                 ],
-            "condition": "{{item_condition}} ",
-            "quantity": "{{item_quantity}} ",
+            "condition": "{{item_condition}}",
+            "quantity": "{{item_quantity}}",
             "keywords": [
-                "{{item_keywords}} "
+                "{{item_keywords}}"
             ],
-            "region": "{{item_region}} ",
-            "est_delivery": "{{item_estdelivery}} ",
+            "region": "{{item_region}}",
+            "est_delivery": "{{item_estdelivery}}",
             "shipper": {
-                "handle": "{{item_shipper}} ",
-                "legal_address": "{{item_shipper_legaladdress}} "
+                "handle": "{{item_shipper}}",
+                "legal_address": "{{item_shipper_legaladdress}}"
             }
-        }
+        },
+        "merchant": {
+			"guid" : "{{merchant_guid}}",
+			"handle": "{{merchant_handle}}",
+			"legal_address" : "{{merchant_legaladdress}}",
+			"pubkeys": {
+				"pgp": "{{merchant_pgp_pubkey}}",
+				"secp256k1_uncompressed": "{{merchant_secp256k1_pubkey}}"
+			}
+		}
     },
-    "merchant": {
-        "guid" : "{{merchant_guid}} ",
-        "handle": "{{merchant_handle}} ",
-        "legal_address" : "{{merchant_legaladdress}} ",
+    "stage02_buyer": {
+        "guid" : "{{buyer_guid}}",
+        "handle": "{{buyer_handle}}",
+        "legal_address" : "{{buyer_legaladdress}}",
         "pubkeys": {
-            "pgp": "{{merchant_pgp_pubkey}} ",
-            "secp256k1_uncompressed": "{{merchant_secp256k1_pubkey}} "
-        }
+            "pgp": "{{buyer_pgp_pubkey}}",
+            "secp256k1_uncompressed": "{{buyer_secp256k1_pubkey}}"
+        },
+        "stage01_hash" : ""
     },
-    "buyer": {
-        "guid" : "{{buyer_guid}} ",
-        "handle": "{{buyer_handle}} ",
-        "legal_address" : "{{buyer_legaladdress}} ",
+    "stage03_notary": {
+        "guid" : "{{notary_guid}}",
+        "handle": "{{notary_handle}}",
+        "legal_address" : "{{notary_legaladdress}}",
         "pubkeys": {
-            "pgp": "{{buyer_pgp_pubkey}} ",
-            "secp256k1_uncompressed": "{{buyer_secp256k1_pubkey}} "
+            "pgp": "{{notary_pgp_pubkey}}",
+            "secp256k1_uncompressed": "{{notary_secp256k1_pubkey}}"
+        },
+        "stage02_hash" : "",
+        "escrow": {
+            "btc_address": "{{escrow_address}}",
+            "redemption_script": "{{escrow_redemption}}"
         }
-    },
-    "notary": {
-        "guid" : "{{notary_guid}} ",
-        "handle": "{{notary_handle}} ",
-        "legal_address" : "{{notary_legaladdress}} ",
-        "pubkeys": {
-            "pgp": "{{notary_pgp_pubkey}} ",
-            "secp256k1_uncompressed": "{{notary_secp256k1_pubkey}} "
-        }
-    },
-    "arbiter": {
-        "guid" : "{{arbiter_guid}} ",
-        "handle": "{{arbiter_handle}} ",
-        "legal_address" : "{{arbiter_legaladdress}} ",
-        "pubkeys": {
-            "pgp": "{{arbiter_pgp_pubkey}} ",
-            "secp256k1_uncompressed": "{{arbiter_secp256k1_pubkey}} "
-        }
-    },
-    "escrow": {
-        "btc_address": "{{escrow_address}} ",
-        "redemption_script": "{{escrow_redemption}} "
     },
     "signatures": {
-        "merchant":"{{merchant_sig}} ",
-        "buyer":"{{buyer_sig}} ",
-        "notary":"{{notary_sig}} "
+        "stage01_merchant":"{{merchant_sig}}",
+        "stage02_buyer":"{{buyer_sig}}",
+        "stage03_notary":"{{notary_sig}}"
     }
 }
 </pre>
@@ -1231,7 +1161,7 @@
 			};
 		$scope.random_nonce = Math.floor((Math.random()*1000000000000000)+1);
 		$scope.TryContract = function(){
-			$scope.contractinput = '{ "genesis": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price":{ "btc": "0.185", "fiat": { "price":"18.5", "currency":"USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape", "preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc", "legal_address": "333 Alamo Way, Austin, TX, 75123" } } }, "merchant": { "guid" : "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address" : "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle":"Roberta Robinson", "legal_address" : "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle":"Safe Hands Faciliated Transaction, Inc", "legal_address" : "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "arbiter": { "guid": "Safe Hands Facilitated Transactions Inc", "handle": "Solomon Shirley", "legal_address" : "100 Madison Street, Cambridge, MA, 02144", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } }, "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" }}'; // OpenBazaar Ricardian Contract template example
+			$scope.contractinput = '{ "stage01_merchant": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price": { "btc": "0.185", "fiat": { "price": "18.5", "currency": "USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape, preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc.", "legal_address": "333 Alamo Way Austin" } }, "merchant": { "guid": "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address": "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } } }, "stage02_buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle": "Roberta Robinson", "legal_address": "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage01_hash": "" }, "stage03_notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle": "Safe Hands Faciliated Transaction, Inc", "legal_address": "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage02_hash": "", "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" } }, "signatures": { "stage01_merchant": "", "stage02_buyer": "", "stage03_notary": "" }}'; // OpenBazaar Ricardian Contract template example
 			$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
 			console.log($scope.contractinput_final); // same as above
 		};
@@ -1239,7 +1169,7 @@
 			$scope.contractinput_final = JSON.parse($scope.contractinput);
 			console.log($scope.contractinput_final);
 		};
-		$scope.start = function() {  // For some reason, this isn't working yet
+		$scope.start = function() {
 			$scope.newcontract = JSON.parse($("#createcontract").text());
 			console.log($scope.newcontract);
 		}

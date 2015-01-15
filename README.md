@@ -4,13 +4,13 @@
 
 This experimental tool is an example of how you can implement OpenBazaar contracts with CommonAccord's API design, reimplemented in AngularJS.
 
-# What can you make
+# What can you do?
 
-1. Privacy Policy
-
-# What will you be able to make
-
-+ A whole bunch more... coming next will be parsing data from an OpenBazaar Ricardian Contract into a CommonAccord legally enforceable contract
++ OpenBazaar
+  + Ricardian contracts
+  + Import and view OB Ricardian contracts (prettified formatting)
++ CommonAccord
+  + Reformat Ricardian contracts to legally enforceable escrow contracts
 
 # Project website
 
@@ -21,3 +21,6 @@ This experimental tool is an example of how you can implement OpenBazaar contrac
 
 + Primavera De Filippi
 + James G. Hazard
++ Regan Lawton
++ Delain Markos
++ Itsnotlupus
