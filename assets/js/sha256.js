@@ -38,13 +38,13 @@
 */
 
 /* SHA256 logical functions */
-function rotateRight(n,x) {
+function rotateRight(n, x) {
 	return ((x >>> n) | (x << (32 - n)));
 }
-function choice(x,y,z) {
+function choice(x, y, z) {
 	return ((x & y) ^ (~x & z));
 }
-function majority(x,y,z) {
+function majority(x, y, z) {
 	return ((x & y) ^ (x & z) ^ (y & z));
 }
 function sha256_Sigma0(x) {

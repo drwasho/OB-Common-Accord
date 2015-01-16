@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 
 <head>
 
@@ -100,6 +100,7 @@
 </div>
 
 <!-- Controller 1: Privacy Policy -->
+<div ng-app="part1">
 <div ng-controller="Working">
 
 	<!-- Row 1: Section Title -->
@@ -277,12 +278,11 @@
 		</div>
 	<!-- End of the row -->
 	</div>
-</div>
+
 
 <br />
 
 <!-- Controller 2: Escrow Contract -->
-<div ng-controller="Escrow">
 
 	<!-- Row 1: Section Title -->
 	<div class="row">
@@ -659,11 +659,13 @@
 		<h2>2. Create an <i>OpenBazaar</i> Ricardian Contract</h2>
 		<br />
 	</div>
+
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 		<form class="form-horizontal">
-		  <fieldset ng-keyup="start()">
+		  <fieldset>
 
+			  <div ng-keyup="start()">
 		    <h3>Stage 01: The Merchant</h3>
 		    <hr />
 		    <h4>Item Details</h4>
@@ -977,6 +979,8 @@
 		      	</div>
 		    </div>
 
+			</div>
+
 		    <br />
 
 			<h3>Digital Signatures</h3>
@@ -997,19 +1001,22 @@
 		        	<p></p>
 					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
 					<p></p>
-					<pre>{{newcontract.stage01_merchant}}</pre>
+					<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
 					<br />
-					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-					<textarea class="form-control " ng-model="merchant_sig"  autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+					<div ng-keyup="start2()">
+						<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+						<textarea class="form-control" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
+					</div>
 					<br />
 					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is what you are to sell)</span>
-					<input class="form-control" type="text" value="{{dashmerchanthash}}" disabled="">
-					<br />							
+					<input class="form-control" type="text" value="{{crap}}" disabled="">
+					{{crap}}
+					<br />
 				</div>
-				
+
 		    </div>
 		    <br />
-		   
+
 		   <h4>Stage 02: Buyer Part</h4>
 		   
 		   <div class="form-group">
@@ -1056,7 +1063,7 @@
 
 		  </fieldset>
 
-<h3><i>OpenBazaar</i> Raw Contract<h3>
+	<h3><i>OpenBazaar</i> Raw Contract</h3>
 <pre id="createcontract" ng-model="createcontract" style="background-color:white;">
 {
     "stage01_merchant": {
@@ -1136,11 +1143,13 @@
 </pre>
 
 
-		</form>
-		</div>
-
+	</form>
 	</div>
+
 </div>
+</div>
+</div>
+
 
 <hr />
 
@@ -1153,57 +1162,54 @@
 
 <!-- End of container -->
 </div>
-</div>
 
 <!-- Load my crap faster -->
 <script src="assets/js/angular.min.js"></script>
 <script src="assets/js/angular-route.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/sha256.js"</script>
-
+<script src="assets/js/sha256.js"></script>
 
 
 <script>
-	function Working($scope){ // Privacy Policy Controller
-		$scope.toggle = function() {
-		$scope.peek = true;
-		}
-		$scope.FullName = 'Your full name';
-		$scope.Handle = 'Handle';
-		$scope.Email = 'Email';
-		$scope.Address = 'address';
-		$scope.theDate = 'YMD';
-		$scope.webAddress = '#';
-	}
-	function Escrow($scope){ // Escrow Contract Controller
-		$scope.toggle = function() {
-			$scope.peek = true;
-			};
-		$scope.toggle1 = function() {
-			$scope.peek = true;
-			};
-		$scope.random_nonce = Math.floor((Math.random()*1000000000000000)+1);
-		$scope.TryContract = function(){
-			$scope.contractinput = '{ "stage01_merchant": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price": { "btc": "0.185", "fiat": { "price": "18.5", "currency": "USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape, preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc.", "legal_address": "333 Alamo Way Austin" } }, "merchant": { "guid": "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address": "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } } }, "stage02_buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle": "Roberta Robinson", "legal_address": "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage01_hash": "" }, "stage03_notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle": "Safe Hands Faciliated Transaction, Inc", "legal_address": "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage02_hash": "", "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" } }, "signatures": { "stage01_merchant": "", "stage02_buyer": "", "stage03_notary": "" }}'; // OpenBazaar Ricardian Contract template example
-			$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
-			console.log($scope.contractinput_final); // same as above
-		};
-		$scope.modifyInput = function() {
-			$scope.contractinput_final = JSON.parse($scope.contractinput);
-			console.log($scope.contractinput_final);
-		};
-		$scope.start = function() {
-			$scope.newcontract = JSON.parse($("#createcontract").text());
-			console.log($scope.newcontract);
-		};
-	}
-</script>
+	var part1 = angular.module('part1', []);
+	part1.controller('Working',
+			function ($scope) {
+				$scope.toggle = function () {
+					$scope.peek = true;
+				};
+				$scope.FullName = 'Your full name';
+				$scope.Handle = 'Handle';
+				$scope.Email = 'Email';
+				$scope.Address = 'address';
+				$scope.theDate = 'YMD';
+				$scope.webAddress = '#';
+				$scope.toggle1 = function () {
+					$scope.peek = true;
+				};
+				$scope.random_nonce = Math.floor((Math.random() * 1000000000000000) + 1);
+				$scope.TryContract = function () {
+					$scope.contractinput = '{ "stage01_merchant": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price": { "btc": "0.185", "fiat": { "price": "18.5", "currency": "USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape, preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc.", "legal_address": "333 Alamo Way Austin" } }, "merchant": { "guid": "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address": "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } } }, "stage02_buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle": "Roberta Robinson", "legal_address": "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage01_hash": "" }, "stage03_notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle": "Safe Hands Faciliated Transaction, Inc", "legal_address": "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage02_hash": "", "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" } }, "signatures": { "stage01_merchant": "", "stage02_buyer": "", "stage03_notary": "" }}';
+					$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
+					console.log($scope.contractinput_final); // same as above
+				};
+				$scope.modifyInput = function () {
+					$scope.contractinput_final = JSON.parse($scope.contractinput);
+					console.log($scope.contractinput_final);
+				};
+				$scope.start = function () {
+					$scope.newcontract = JSON.parse($("#createcontract").text());
+					console.log($scope.newcontract);
+				};
+				$scope.start2 = function () {
+					$scope.crap = ("#merchanthash").text(sha256_digest());
+					console.log($scope.crap);
+				};
+			});
 
-<script>
-	function viewTemplate(){
+	function viewTemplate() {
 		window.open("https://gist.github.com/drwasho/09b3e0a1187476ca5d2a");
-		}
+	}
 </script>
 
 </body>
