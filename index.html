@@ -986,7 +986,7 @@
 			<h3>Digital Signatures</h3>
 			<hr />
 
-			<!-- Digital Signatures -->
+			<!-- #### Digital Signatures #### -->
 		    
 
 			<h4>Stage 01: Merchant Part</h4>
@@ -1003,13 +1003,11 @@
 					<p></p>
 					<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
 					<br />
-					<div ng-keyup="start2()">
-						<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-						<textarea class="form-control" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
-					</div>
+					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+					<textarea class="form-control" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
 					<br />
-					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is what you are to sell)</span>
-					<input class="form-control" type="text" value="{{crap}}" disabled="">
+					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span>
+					<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
 					<br />
 				</div>
 
@@ -1026,13 +1024,13 @@
 		     	<div class="col-lg-9">
 					<p></p>
 		        	<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-					<pre>{{newcontract.stage02_buyer}}</pre>
+					<pre id="buyerhash">{{newcontract.stage02_buyer}}</pre>
 					<br />
 					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>purchase</b> the item in this contract!</span>
 		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
 					<br />
-					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is what you're agreeing to)</span>
-					<input class="form-control" type="text" value="{{dasmerchanthash}}" placeholder="Hash..." disabled="">
+					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to buy)</span>
+					<input class="form-control" type="text" value="{{stage01hash}}" placeholder="Hash..." disabled="">
 					<br />		
 		      	</div>
 		    </div>
@@ -1048,13 +1046,13 @@
 		     	<div class="col-lg-9">
 					<p></p>
 		        	<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-					<pre>{{newcontract.stage03_notary}}</pre>
+					<pre id="notaryhash">{{newcontract.stage03_notary}}</pre>
 					<br />
 					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> the contract between the buyer and seller!</span>
 		        	<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="4"></textarea>
 					<br />
-					<span class="help-block">SHA256 hash of "Stage 02: Buyer Part" (i.e. this is the contract you' agree to notarise)</span>
-					<input class="form-control" type="text" placeholder="Hash..." disabled="">
+					<span class="help-block">SHA256 hash of "Stage 02: Buyer Part" (i.e. this is a tamper-proof statement of what you want to notarise)</span>
+					<input class="form-control" type="text" value="{{stage02hash}}" placeholder="Hash..." disabled="">
 					<br />		
 		      	</div>
 		    </div>
@@ -1117,7 +1115,7 @@
             "pgp": "{{buyer_pgp_pubkey}}",
             "secp256k1_uncompressed": "{{buyer_secp256k1_pubkey}}"
         },
-        "stage01_hash" : ""
+        "stage01_hash" : "{{stage01hash}}"
     },
     "stage03_notary": {
         "guid" : "{{notary_guid}}",
@@ -1127,7 +1125,7 @@
             "pgp": "{{notary_pgp_pubkey}}",
             "secp256k1_uncompressed": "{{notary_secp256k1_pubkey}}"
         },
-        "stage02_hash" : "",
+        "stage02_hash" : "{{stage02hash}}",
         "escrow": {
             "btc_address": "{{escrow_address}}",
             "redemption_script": "{{escrow_redemption}}"
@@ -1170,6 +1168,7 @@
 <script src="assets/js/sha256.js"></script>
 
 
+
 <script>
 	var part1 = angular.module('part1', []);
 	part1.controller('Working',
@@ -1199,13 +1198,12 @@
 				$scope.start = function () {
 					$scope.newcontract = JSON.parse($("#createcontract").text());
 					console.log($scope.newcontract);
-				};
-				$scope.start2 = function () {
-					$scope.crap = ("#merchanthash").text(sha256_digest());
-					console.log($scope.crap);
+					$scope.stage01hash = sha256_digest($("#merchanthash").text());
+					console.log($scope.stage01hash);
+					$scope.stage02hash = sha256_digest($("#buyerhash").text());
+					console.log($scope.stage01hash);
 				};
 			});
-
 	function viewTemplate() {
 		window.open("https://gist.github.com/drwasho/09b3e0a1187476ca5d2a");
 	}
