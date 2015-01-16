@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d916c6e5-686d-48c8-ae4d-d773ae0f1807" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/angular.min.js" afterPath="$PROJECT_DIR$/assets/js/angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/sha256.js" afterPath="$PROJECT_DIR$/assets/js/sha256.js" />
-    </list>
+    <list default="true" id="d916c6e5-686d-48c8-ae4d-d773ae0f1807" name="Default" comment="" />
     <ignored path="CommonAccord.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +51,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6481481" vertical-offset="18931" max-vertical-offset="19499">
-                  <caret line="1204" column="53" selection-start-line="1204" selection-start-column="53" selection-end-line="1204" selection-end-column="53" />
+                <state vertical-scroll-proportion="0.24338624" vertical-offset="18931" max-vertical-offset="19499">
+                  <caret line="1195" column="50" selection-start-line="1195" selection-start-column="50" selection-end-line="1195" selection-end-column="50" />
                   <folding>
                     <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -199,8 +195,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6481481" vertical-offset="18931" max-vertical-offset="19499">
-          <caret line="1204" column="53" selection-start-line="1204" selection-start-column="53" selection-end-line="1204" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.24338624" vertical-offset="18931" max-vertical-offset="19499">
+          <caret line="1195" column="50" selection-start-line="1195" selection-start-column="50" selection-end-line="1195" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
