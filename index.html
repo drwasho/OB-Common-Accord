@@ -15,6 +15,11 @@
 <meta name="twitter:creator" content="@drwasho">
 <meta name="twitter:image" content="http://s21.postimg.org/4x6gx7lyv/twitter.png">
 
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="OpenBazaar Contract Tools">
+<meta itemprop="description" content="Client-side contract tools for viewing and creating OpenBazaar contracts. Compatibility with CommonAccord API for the creation of legally enforceable contracts.">
+<meta itemprop="image" content="http://s21.postimg.org/4x6gx7lyv/twitter.png">
+
 <!-- Open Graph data -->
 <meta property="og:title" content="OpenBazaar Contract Tools" />
 <meta property="og:type" content="article" />
@@ -23,6 +28,7 @@
 <meta property="og:description" content="Client-side contract tools for viewing and creating OpenBazaar contracts. Compatibility with CommonAccord API for the creation of legally enforceable contracts." />
 
 <link rel="stylesheet" href="assets/css/bootstrap.css" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 
 </head>
 
@@ -75,29 +81,27 @@
 			<span class="icon-bar"></span>
 		</button>
 
-		<a class="navbar-brand" href="https://openbazaar.org">OpenBazaar</a>
+		<a class="navbar-brand" href="https://openbazaar.org" target="_blank">OpenBazaar</a>
 
 	</div>
 
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
 
 		<ul class="nav navbar-nav">
-			<li><a href="https://openbazaar.org" target="_blank">About</a></li>
-			<li><a href="#">Guide</a></li>
+			<li><a href="#" ng-click="home()">Home</a></li>
 			<li><a href="#" ng-click="toggle1()">View Contract</a></li>
 			<li><a href="#" ng-click="toggle4()">Create Contract</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">CommonAccord <b class="caret"></b></a>
 				<ul class="dropdown-menu">
+					<li><a href="http://commonaccord.org" target="_blank">CommonAccord</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Tools</li>
 					<li><a href="#" ng-click="toggle()">Privacy Policy</a></li>
 					<li><a href="#" ng-click="toggle1(); toggle3()">Escrow Contract</a></li>
 				</ul>
 			</li>
 		</ul>
-
-		<form class="navbar-form navbar-right">
-			<input type="text" class="form-control col-lg-8" placeholder="Search">
-		</form>
 
 	</div>
 
@@ -120,13 +124,14 @@
 
 <!-- Introduction -->
 <div class="row">
+
 	<h1 style="font-size:48px">What is this?</h1>
 	<hr>
 	<p>Client-side tools created with AngularJS to parse <i>OpenBazaar</i> Ricardian Contracts formatted in JSON, displaying them in stylish HTML (twitter bootstrap, responsive design), and also automagically populate the fields of <i>CommonAccord's</i> legally enforceable escrow contract template.</p>
+	<p>Please note that this is for <b>testing only</b>, using a yet unimplemented version of the <i>OpenBazaar</i> contract schema. It is also an unfinished tool, so do not expect that anything your create here is legally enforceable... neither is it legal advice. Always consult legal experts.</p>
 	<br />
-	Please note that this is for <b>testing only</b>, using a yet unimplemented version of the <i>OpenBazaar</i> contract schema.
 	<br />
-	<br />
+
 </div>
 
 <!-- Privacy Policy -->
@@ -886,9 +891,11 @@
 						<label class="control-label">PGP Pubkey</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="merchant_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
+						<textarea type="text" class="form-control " ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" row="4"></textarea>
 					</div>
 				</div>
+
+				<div ng-bind-html-unsafe="merchant_pgp_pubkey | breakFilter"></div>
 
 				<!-- PGP Public Key -->
 				<div class="form-group">
@@ -1042,8 +1049,6 @@
 			<hr />
 
 			<!-- #### Digital Signatures #### -->
-
-
 			<h4>Stage 01: Merchant Part</h4>
 
 			<div class="form-group">
@@ -1053,17 +1058,40 @@
 				</div>
 
 				<div class="col-lg-9">
+
 					<p></p>
+
+					<!-- This is what you're supposed to digitally sign -->
 					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
 					<p></p>
 					<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
 					<br />
-					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-					<textarea class="form-control" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
+
+					<!-- TEMP: Enter Pubkey -->
+					<span class="help-block">Your Public PGP Key</span>
+					<p></p>
+					<pre id="daspubkey">{{merchant_pgp_pubkey}}</pre>
 					<br />
+
+					<!-- TEMP: Enter Digital Signature -->
+					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+					<textarea class="form-control" ng-keyup="start2()" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
+					<br />
+					<span class="help-block">Merchant's digital signature</span>
+					<pre id="dasmerchantsig">{{merchant_sig}}</pre>
+					<span><button type="button" class="btn btn-primary">Generate PGP Keypair</button></span> <span><button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button></span>
+					<br />
+					<hr>
+
+					<!-- TEMP: Check of success or failure -->
+					<h4>{{check}}</h4>
+
+					<!-- This is the hash of Stage 01 Merchant Part -->
 					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span>
 					<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
+
 					<br />
+
 				</div>
 
 			</div>
@@ -1214,8 +1242,8 @@
 <!-- End of Peek 4-->
 </div>
 
+<!-- End of first div container -->
 </div>
-
 
 <hr />
 
@@ -1226,7 +1254,7 @@
 	</div>
 </div>
 
-<!-- End of container -->
+<!-- End of second div container -->
 </div>
 
 <!-- Load my crap faster -->
@@ -1235,64 +1263,8 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/sha256.js"></script>
-
-
-
-<script>
-	var part1 = angular.module('part1', []);
-	part1.controller('Working',
-			function ($scope) {
-				$scope.toggle = function () { // Reveals the Privacy Policy
-					$scope.peek = true;
-					$scope.peek1 = false;
-					$scope.peek2 = false;
-					$scope.peek3 = false;
-					$scope.peek4 = false;
-				};
-				$scope.toggle1 = function () { // Reveals the Contract Import Command Center
-					$scope.peek1 = true;
-					$scope.peek = false;
-					$scope.peek4 = false;
-				};
-				$scope.toggle2 = function () { // Reveals the OpenBazaar Contract Interpreter
-					$scope.peek2 = true;
-					$scope.peek4 = false;
-					$scope.peek = false;
-				};
-				$scope.toggle3 = function () { // Reveals the CommonAccord Escrow Contract Format
-					$scope.peek3 = true;
-					$scope.peek4 = false;
-				};
-				$scope.toggle4 = function () { // Reveals the OpenBazaar Contract Creation Tool
-					$scope.peek4 = true;
-					$scope.peek = false;
-					$scope.peek1 = false;
-					$scope.peek2 = false;
-					$scope.peek3 = false;
-				};
-				$scope.random_nonce = Math.floor((Math.random() * 1000000000000000) + 1);
-				$scope.TryContract = function () {
-					$scope.contractinput = '{ "stage01_merchant": { "metadata": { "obcv": "0.0.2", "category": "Physical Item", "subcategory": "Fixed price", "expiration_date_YYYYMMDD": "2015-01-01" }, "nonce": "0000000000000000", "item_data": { "title": "Grape Preserves", "description": "18 cases of the finest grape preserve.", "price": { "btc": "0.185", "fiat": { "price": "18.5", "currency": "USD" } }, "image": [ "http://i.imgur.com/t26Wb2a.jpg", "44a8dc6118e37e2d0b2e86bbbefd098a18294b7352ffdb05ec35839be928aaf6" ], "condition": "Great condition", "quantity": "18", "keywords": [ "grape, preserve" ], "region": "Worldwide", "est_delivery": "20 days", "shipper": { "handle": "Fabulous Express, Inc.", "legal_address": "333 Alamo Way Austin" } }, "merchant": { "guid": "b5016e193656d33693a38bc2dbea7c80440c09ee", "handle": "Gerry Grapes, LLC", "legal_address": "1 Broadway street, Cambridge, MA, 02142", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" } } }, "stage02_buyer": { "guid": "15b3830853a935122da418c36751b30107537c53", "handle": "Roberta Robinson", "legal_address": "666 Winding Drive, Woodstock, NY, 12498", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage01_hash": "" }, "stage03_notary": { "guid": "d617ae301a6285abc9dc2ee444a6b3544d583f8c", "handle": "Safe Hands Faciliated Transaction, Inc", "legal_address": "1550 Bay Street, San Francisco, CA, 94123", "pubkeys": { "pgp": "PGP Pubkey", "secp256k1_uncompressed": "Bitcoin Uncompressed PubKey" }, "stage02_hash": "", "escrow": { "btc_address": "3MXYUBLWNETa5HTewZp1xMTt7AW9kbFNqs", "redemption_script": "524104b3fae54a761c71d38df081cddb75b6306306d8e83338e9b748a02d4978ef48d356ec7fb4155bc819767ed90d56a0dccab185b9bf3d52027cdc226b611ddd398541047aa4c9652beb1a01b351cc212391168c11e192e25a88af79a422c4f83cbc7ed0bb5632c87547c45525167a8c814afc29c7ffe44157547dc21b193ac714b4ba06410420b86afc794ec3307bcf3becc94b30f672a17483581dd703a37956f60ba89cf77bc349fe7d9889f7ed609b14bc397fc4ae0196c8325e6acc4d2e95aceca4d20741046ca17a66be50dc0d0093d3ebbefb74ffbd69fae577dfa329f67444f3f99913708efa5f51ca27fd0509af26245c9d5526b620cb9d90ca9a4a0ef2e3e2fe0e2bb854ae" } }, "signatures": { "stage01_merchant": "", "stage02_buyer": "", "stage03_notary": "" }}';
-					$scope.contractinput_final = JSON.parse($scope.contractinput); // allows the JSON to be immediately parsed
-					console.log($scope.contractinput_final); // same as above
-				};
-				$scope.modifyInput = function () {
-					$scope.contractinput_final = JSON.parse($scope.contractinput);
-					console.log($scope.contractinput_final);
-				};
-				$scope.start = function () {
-					$scope.newcontract = JSON.parse($("#createcontract").text());
-					console.log($scope.newcontract);
-					$scope.stage01hash = sha256_digest($("#merchanthash").text());
-					console.log($scope.stage01hash);
-					$scope.stage02hash = sha256_digest($("#buyerhash").text());
-					console.log($scope.stage01hash);
-				};
-			});
-	function viewTemplate() {
-		window.open("https://gist.github.com/drwasho/09b3e0a1187476ca5d2a");
-	}
-</script>
+<script src="assets/js/openpgp.min.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 
