@@ -891,13 +891,11 @@
 						<label class="control-label">PGP Pubkey</label>
 					</div>
 					<div class="col-lg-9">
-						<textarea type="text" class="form-control " ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" row="4"></textarea>
+						<textarea type="text" class="form-control " id="pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
 					</div>
 				</div>
 
-				<div ng-bind-html-unsafe="merchant_pgp_pubkey | breakFilter"></div>
-
-				<!-- PGP Public Key -->
+				<!-- Bitcoin Public Key -->
 				<div class="form-group">
 					<div class="col-lg-3">
 						<label class="control-label">Bitcoin Pubkey</label>
@@ -944,7 +942,7 @@
 					</div>
 				</div>
 
-				<!-- PGP Public Key -->
+				<!-- Bitcoin Public Key -->
 				<div class="form-group">
 					<div class="col-lg-3">
 						<label class="control-label">PGP Pubkey</label>
@@ -1010,7 +1008,7 @@
 					</div>
 				</div>
 
-				<!-- PGP Public Key -->
+				<!-- Bitcoin Public Key -->
 				<div class="form-group">
 					<div class="col-lg-3">
 						<label class="control-label">Bitcoin Pubkey</label>
@@ -1068,9 +1066,13 @@
 					<br />
 
 					<!-- TEMP: Enter Pubkey -->
-					<span class="help-block">Your Public PGP Key</span>
+					<span class="help-block" style="font-weight:bold">Your Public PGP Key</span>
 					<p></p>
+					<span class="help-block">Value is coming directly from the merchant textarea</span>
 					<pre id="daspubkey">{{merchant_pgp_pubkey}}</pre>
+					<p></p>
+					<span class="help-block">Value is coming directly from the JSON contract</span>
+					<pre id="this">{{newcontract.stage01_merchant.merchant.pubkeys.pgp}}</pre>
 					<br />
 
 					<!-- TEMP: Enter Digital Signature -->
@@ -1079,7 +1081,7 @@
 					<br />
 					<span class="help-block">Merchant's digital signature</span>
 					<pre id="dasmerchantsig">{{merchant_sig}}</pre>
-					<span><button type="button" class="btn btn-primary">Generate PGP Keypair</button></span> <span><button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button></span>
+					<button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button>
 					<br />
 					<hr>
 

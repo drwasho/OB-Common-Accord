@@ -59,9 +59,13 @@ part1.controller('Working',
             console.log($scope.stage01hash);
         };
         $scope.dasverify = function () {
-            try {
+            openpgp.initWorker = function (s) {
                 openpgp.initWorker("openpgp.worker.min.js");
-            } catch (e) {}
+            };
+            var dussel = $("this");
+            var dorf = JSON.stringify(dussel);
+            console.log(dorf);
+            // Stop, hammer time
             var daspublickey = $("#daspubkey").text();
             var publickey = openpgp.key.readArmored(daspublickey).keys[0];
             console.log(publickey);
@@ -69,11 +73,7 @@ part1.controller('Working',
             var signature = openpgp.cleartext.readArmored(dassignature);
             console.log(signature);
             openpgp.verifyClearSignedMessage(publickey, signature).then(function(sigCheck) {
-                if (sigCheck.signatures[0].valid) {
-                    $scope.check = "True";
-                } else {
-                    $scope.check = "False";
-                }
+                console.log(sigCheck.signatures[0].valid); // success
             });
         };
     });
