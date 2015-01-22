@@ -89,16 +89,14 @@
 
 		<ul class="nav navbar-nav">
 			<li><a href="#" ng-click="home()">Home</a></li>
-			<li><a href="#" ng-click="toggle1()">View Contract</a></li>
-			<li><a href="#" ng-click="toggle4()">Create Contract</a></li>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">CommonAccord <b class="caret"></b></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">OpenBazaar Contracts <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="http://commonaccord.org" target="_blank">CommonAccord</a></li>
-					<li class="divider"></li>
 					<li class="dropdown-header">Tools</li>
-					<li><a href="#" ng-click="toggle()">Privacy Policy</a></li>
-					<li><a href="#" ng-click="toggle1(); toggle3()">Escrow Contract</a></li>
+					<li><a href="#" ng-click="toggle1()">1. Create contract</a></li>
+					<li><a href="#" ng-click="toggle2()">2. Buy contract</a></li>
+					<li><a href="#" ng-click="toggle3()">3. Notarise contract</a></li>
+					<li><a href="#" ng-click="toggle4()">4. View final contract</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -124,594 +122,25 @@
 
 <!-- Introduction -->
 <div class="row">
-
-	<h1 style="font-size:48px">What is this?</h1>
+	<h1 style="font-size:48px"><i>OpenBazaar</i> Contract Tools</h1>
+	<h2 >What is this?</h2>
 	<hr>
 	<p>Client-side tools created with AngularJS to parse <i>OpenBazaar</i> Ricardian Contracts formatted in JSON, displaying them in stylish HTML (twitter bootstrap, responsive design), and also automagically populate the fields of <i>CommonAccord's</i> legally enforceable escrow contract template.</p>
 	<p>Please note that this is for <b>testing only</b>, using a yet unimplemented version of the <i>OpenBazaar</i> contract schema. It is also an unfinished tool, so do not expect that anything your create here is legally enforceable... neither is it legal advice. Always consult legal experts.</p>
 	<br />
-	<br />
-
 </div>
 
-<!-- Privacy Policy -->
-<div ng-show="peek">
+<!-- ############################## -->
+<!-- ## Contract Generator Tools ## -->
+<!-- ############################## -->
 
-	<!-- Row 1: Section Title -->
-	<div class="row">
-		<h1 style="font-size:48px">CommonAccord Contracts</h1>
-		<hr>
-		<h2>1. Privacy Policy</h2>
-		<br />
-	</div>
+<!-- # 1. Create Contract # -->
 
-	<!-- Row 2: Privacy Policy Input -->
-	<div class="row">
-		<div class="well bs-component">
-		<form class="form-horizontal" _lpchecked="1">
-		<fieldset>
-			<legend>Contract Details</legend>
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Full Name</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control form-input" ng-model="FullName" placeholder="Enter your full name">
-			</div>
-			</div>
-
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Handle</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control " ng-model="Handle" placeholder="Enter your handle/nickname">
-			</div>
-			</div>
-
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Email</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control " ng-model="Email" placeholder="Enter your email address">
-			</div>
-			</div>
-
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Address</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control " ng-model="Address" placeholder="Enter your legal address">
-			</div>
-			</div>
-
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Date</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control " ng-model="theDate" placeholder="Enter the date">
-			</div>
-			</div>
-
-			<div class="form-group">
-			<label class="col-lg-2 control-label">Website</label>
-			<div class="col-lg-10">
-			<input type="text" class="form-control " ng-model="webAddress" placeholder="Enter the website that this privacy policy applies to">
-			<br />
-			<button type="button" class="btn btn-primary">View Privacy Policy</button>
-			</div>
-			</div>
-
-		</fieldset>
-		</form>
-
-		</div>
-	</div>
-
-	<!-- Row 3: Privacy Policy Statement -->
-	<div class="row">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">{{Handle}} Privacy Policy</h3>
-			</div>
-			<div class="panel-body">
-
-			<p class="wordwrap"><span style="color:green;">{{FullName}}</span> ("<span style="color:blue;">{{Handle}}</span>," "we", "us," "our,") provide online and mobile services, including but not limited to, the <span style="color:blue;">{{Handle}}</span> website (the "Site") widgets, computer programs and mobile applications hosted by or on behalf of us (collectively, the "Services") intended to enhance your use of the sleep and body monitoring electronic products offered by us (the "Products"). We are committed to maintaining the privacy, integrity and security of any personal information about our users. This Privacy Policy ("Policy") explains how we protect personal information we collect in connection with your use of the Services and how we use and in some cases disclose that information. "Personal Information" for purposes of this Policy means information that identifies you, such as your name, address, phone number, fax number or email address.</p>
-
-			<p>This Policy is subject to the provisions our Terms of Use (the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">"Terms of Use"</a>), which are incorporated by reference. To see the <a href="https://github.com/CommonAccord/Org/blob/master/Doc/02/Sec/DT_Privacy.01.md" type="_blank">Terms of Use</a>, please visit our <a href="{{webAddress}}" target="_blank">website</a>.</p>
-
-			<ol type="1">
-				<li><h4>What Personal Information We Collect</h4></li>
-				<p>Products work in conjunction with a user account on the Site (a "User Account").</p>
-
-				<ol type="1">
-					<li>When you sign up for a User Account, you are required to provide an email address (which will be used as your login ID) and to create an account password (collectively the "Registration Information").</li>
-					<li>In order to benefit fully from the Products and Services, you can also add additional personal details to your User Account, such as height, weight, gender, and age.</li>
-					<li>Information that you add manually to one of the Services is stored in your User Account.</li>
-				</ol>
-
-				<li><h4>How We Use Your Personal Information</h4></li>
-				<p>Company uses your personal information to:</p>
-
-				<ol type="1">
-					<li>Provide you with the Services;</li>
-					<li>Analyze Site usage and improve the Products and Services;</li>
-					<li>Deliver to you any administrative notices and communications relevant to your use of the Products and Services;</li>
-					<li>Provide you with updates regarding the Products and Services;</li>
-					<li>Perform internal market research, project planning, troubleshooting problems, and to detect and protect against error, fraud or other criminal activity.</li>
-				</ol>
-
-				<li><h4>Disclosure to Third Parties</h4></li>
-
-				<ol type="1">
-					<li>At times we may make certain Personal Information available to strategic partners that work with us to provide services to you. In such cases, your account with such third party will continue to be subject to that third party's privacy policy and your User Account will continue to be governed by this Policy.</li>
-					<li>We may also share your personal information with companies who provide services to us such as information processing, order fulfillment, product delivery, customer data management, customer research and the like. These companies are obligated to protect your information and may be located wherever we do business.</li>
-					<li>We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our Terms of Use or protect our operations or users if we are required to do so by any applicable law, rule, regulation, subpoena or other legal process.</li>
-					<li>In the event of a reorganization, merger or sale, we may transfer any and all personal information we collect to the relevant third party.</li>
-				</ol>
-
-				<li><h4>Use of Aggregated Anonymous User Data</h4></li>
-				<p>We may disclose non-personally identifiable aggregated user data, such as aggregated gender, age, height, weight, and usage data gathered from the Products and Services (without the inclusion of a user's name or other identifying information) to:</p>
-
-				<ol type="1">
-					<li>Organizations that conduct consumer research into health and wellness;</li>
-					<li>Users of the Products or Services for purposes of comparison of their personal health and wellness situation relative to the broader community; and</li>
-					<li>Advertisers and other third parties for their marketing and promotional purposes.</li>
-				</ol>
-
-				<li><h4>Cookies and Other Technology</h4></li>
-
-				<ol type="1">
-					<li>The Services may use "cookies" and other technologies such as pixel tags and web beacons.</li>
-					<li>Cookies are alphanumeric identifiers in the form of text files that are inserted and stored by your Web browser on your computer's hard drive. These technologies tell us which parts of our website you have visited, limit the number of times you see an offer, or help us better determine which offers you may like to see or to alert you to software compatibility issues. They are also used to analyze and improve the design and functionality of the Products and Services.</li>
-					<li>If you choose to delete cookies from your device or block them from being stored on your device, please note that the full functionality of the Services may not be available to you.</li>
-					<li>"Web Beacons" are images embedded in a Web page or email for the purpose of measuring and analyzing site usage and activity. We, or third party service providers acting on our behalf, may use Web Beacons to help us analyze Site usage and improve the Services.</li>
-					<li>We may use third party service providers to help us analyze certain online activities and improve the Products and Services. For example, these service providers may help us measure the performance of our online campaigns or analyze visitor activity on the Site. We may permit these service providers to use cookies and other technologies to perform these services for us. We do not share any personal information about our customers with these third party service providers, and these service providers do not collect such information on our behalf. Our third party service providers are required to comply fully with this Policy.</li>
-				</ol>
-
-				<li><h4>Information You Elect to Share With Others</h4></li>
-				<p>If you use a message board, blog, journal or any other method of posting user-generated content on the Site or through the Services, you should be aware that such information can be read, collected or used by others and could be used to send you unsolicited messages. We are not responsible for the personal information you choose to submit in these areas.</p>
-
-				<li><h4>Surveys</h4></li>
-				<p>We may ask you to participate in surveys designed to help us improve the Products and Services. Any personal information provided to us in connection with any survey will be used only in relation to that survey and as elsewhere set forth in this Policy.</p>
-
-				<li><h4>Children</h4></li>
-				<p>We do not knowingly collect any personal information from children under 13. If we discover that a child under the age of 13 has provided us with personally identifying information, we will take steps to delete the information as soon as possible.</p>
-
-				<li><h4>Your Right to Delete Your Data</h4></li>
-				<p>If you would like to cancel your User Account you may do so by emailing us at contact. When you request cancellation of your account, your personally identifiable information will be deleted, including but not limited your email address, name, and photo(s). Archival copies of your account information that exist within our back-up system will be deleted in accordance with our normal back-up expiration schedule. Following cancellation or termination of your account, we may continue to utilize de-identified and anonymized historical data associated with your use of the Products and Services.</p>
-
-				<li><h4>Email Communications From Us</h4></li>
-
-				<ol type="1">
-					<li>We may provide you with summaries of your User Account data and email alerts. We also allow you to subscribe to email newsletters and from time to time may transmit emails promoting Acme and third-party goods or services.</li>
-					<li>You have the ability to opt-out of receiving our weekly summaries and promotional emails and to terminate your newsletter subscriptions by following the instructions provided in such emails.</li>
-					<li>Opting out in this manner will not end transmission of service-related emails, such as email alerts.</li>
-				</ol>
-
-				<li><h4>Acme Privacy Policy</h4></li>
-
-				<ol type="1">
-					<li>We use a combination of firewall barriers, encryption techniques and authentication procedures, among others, to maintain the security of your data and to protect accounts and systems from unauthorized access.</li>
-					<li>When you register for the Site, we require a password from you for your privacy and security. This password is stored in an encrypted fashion on our systems.</li>
-					<li>It is important to understand that these precautions apply only to our Site and systems. We exercise no control over how your information is stored, maintained or displayed by third parties or on third-party sites.</li>
-				</ol>
-
-				<li><h4>International Users</h4></li>
-
-				<ol type="1">
-					<li>Services are hosted and operated entirely in the United States and are subject to United States law. Any personal information that you provide to us is being provided to us solely in the United States and will be hosted on United States servers. You consent to the transfer of your personal information to the United States. If you are accessing the Services from outside the United States, please be advised that United States law may not offer the same privacy protections as the law of your jurisdiction.</li>
-					<li>If you have a security related concern, please contact us by <a href="mailto:{{Email}}?Subject=Help%me%Obi-Wan%Kenobi" target="_top" style="color:orange;">by email</a> or mail us at our {{Address}}.</li>
-				</ol>
-
-				<li><h4>Updates to this Policy</h4></li>
-				<p>We may update this Policy periodically. The date last revised is <span style="color:cyan;">{{theDate}}</span>. Changes take effect immediately upon posting.</p>
-
-				<li><h4>Contact us if you have any questions or concerns</h4></li>
-				<p>If you have questions, comments, concerns or feedback regarding this Policy or any other privacy or security concern, send an e-mail to our support services.</p>
-
-			</ol>
-			</p>
-
-			</div>
-
-		<!-- End of the panel-->
-		</div>
-	<!-- End of the row -->
-	</div>
-<!-- End of Privacy Policy ng-show peek -->
-</div>
-
-<!-- Import Contracts and CommonAccord Escrow -->
 <div ng-show="peek1">
-
-	<!-- Row 1: Section Title -->
-	<div class="row">
-		<h1 style="font-size:48px"><i>OpenBazaar</i> Contract Tools</h1>
-		<hr>
-	</div>
-
-	<!-- Title -->
-	<div class="row">
-		<h2>Import <i>OpenBazaar</i> Ricardian Contracts and Convert them to a <i>CommonAccord</i> Escrow Contract</h2>
-		<br />
-	</div>
-
-	<!-- Row 2: OpenBazaar RC JSON Input -->
-	<div class="row">
-		<div class="well bs-component">
-			<form class="form-horizontal" _lpchecked="1">
-				<fieldset>
-					<legend><i>OpenBazaar</i> Ricardian Contract</legend>
-
-					<div class="form-group">
-						<label for="textArea" class="col-lg-2 control-label"><i>OpenBazaar</i> Contract</label>
-						<div class="col-lg-10">
-							<textarea class="form-control" rows="5" ng-model="contractinput" ng-keyup="modifyInput()"></textarea>
-							<span class="help-block">Paste in your <span><i>OpenBazaar</i></span> Richardian Contract formatted in JSON.</span>
-							<span><button type="button" class="btn btn-primary" ng-click="toggle2()">Import Contract</button></span> <button type="button" class="btn btn-primary" ng-click="TryContract(); toggle2()">Try an Example Contract</button><span> <a href="https://gist.github.com/drwasho/09b3e0a1187476ca5d2a" class="btn btn-danger "target="_blank">See Contract Template</a></span>
-							<p></p>
-							<button type="button" class="btn btn-success" ng-click="toggle2(); toggle3()">Convert to CommonAccord Escrow Contract</button>
-						</div>
-					</div>
-
-				</fieldset>
-			</form>
-		</div>
-	</div>
-
-	<!-- Row 3: OpenBazaar Ricardian Contract Interpreter -->
-	<div class="row" ng-show="peek2">
-
-		<div class="panel panel-primary">
-
-			<div class="panel-heading">
-				<h2 class="panel-title"><i>OpenBazaar</i> Ricardian Contract Interpreter</h2>
-			</div>
-
-			<div class="panel-body">
-
-				<div class="row">
-					<div class="col-lg-12">
-						<h1>{{contractinput_final.genesis.item_data.title}}</h1>
-						<hr />
-					</div>
-				</div>
-
-				<div class="row">
-
-					<div class="col-lg-6">
-						<img class="img-responsive" ng-src="{{contractinput_final.genesis.item_data.image[0]}}" style="border:1px solid black; width:100%;" title="SHA256 Hash: {{contractinput_final.genesis.item_data.image[1]}}">
-					</div>
-
-					<div class="col-lg-6">
-
-						<h1 class="text-primary" style="text-align:center;">{{contractinput_final.genesis.item_data.price.btc}} BTC</h1>
-						<h4 class="text-muted" style="text-align:center;">{{contractinput_final.genesis.item_data.price.fiat.price}} {{contractinput_final.genesis.item_data.price.fiat.currency}}</h4>
-
-						<br />
-
-						<p style="color:teal; text-align:center;">Qty</p>
-						<h4 style="color:teal; text-align:center;">{{contractinput_final.genesis.item_data.quantity}}</h4>
-						<hr />
-
-						<h3 style="text-align:center;">DESCRIPTION</h3>
-						<p class="wordwrap" style="text-align:center;font-size:18px">{{contractinput_final.genesis.item_data.description}}</p>
-
-						<hr />
-
-						<p class="wordwrap"><b>Keywords: </b>{{contractinput_final.genesis.item_data.keywords.join(", ")}}</p>
-
-						<p class="wordwrap"><b>Condition: </b>{{contractinput_final.genesis.item_data.condition}}</p>
-
-						<hr />
-
-						<h4>Shipping</h4>
-
-						<p class="wordwrap"><b>Delivery region: </b>{{contractinput_final.genesis.item_data.region}}</p>
-
-						<p class="wordwrap"><b>Estimate delivery: </b>{{contractinput_final.genesis.item_data.est_delivery}}</p>
-
-						<br />
-
-						<h5>{{contractinput_final.genesis.item_data.shipper.handle}}</h5>
-						<p class="wordwrap text-muted">{{contractinput_final.genesis.item_data.shipper.legal_address}}</p>
-					</div>
-
-				</div>
-
-				<hr />
-
-				<!-- Exchange Details -->
-				<div class="row">
-
-					<div class="col-lg-3">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">Merchant</h3>
-								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.merchant.handle}}</h4>
-							</div>
-							<div class="panel-body">
-								<span class="label label-primary">GUID</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.guid}}<p>
-								<p> </p>
-								<span class="label label-primary">PGP Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.pubkeys.pgp}}<p>
-								<p> </p>
-								<span class="label label-primary">secp256k1 Bitcoin Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.merchant.pubkeys.secp256k1_uncompressed}}<p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">Buyer</h3>
-								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.buyer.handle}}</h4>
-							</div>
-							<div class="panel-body">
-								<span class="label label-primary">GUID</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.guid}}<p>
-								<p> </p>
-								<span class="label label-primary">PGP Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.pubkeys.pgp}}<p>
-								<p> </p>
-								<span class="label label-primary">secp256k1 Bitcoin Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.buyer.pubkeys.secp256k1_uncompressed}}<p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">Notary</h3>
-								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.notary.handle}}</h4>
-							</div>
-							<div class="panel-body">
-								<span class="label label-primary">GUID</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.guid}}<p>
-								<p> </p>
-								<span class="label label-primary">PGP Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.pubkeys.pgp}}<p>
-								<p> </p>
-								<span class="label label-danger">secp256k1 Bitcoin Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.notary.pubkeys.secp256k1_uncompressed}}<p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">Arbiter</h3>
-								<h4 class="panel-title" style="font-size:20px">{{contractinput_final.arbiter.handle}}</h4>
-							</div>
-							<div class="panel-body">
-								<span class="label label-primary">GUID</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.guid}}<p>
-								<p> </p>
-								<span class="label label-primary">PGP Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.pubkeys.pgp}}<p>
-								<p> </p>
-								<span class="label label-danger">secp256k1 Bitcoin Public Key</span>
-								<p class="well well-sm wordwrap" style="font-size:10px">{{contractinput_final.arbiter.pubkeys.secp256k1_uncompressed}}<p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-
-	<br />
-
-</div>
-
-<!-- Row 4: CommonAccord Escrow Contract Display -->
-<div ng-show="peek3">
-
-	<div class="row">
-
-		<div class="panel panel-primary">
-
-			<div class="panel-heading">
-				<h2 class="panel-title"><i>CommonAccord</i> Escrow Contract</h2>
-			</div>
-
-			<div class="panel-body">
-
-				<p class="wordwrap"><h4>ESCROW AGREEMENT</h4></p>
-
-				<p>This escrow agreement (&ldquo;Escrow Agreement&rdquo;) is made and entered into on 2014-08-13:12:05 by and among:</p>
-
-				<ul>
-				<li><font color="{mcolor}">{{contractinput_final.buyer.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.buyer.legal_address}}</font>, (&ldquo;Purchaser&rdquo;),</li>
-
-				<li><font color="magenta">{{contractinput_final.notary.handle}}</font>, a legal person whose principal address is <font color="red">{{contractinput_final.notary.legal_address}}</font>, (&ldquo;Escrow Agent&rdquo;),</li>
-
-				<li><font color="green">{{contractinput_final.merchant.handle}}</font>, a legal person whose business address is <font color="red">{{contractinput_final.merchant.legal_address}}</font> ("Seller"), as of 2014-08-13:12:05.</li>
-				</ul>
-
-				<p>Additional persons referenced in this Agreement are:</p>
-
-				<ul>
-				<li><font color="blue">{{contractinput_final.genesis.item_data.shipper.handle}}</font>, a legal person whose business address is <font color="red">{{contractinput_final.genesis.item_data.shipper.legal_address}}</font> ("Shipper"); and</li>
-
-				<li><font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}</font> ("Arbitrator").</li>
-				</ul>
-
-				<ul>
-				<li>WHEREAS, the Purchaser and the Seller have entered into a purchase agreement (&ldquo;Purchase Agreement&rdquo;) for the sale of <font color="blue">{{contractinput_final.genesis.item_data.quantity}}</font> units of "<font color="red">{{contractinput_final.genesis.item_data.title}}</font>" (the &ldquo;Products&rdquo;) owned by the Seller in exchange for <font color="red">{{contractinput_final.genesis.item_data.price.btc}} BTC</font> (the "Purchase Price") (altogether, the "Transaction");</li>
-
-				<li>WHEREAS, pursuant to said Purchase Agreement, the Purchaser has agreed to deposit the Purchase Price into an Escrow Account ("the Escrow Account");</li>
-
-				<li>WHEREAS, the Purchaser and the Seller have agreed to use the Escrow Agent to hold the Purchase Price and act as Escrow Agent;</li>
-
-				<li>WHEREAS, the Escrow Agent has agreed to act in such capacity upon the terms and conditions contained herein; and</li>
-
-				<li>WHEREAS, the Seller, Purchaser and Escrow Agent agree to use <font color="blue">{{contractinput_final.arbiter.handle}}</font>, an individual whose business address is <font color="red">{{contractinput_final.arbiter.legal_address}}</font> (the "Arbitrator") to resolve any disputes among them regarding the meaning of this Agreement or the performance of this Agreement, including any "Claim" as defined below.</li>
-				</ul><br />
-				NOW, THEREFORE, in consideration of the mutual premises and conditions contained herein, the Purchaser, the Seller and the Escrow Agent do hereby agree as follows:
-
-				<ol>
-				<li><u>Deposit of Funds</u>. The Purchaser has delivered funds (<span class="wordwrap"><a ng-href="https://blockchain.info/address/{{contractinput_final.escrow.btc_address}}">{{contractinput_final.escrow.btc_address}}</a></span>) equal to the Purchase Price to the Escrow Agent and the Escrow Agent acknowledges receipt of the Purchase Price.</li>
-
-				<li><u>Pickup</u>. The Seller promises to deliver the Products to the Shipper on or before <font color="blue">{{contractinput_final.genesis.item_data.est_delivery}}</font>.</li>
-
-				<li><u>Release of Payment</u>. The Escrow Agent shall release the Purchase Price to the Seller not less than 24 hours and nor more than 48 hours after notification from the Shipper that it has delivered the Products to the Purchaser.</li>
-
-				<li><u>Cancellation</u>. If the Seller fails to deliver the Products to the Shipper by <font color="red">{{contractinput_final.genesis.metadata.expiration_date_YYYYMMDD}}</font>, the Purchaser shall have the option to cancel the Transaction ("Cancellation") at any time after <font color="red">{{contractinput_final.genesis.metadata.expiration_date_YYYYMMDD}}</font> and before the Shipper notifies the Escrow Agent that Shipper has received the Products from Seller. If there is a Cancellation, the Escrow Agent shall return the Purchase Price to the Purchaser and the Purchaser shall have no other obligation to the Seller.</li>
-
-				<li><u>Claim</u>. If the Purchaser notifies the Escrow Agent of a claim of defect in the Product (a "Claim") not later than 24 hours after notification by the Shipper of delivery to the Purchaser, then the Escrow Agent shall not release the Purchase Price to the Seller while the Claim is being handled. The Escrow Agent shall notify the Seller, the Purchaser, and the Arbitrator of the existence of the Claim.</li>
-
-				<li><u>Reliance by Escrow Agent</u>. The Escrow Agent may act in reliance upon any writing, instrument, or signature that the Escrow Agent, in good faith, believes to be genuine; and may assume any person purporting to give any notice, writing, advice, or instructions in connection with any provision herein has been duly authorized to do so.</li>
-
-				<li><u>Indemnification of Escrow Agent</u>. The Purchaser and the Seller agree to indemnify and hold harmless the Escrow Agent from any and all claims, liabilities, losses, expenses, actions, suits, or proceedings at law or in equity, or any other expense, fees, or charges of any character or nature whatever that it may incur by reason of acting as the Escrow Agent under this Escrow Agreement except for the Escrow Agent&#39;s gross negligence, bad faith or willful misconduct. The Escrow Agent shall not be required to institute or maintain any litigation unless indemnified to its satisfaction for its counsel fees, costs, disbursements and all other expenses and liabilities that it may be subjected to in connection with the aforesaid action.</li>
-
-				<li><u>Submission of Dispute by Escrow Agent</u>. If the Seller and the Purchaser disagree about the interpretation of this Escrow Agreement, about the rights and
-				obligations of the parties, or the propriety of any action contemplated by the Escrow Agent hereunder, the Escrow Agent may submit such dispute to the
-				Arbitrator. The Escrow Agent shall be indemnified for any costs, including reasonable attorney fees in connection with the aforesaid action.</li>
-
-				<li><u>Fee for Escrow Agent</u>. For its services, the Escrow Agent shall receive $1.50.</li>
-
-				<li><u>Fee for Arbitrator</u>. In the event that the Arbitrator is notified of a Claim or otherwise informed of a dispute, the Arbitrator shall receive $50.00.</li>
-
-				<li><u>Successors</u>. The rights created by this Escrow Agreement shall inure to the benefit of, and the obligations created hereby shall be binding upon the
-				successors and assigns of the Escrow Agent and all parties to this Escrow Agreement.</li>
-
-				<li><u>Limit on Liability of Escrow Agent</u>. The Escrow Agent shall not be obligated to take any action that is not specifically set forth herein. In the
-				event of a disagreement or dispute concerning the validity or interpretation of any condition of this Escrow Agreement, the dispute shall be resolved by the
-				Arbitrator. In such event, the Escrow Agent shall be relieved of any other and further liability under this Escrow Agreement.</li>
-
-				<li><u>Arbitration</u>. PLEASE READ THE FOLLOWING PARAGRAPH CAREFULLY BECAUSE IT REQUIRES THE PARTIES TO ARBITRATE DISPUTES AND LIMITS THE MANNER IN WHICH THE PARTIES CAN SEEK RELIEF.<br />
-				The parties agree to arbitrate any dispute arising from these Terms or relating to the Site, except that the parties are not required to arbitrate any dispute in
-				which either party seeks equitable or other relief for the alleged unlawful use of copyrights, trademarks, trade names, logos, trade secrets or patents. ARBITRATION PREVENTS THE PARTIES FROM SUING IN COURT OR FROM HAVING A JURY TRIAL. The parties agree that the parties will notify each other of any dispute within thirty (30) days of when it arises, that the parties will attempt informal resolution prior to any demand for arbitration, that any arbitration will occur in Chicago, Illinois and that arbitration will be conducted confidentially by a single arbitrator in accordance with the rules of JAMS. The parties also agree that the state or federal courts in Cook County, Illinois have exclusive jurisdiction over any appeals of an arbitration award and over any suit between the parties not subject to arbitration. In any arbitration, the parties will not seek discovery from each other, and the arbitrator shall not allow parties to engage in discovery; rather, each party shall disclose the evidence supporting their positions at some mutually agreeable time and date prior to the final hearing. Other than class procedures and remedies discussed below, the arbitrator has the authority to grant any remedy that would otherwise be available in court. Neither party will participate in a class action or class-wide arbitration for any claims covered by these Terms. The parties also agree not to participate in claims brought in an private attorney general or representative capacity, or consolidated claims involving another person, if the other party is a party to the proceeding. If the prohibition against class actions and other claims brought on behalf of third parties contained above is found to be unenforceable, then that language shall be deemed to have been dropped from the Terms and the remaining obligations relating to arbitration shall continue in full force and effect.</li>
-
-				<li><u>Governing Law</u><br />
-				This Escrow Agreement shall be construed and enforced in accordance with the laws of Illinois without reference to its internal choice of law rules.</li>
-
-				<li><u>Notices</u>.<br />
-				All notices under this Agreement shall be delivered by electronic message using the "blockchain" technology through which this Agreement was entered.</li>
-
-				<li><u>Construction to Conform to Technical Implementation</u><br />
-				The provisions of this Agreement are intended to express in legal language ("Text") the functioning of the software code that performs the transaction. Each party represents that it has access to the source code ("Code") and has made such inspection and analysis as it deems appropriate. In the event of any ambiguity in the text or conflict between the text and operation of the Code, the Code will be
-				the definitive version.</li>
-				</ol>IN WITNESS WHEREOF, the undersigned being all the parties to this Escrow Agreement have hereunto set their hands.<br />
-				&ensp;<br />
-				SELLER:<br />
-
-				<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
-					<tr>
-					  <td><strong><font color="green">{{contractinput_final.merchant.handle}}</font></strong></td>
-					</tr>
-
-					<tr>
-					  <td>(&ldquo;Seller&rdquo;)</td>
-					</tr>
-
-					<tr>
-					  <td>By: <u>xGERRY</u><br />
-					  Name: <font color="green">{{contractinput_final.buyer.handle}}</font><br />
-					  Its: Founder</td>
-					</tr>
-
-					<tr>
-					  <td>Date: 2014-08-13:12:01</td>
-					</tr>
-
-					<tr>
-					  <td><font color="red">{{contractinput_final.merchant.legal_address}}</font></td>
-					</tr>
-					</table><br />
-					PURCHASER:<br />
-
-					<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
-					<tr>
-					  <td><strong><font color="{mcolor}">{{contractinput_final.buyer.handle}}</font></strong></td>
-					</tr>
-
-					<tr>
-					  <td>(&ldquo;Purchaser&rdquo;)</td>
-					</tr>
-
-					<tr>
-					  <td>By: <u>x{{contractinput_final.buyer.handle}}</u></td>
-					</tr>
-
-					<tr>
-					  <td>Date: 2014-08-13:12:04</td>
-					</tr>
-
-					<tr>
-					  <td><font color="red">{{contractinput_final.buyer.legal_address}}</font></td>
-					</tr>
-					</table><br />
-					ESCROW AGENT:<br />
-
-					<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
-					<tr>
-					  <td><strong><font color="magenta">{{contractinput_final.notary.handle}}</font></strong></td>
-					</tr>
-
-					<tr>
-					  <td>(&ldquo;Escrow Agent&rdquo;)</td>
-					</tr>
-
-					<tr>
-					  <td>By: <u>x{{contractinput_final.notary.handle}}</u><br />
-					  Name: <font color="magenta">Samuel</font> <font color=
-					  "magenta">Hardy</font><br />
-					  Its: COO</td>
-					</tr>
-
-					<tr>
-					  <td>Date: 2014-08-13:12:05</td>
-					</tr>
-
-					<tr>
-					  <td><font color="red">{{contractinput_final.notary.legal_address}}</font></td>
-					</tr>
-					</table><br />
-					ARBITRATOR:<br />
-
-					<table border="0" cellpadding="1" cellspacing="1" style="width:300px">
-					<tr>
-					  <td><strong>{{contractinput_final.arbiter.handle}}</strong></td>
-					</tr>
-
-					<tr>
-					  <td>(&ldquo;Arbitrator&rdquo;)</td>
-					</tr>
-
-					<tr>
-					  <td>By: <u>x{{contractinput_final.arbiter.handle}}</u></td>
-					</tr>
-
-					<tr>
-					  <td>Date: 2014-08-13:12:03</td>
-					</tr>
-
-					<tr>
-					  <td><font color="red">{{contractinput_final.arbiter.legal_address}}</font></td>
-					</tr>
-				</table>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<!-- Contract Generator -->
-<div ng-show="peek4">
-
-	<!-- Row 1: Section Title -->
-	<div class="row">
-		<h1 style="font-size:48px"><i>OpenBazaar</i> Contract Tools</h1>
-		<hr>
-	</div>
 
 	<div class="row">
 		<h2>Create an <i>OpenBazaar</i> Ricardian Contract</h2>
-		<br />
+		<hr>
 	</div>
 
 	<div class="row">
@@ -734,7 +163,7 @@
 						<label class="control-label">Title</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="item_title" autocomplete="off" placeholder="What is your item called?" >
+						<input type="text" class="form-control " id="item_title" ng-model="item_title" autocomplete="off" placeholder="What is your item called?" >
 					</div>
 				</div>
 
@@ -744,7 +173,7 @@
 						<label class="control-label">Description</label>
 					</div>
 					<div class="col-lg-9">
-						<textarea type="text" class="form-control " ng-model="item_description" autocomplete="off" placeholder="Tell us about your item"  rows="4"></textarea>
+						<textarea type="text" class="form-control " id="item_description" ng-model="item_description" autocomplete="off" placeholder="Tell us about your item"  rows="4"></textarea>
 					</div>
 				</div>
 
@@ -754,7 +183,7 @@
 						<label class="control-label">Price (BTC)</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="item_price" autocomplete="off" placeholder="Price of the item in Bitcoin" >
+						<input type="text" class="form-control " id="item_price" ng-model="item_price" autocomplete="off" placeholder="Price of the item in Bitcoin" >
 					</div>
 				</div>
 
@@ -764,10 +193,10 @@
 						<label class="control-label">Price (fiat)</label>
 					</div>
 					<div class="col-lg-6">
-						<input type="text" class="form-control " ng-model="item_fiat_price" autocomplete="off" placeholder="Price in fiat?" >
+						<input type="text" class="form-control" id="item_fiat_price" ng-model="item_fiat_price" autocomplete="off" placeholder="Price in fiat?" >
 					</div>
 					<div class="col-lg-3">
-						<input type="text" class="form-control " ng-model="item_fiat_xe" autocomplete="off" placeholder="What is the currency code?" >
+						<input type="text" class="form-control" id="item_fiat_xe" ng-model="item_fiat_xe" autocomplete="off" placeholder="What is the currency code?" >
 					</div>
 				</div>
 
@@ -777,10 +206,10 @@
 						<label class="control-label">Item Image</label>
 					</div>
 					<div class="col-lg-6">
-						<input type="text" class="form-control " ng-model="item_image" autocomplete="off" placeholder="Enter direct URL here" >
+						<input type="text" class="form-control " id="item_image" ng-model="item_image" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
 					<div class="col-lg-3">
-						<input type="text" class="form-control " ng-model="item_image_hash" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
+						<input type="text" class="form-control " id="item_image_hash" ng-model="item_image_hash" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
 
@@ -790,7 +219,7 @@
 						<label class="control-label">Item Condition</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="item_condition" autocomplete="off" placeholder="What is the item's condition?" >
+						<input type="text" class="form-control " id="item_condition" ng-model="item_condition" autocomplete="off" placeholder="What is the item's condition?" >
 					</div>
 				</div>
 
@@ -800,7 +229,7 @@
 						<label class="control-label">Quantity</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling?" >
+						<input type="text" class="form-control " id="item_quantity" ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling?" >
 					</div>
 				</div>
 
@@ -810,7 +239,7 @@
 						<label class="control-label">Keywords</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="item_keywords" autocomplete="off" placeholder="Separate keywords with a comma!" >
+						<input type="text" class="form-control " id="item_keywords" ng-model="item_keywords" autocomplete="off" placeholder="Separate keywords with a comma!" >
 					</div>
 				</div>
 
@@ -820,10 +249,10 @@
 						<label class="control-label">Region and Estimated Delivery</label>
 					</div>
 					<div class="col-lg-5">
-						<input type="text" class="form-control " ng-model="item_region" autocomplete="off" placeholder="Regions you can ship to" >
+						<input type="text" class="form-control " id="item_region" ng-model="item_region" autocomplete="off" placeholder="Regions you can ship to" >
 					</div>
 					<div class="col-lg-4">
-						<input type="text" class="form-control " ng-model="item_estdelivery" autocomplete="off" placeholder="What is the estimated delivery time?" >
+						<input type="text" class="form-control " id="item_estdelivery" ng-model="item_estdelivery" autocomplete="off" placeholder="What is the estimated delivery time?" >
 					</div>
 				</div>
 
@@ -833,10 +262,10 @@
 						<label class="control-label">Shipper</label>
 					</div>
 					<div class="col-lg-4">
-						<input type="text" class="form-control " ng-model="item_shipper" autocomplete="off" placeholder="Who is shipping your item?" >
+						<input type="text" class="form-control " id="item_shipper" ng-model="item_shipper" autocomplete="off" placeholder="Who is shipping your item?" >
 					</div>
 					<div class="col-lg-5">
-						<input type="text" class="form-control " ng-model="item_shipper_legaladdress" autocomplete="off" placeholder="What is the legal address of the shipper? (CommonAccord)" >
+						<input type="text" class="form-control " id="item_shipper_legaladdress" ng-model="item_shipper_legaladdress" autocomplete="off" placeholder="What is the legal address of the shipper? (CommonAccord)" >
 					</div>
 				</div>
 
@@ -846,7 +275,7 @@
 						<label class="control-label">Contract Expiration Date</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="metadata_expdate" autocomplete="off" placeholder="When is this contract invalid?" >
+						<input type="text" class="form-control " id="metadata_expdate" ng-model="metadata_expdate" autocomplete="off" placeholder="When is this contract invalid?" >
 					</div>
 				</div>
 
@@ -861,7 +290,7 @@
 						<label class="control-label">Merchant GUID</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="merchant_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
+						<input type="text" class="form-control " id="merchant_guid" ng-model="merchant_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
 					</div>
 				</div>
 
@@ -871,7 +300,7 @@
 						<label class="control-label">Merchant Handle</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="merchant_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
+						<input type="text" class="form-control " id="merchant_handle" ng-model="merchant_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
 					</div>
 				</div>
 
@@ -881,7 +310,7 @@
 						<label class="control-label">Legal Address</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="merchant_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
+						<input type="text" class="form-control " id="merchant_legaladdress" ng-model="merchant_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
 					</div>
 				</div>
 
@@ -891,7 +320,7 @@
 						<label class="control-label">PGP Pubkey</label>
 					</div>
 					<div class="col-lg-9">
-						<textarea type="text" class="form-control " id="pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
+						<textarea type="text" class="form-control " id="pgp_pubkey" id="pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
 					</div>
 				</div>
 
@@ -901,153 +330,14 @@
 						<label class="control-label">Bitcoin Pubkey</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="merchant_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
+						<input type="text" class="form-control " id="merchant_secp256k1_pubkey" ng-model="merchant_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
 					</div>
 				</div>
 
 				<br />
-
-				<h3>Stage 02: The Buyer</h3>
-
-				<hr />
-
-				<!-- BUYER -->
-				<!-- Guid -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Buyer GUID</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="buyer_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
-					</div>
-				</div>
-
-				<!-- Handle -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Buyer Handle</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="buyer_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
-					</div>
-				</div>
-
-				<!-- Legal Address -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Legal Address</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="buyer_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
-					</div>
-				</div>
-
-				<!-- Bitcoin Public Key -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">PGP Pubkey</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="buyer_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
-					</div>
-				</div>
-
-				<!-- PGP Public Key -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Bitcoin Pubkey</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="buyer_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
-					</div>
-				</div>
-
-				<br />
-
-				<h3>Stage 03: The Notary</h3>
-				<hr />
-
-				<!-- NOTARY -->
-				<!-- Guid -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Notary GUID</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
-					</div>
-				</div>
-
-				<!-- Handle -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Notary Handle</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
-					</div>
-				</div>
-
-				<!-- Legal Address -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Legal Address</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
-					</div>
-				</div>
-
-				<!-- PGP Public Key -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">PGP Pubkey</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="notary_pgp_pubkey"  autocomplete="off" placeholder="PGP public key, DO NOT INCLUDE HEADERS" >
-					</div>
-				</div>
-
-				<!-- Bitcoin Public Key -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Bitcoin Pubkey</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
-					</div>
-				</div>
-
-				<!-- Multisig address -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Multisignature Escrow Address</label>
-					</div>
-					<div class="col-lg-9">
-						<input type="text" class="form-control " ng-model="escrow_address"  autocomplete="off" placeholder="Multisig bitcoin address" >
-					</div>
-				</div>
-
-				<!-- Redemption Script -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Multisignature Redemption Script</label>
-					</div>
-					<div class="col-lg-9">
-						<textarea type="text" class="form-control " ng-model="escrow_redemption" autocomplete="off" placeholder="Multisig redemption script" ></textarea>
-					</div>
-				</div>
-
-				<!-- End of ng-keyup="start()" -->
-				</div>
-
-			<br />
-
-			<h3>Digital Signatures</h3>
-			<hr />
 
 			<!-- #### Digital Signatures #### -->
-			<h4>Stage 01: Merchant Part</h4>
+			<h4>Digital Signatures</h4>
 
 			<div class="form-group">
 
@@ -1065,104 +355,45 @@
 					<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
 					<br />
 
-					<!-- TEMP: Enter Pubkey -->
-					<span class="help-block" style="font-weight:bold">Your Public PGP Key</span>
-					<p></p>
-					<span class="help-block">Value is coming directly from the merchant textarea</span>
-					<pre id="daspubkey">{{merchant_pgp_pubkey}}</pre>
-
-					<p></p>
-					<span class="help-block">Value is coming directly from the JSON contract</span>
-					<pre id="thisa" ng-model="thisa">{{newcontract.stage01_merchant.merchant.pubkeys.pgp}}</pre>
-					<br />
-
-					<!-- TEMP: Enter Digital Signature -->
+					<!-- Enter Digital Signature -->
 					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
 					<textarea class="form-control" ng-keyup="start2()" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
 					<br />
 					<span class="help-block">Merchant's digital signature</span>
 					<pre id="dasmerchantsig">{{merchant_sig}}</pre>
+					<p></p>
+					<p></p>
 					<button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button>
 					<br />
-					<hr>
 
 					<!-- TEMP: Check of success or failure -->
 					<h4>{{check}}</h4>
 
 					<!-- This is the hash of Stage 01 Merchant Part -->
-					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span>
+					<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
 					<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
 
 					<br />
 
 				</div>
 
-			</div>
+						</div> <!-- End of Form Group -->
+					</div> <!-- End of Start() -->
+				</fieldset> <!-- End of Fieldset -->
+			</form> <!-- End of Form -->
+		</div> <!-- End of Well Component -->
+	</div> <!-- End of Row -->
 
-				<br />
+	<div class="row">
 
-			<h4>Stage 02: Buyer Part</h4>
-
-			<div class="form-group">
-
-				<div class="col-lg-3">
-					<label class="control-label">Buyer Digital Signature</label>
-				</div>
-
-				<div class="col-lg-9">
-
-					<p></p>
-					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-					<pre id="buyerhash">{{newcontract.stage02_buyer}}</pre>
-					<br />
-					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>purchase</b> the item in this contract!</span>
-					<textarea class="form-control" ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
-					<br />
-					<span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to buy)</span>
-					<input class="form-control" type="text" value="{{stage01hash}}" placeholder="Hash..." disabled="">
-					<br />
-
-				</div>
-			<!-- End of form-group -->
-			</div>
-
-			<br />
-
-			<h4>Stage 03: Notary Part</h4>
-
-			<div class="form-group">
-
-				<div class="col-lg-3">
-
-					<label class="control-label">Notary Digital Signature</label>
-
-				</div>
-
-				<div class="col-lg-9">
-
-					<p></p>
-					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-					<pre id="notaryhash">{{newcontract.stage03_notary}}</pre>
-					<br />
-					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> the contract between the buyer and seller!</span>
-					<textarea class="form-control " ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
-					<br />
-					<span class="help-block">SHA256 hash of "Stage 02: Buyer Part" (i.e. this is a tamper-proof statement of what you want to notarise)</span>
-					<input class="form-control" type="text" value="{{stage02hash}}" placeholder="Hash..." disabled="">
-					<br />
-
-				</div>
-			<!-- End of form-group -->
-			</div>
-
-			<br />
-
-			</fieldset>
-
-		<h3><i>OpenBazaar</i> Raw Contract</h3>
-
+<h2><i>OpenBazaar</i> Raw Contract</h2>
+<br />
 <pre id="createcontract" ng-model="createcontract" style="background-color:white;">
-{
+{{display1}}
+{{newcontract.stage01_merchant.item_title}}
+{{newcontract.stage01_merchant.item_description}}
+
+	{
     "stage01_merchant": {
         "metadata": {
             "obcv": "0.0.2",
@@ -1238,24 +469,20 @@
     }
 }
 </pre>
+</div> <!-- End of Peek 1 -->
 
-		</form>
-		</div>
-	</div>
-<!-- End of Peek 4-->
-</div>
 
 <!-- End of first div container -->
 </div>
 
-<hr />
+	<hr />
 
-<!-- Footer Image -->
-<div class="row">
-	<div class="col-lg-12">
-		<img src="assets/img/OBCA.png" style="width:100%" />
+	<!-- Footer Image -->
+	<div class="row">
+		<div class="col-lg-12">
+			<img src="assets/img/OBCA.png" style="width:100%" />
+		</div>
 	</div>
-</div>
 
 <!-- End of second div container -->
 </div>
