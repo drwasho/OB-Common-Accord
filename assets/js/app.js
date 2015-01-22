@@ -62,9 +62,11 @@ part1.controller('Working',
             openpgp.initWorker = function (s) {
                 openpgp.initWorker("openpgp.worker.min.js");
             };
-            var dussel = $("this");
-            var dorf = JSON.stringify(dussel);
-            console.log(dorf);
+            // Stop, hammer time
+
+            var pubkey = pgp_pubkey.value;
+            var das = JSON.stringify({})
+
             // Stop, hammer time
             var daspublickey = $("#daspubkey").text();
             var publickey = openpgp.key.readArmored(daspublickey).keys[0];
