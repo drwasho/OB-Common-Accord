@@ -9,7 +9,7 @@ part1.controller('Working',
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
         };
-        $scope.random_nonce = Math.floor((Math.random() * 1000000000000000) + 1);
+        var nonce = Math.floor((Math.random() * 1000000000000000) + 1);
         $scope.start = function () {
             var itemTitle = item_title.value;
             var itemDescription = item_description.value;
@@ -30,7 +30,7 @@ part1.controller('Working',
             var merchantPGPPubkey = merchant_pgp_pubkey.value;
             var merchantECPubkey = merchant_secp256k1_pubkey.value;
             var merchantDigiSig = merchant_digisig.value;
-            var dudeden = JSON.stringify({ stage01_merchant: { metadata: {obcv: "0.0.2", category: "Physical item", subcategory: "Fixed Price", Expiration_date: metadataExpDate}, item_data: {title: itemTitle, description: itemDescription, price: {btc: itemPrice, fiat: {price: itemFiatPrice, currency: itemFiatXE}}, image_link: itemImage, image_hash: itemImageHash, condition: itemCondition, quantity: itemQuantity, keywords: itemKeywords, region: itemRegion, estimated_delivery: itemEstDelivery}, merchant: {guid: merchantGUID, handle: merchantHandle, legal_address: merchantLegalAddress, pgp_pubkey: merchantPGPPubkey, bitcoin_pubkey: merchantECPubkey} }, signatures: {merchant_sig: merchantDigiSig}}, null, "\t");
+            var dudeden = JSON.stringify({ stage01_merchant: { metadata: {obcv: "0.0.2", category: "Physical item", subcategory: "Fixed Price", nonce: nonce, expiration_date: metadataExpDate}, item_data: {title: itemTitle, description: itemDescription, price: {btc: itemPrice, fiat: {price: itemFiatPrice, currency: itemFiatXE}}, image_link: itemImage, image_hash: itemImageHash, condition: itemCondition, quantity: itemQuantity, keywords: itemKeywords, region: itemRegion, estimated_delivery: itemEstDelivery}, merchant: {guid: merchantGUID, handle: merchantHandle, legal_address: merchantLegalAddress, pgp_pubkey: merchantPGPPubkey, bitcoin_pubkey: merchantECPubkey} }, signatures: {merchant_sig: merchantDigiSig}}, null, "\t");
             $scope.display1 = dudeden;
             $scope.newcontract = JSON.parse(dudeden);
             $scope.stage01hash = sha256_digest($("#merchanthash").text());
