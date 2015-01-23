@@ -256,19 +256,6 @@
 					</div>
 				</div>
 
-				<!-- Shipper -->
-				<div class="form-group">
-					<div class="col-lg-3">
-						<label class="control-label">Shipper</label>
-					</div>
-					<div class="col-lg-4">
-						<input type="text" class="form-control " id="item_shipper" ng-model="item_shipper" autocomplete="off" placeholder="Who is shipping your item?" >
-					</div>
-					<div class="col-lg-5">
-						<input type="text" class="form-control " id="item_shipper_legaladdress" ng-model="item_shipper_legaladdress" autocomplete="off" placeholder="What is the legal address of the shipper? (CommonAccord)" >
-					</div>
-				</div>
-
 				<!-- Expiration date -->
 				<div class="form-group">
 					<div class="col-lg-3">
@@ -320,7 +307,7 @@
 						<label class="control-label">PGP Pubkey</label>
 					</div>
 					<div class="col-lg-9">
-						<textarea type="text" class="form-control " id="pgp_pubkey" id="pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
+						<textarea type="text" class="form-control " id="merchant_pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
 					</div>
 				</div>
 
@@ -357,17 +344,20 @@
 
 					<!-- Enter Digital Signature -->
 					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-					<textarea class="form-control" ng-keyup="start2()" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  row="6"></textarea>
+					<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
 					<br />
-					<span class="help-block">Merchant's digital signature</span>
-					<pre id="dasmerchantsig">{{merchant_sig}}</pre>
-					<p></p>
-					<p></p>
-					<button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button>
-					<br />
+					<div class="row">
+						<div class="col-lg-6">
+							<span class="help-block">Merchant's Public Key</span>
+							<pre id="daspubkey" style="font-size: 10px">{{newcontract.stage01_merchant.merchant.pgp_pubkey}}</pre>
+						</div>
+						<div class="col-lg-6">
+							<span class="help-block">Merchant's Digital Signature</span>
+							<pre id="dasmerchantsig" style="font-size: 10px">{{newcontract.signatures.merchant_sig}}</pre>
+						</div>
+					</div>
 
-					<!-- TEMP: Check of success or failure -->
-					<h4>{{check}}</h4>
+					<p></p>
 
 					<!-- This is the hash of Stage 01 Merchant Part -->
 					<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
@@ -377,8 +367,15 @@
 
 				</div>
 
-						</div> <!-- End of Form Group -->
-					</div> <!-- End of Start() -->
+			</div> <!-- End of Start() -->
+		</div> <!-- End of Form Group -->
+
+				<p></p>
+				<button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button>
+				<br />
+				<!-- TEMP: Check of success or failure -->
+				<h4>{{check}}</h4>
+
 				</fieldset> <!-- End of Fieldset -->
 			</form> <!-- End of Form -->
 		</div> <!-- End of Well Component -->
@@ -388,87 +385,11 @@
 
 <h2><i>OpenBazaar</i> Raw Contract</h2>
 <br />
+
 <pre id="createcontract" ng-model="createcontract" style="background-color:white;">
 {{display1}}
-{{newcontract.stage01_merchant.item_title}}
-{{newcontract.stage01_merchant.item_description}}
-
-	{
-    "stage01_merchant": {
-        "metadata": {
-            "obcv": "0.0.2",
-            "category": "Physical Item",
-            "subcategory": "Fixed price",
-            "expiration_date_YYYYMMDD": "{{metadata_expdate}}"
-        },
-        "nonce": "{{random_nonce}}",
-        "item_data": {
-            "title": "{{item_title}}",
-            "description": "{{item_description}}",
-            "price":{
-                "btc": "{{item_price}}",
-                "fiat": {
-                    "price":"{{item_fiat_price}}",
-                    "currency":"{{item_fiat_xe}}"
-                }
-                },
-            "image": [
-                "<a ng-href="{{item_image}}">{{item_image}}</a>",
-                "{{item_image_hash}}"
-                ],
-            "condition": "{{item_condition}}",
-            "quantity": "{{item_quantity}}",
-            "keywords": [
-                "{{item_keywords}}"
-            ],
-            "region": "{{item_region}}",
-            "est_delivery": "{{item_estdelivery}}",
-            "shipper": {
-                "handle": "{{item_shipper}}",
-                "legal_address": "{{item_shipper_legaladdress}}"
-            }
-        },
-        "merchant": {
-			"guid" : "{{merchant_guid}}",
-			"handle": "{{merchant_handle}}",
-			"legal_address" : "{{merchant_legaladdress}}",
-			"pubkeys": {
-				"pgp": "{{merchant_pgp_pubkey}}",
-				"secp256k1_uncompressed": "{{merchant_secp256k1_pubkey}}"
-			}
-		}
-    },
-    "stage02_buyer": {
-        "guid" : "{{buyer_guid}}",
-        "handle": "{{buyer_handle}}",
-        "legal_address" : "{{buyer_legaladdress}}",
-        "pubkeys": {
-            "pgp": "{{buyer_pgp_pubkey}}",
-            "secp256k1_uncompressed": "{{buyer_secp256k1_pubkey}}"
-        },
-        "stage01_hash" : "{{stage01hash}}"
-    },
-    "stage03_notary": {
-        "guid" : "{{notary_guid}}",
-        "handle": "{{notary_handle}}",
-        "legal_address" : "{{notary_legaladdress}}",
-        "pubkeys": {
-            "pgp": "{{notary_pgp_pubkey}}",
-            "secp256k1_uncompressed": "{{notary_secp256k1_pubkey}}"
-        },
-        "stage02_hash" : "{{stage02hash}}",
-        "escrow": {
-            "btc_address": "{{escrow_address}}",
-            "redemption_script": "{{escrow_redemption}}"
-        }
-    },
-    "signatures": {
-        "stage01_merchant":"{{merchant_sig}}",
-        "stage02_buyer":"{{buyer_sig}}",
-        "stage03_notary":"{{notary_sig}}"
-    }
-}
 </pre>
+
 </div> <!-- End of Peek 1 -->
 
 
