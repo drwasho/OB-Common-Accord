@@ -39,18 +39,18 @@ part1.controller('Working',
             var merchantPGPPubkey = merchant_pgp_pubkey.value;
             var merchantECPubkey = merchant_secp256k1_pubkey.value;
             var merchantDigiSig = merchant_digisig.value;
-            var dudeden = JSON.stringify({ stage01_merchant: { metadata: {obcv: "0.0.2", category: "Physical item", subcategory: "Fixed Price", nonce: nonce, expiration_date: metadataExpDate}, item_data: {title: itemTitle, description: itemDescription, price: {btc: itemPrice, fiat: {price: itemFiatPrice, currency: itemFiatXE}}, image_link: itemImage, image_hash: itemImageHash, condition: itemCondition, quantity: itemQuantity, keywords: itemKeywords, region: itemRegion, estimated_delivery: itemEstDelivery}, merchant: {guid: merchantGUID, handle: merchantHandle, legal_address: merchantLegalAddress, pgp_pubkey: merchantPGPPubkey, bitcoin_pubkey: merchantECPubkey} }, stage02_buyer: {handle: ""}, signatures: {merchant_sig: merchantDigiSig}}, null, "\t");
-            $scope.display1 = dudeden;
+            var dudeden = JSON.stringify({ stage01_merchant: { metadata: {obcv: "0.0.2", category: "Physical item", subcategory: "Fixed Price", nonce: nonce, expiration_date: metadataExpDate}, item_data: {title: itemTitle, description: itemDescription, price: {btc: itemPrice, fiat: {price: itemFiatPrice, currency: itemFiatXE}}, image_link: itemImage, image_hash: itemImageHash, condition: itemCondition, quantity: itemQuantity, keywords: itemKeywords, region: itemRegion, estimated_delivery: itemEstDelivery}, merchant: {guid: merchantGUID, handle: merchantHandle, legal_address: merchantLegalAddress, pubkeys: {pgp: merchantPGPPubkey, bitcoin_pubkey: merchantECPubkey}}}, signatures: {merchant_sig: merchantDigiSig, buyer_sig: ""}});
             $scope.newcontract = JSON.parse(dudeden);
-            $scope.stage01hash = sha256_digest($("#merchanthash").text());
+            $scope.display1 = JSON.stringify($scope.newcontract, null, 4);
             console.log($scope.stage01hash);
         };
-        $scope.dasverify = function () {
-            var daspublickey = $("#daspubkey").text();
-            var publickey = openpgp.key.readArmored(daspublickey).keys[0];
+        $scope.stage01_verify = function () {
+            $scope.stage01hash = sha256_digest($("#merchanthash").text());
+            var stage01_publickey = $("#stage01_pubkey").text();
+            var publickey = openpgp.key.readArmored(stage01_publickey).keys[0];
             console.log(publickey);
-            var dassignature = $("#dasmerchantsig").text();
-            var signature = openpgp.cleartext.readArmored(dassignature);
+            var stage01_signature = $("#stage01_merchantsig").text();
+            var signature = openpgp.cleartext.readArmored(stage01_signature);
             console.log(signature);
             openpgp.verifyClearSignedMessage(publickey, signature).then(function(sigCheck) {
                 $scope.check = sigCheck.signatures[0].valid;
@@ -58,7 +58,7 @@ part1.controller('Working',
         };
         $scope.start2 = function () {
             var clash = JSON.parse($scope.buycontract);
-            $scope.buyercontract = JSON.parse($scope.buycontract);
+            console.log(clash);
             var buyerGUID = buyer_guid.value;
             var buyerHandle = buyer_handle.value;
             var buyerLegalAddress = buyer_legaladdress.value;
@@ -66,21 +66,20 @@ part1.controller('Working',
             var buyerECPubkey = buyer_secp256k1_pubkey.value;
             var buyerDigiSig = buyer_digisig.value;
             clash.stage02_buyer = { guid: buyerGUID, handle: buyerHandle, legal_address: buyerLegalAddress, pubkeys: {pgp: buyerPGPPubkey, secp256k1_uncompressed: buyerECPubkey}};
-            clash.signatures.buyersig = buyerDigiSig;
+            clash.signatures.buyer_sig = buyerDigiSig;
             $scope.buyercontract = clash;
-            // var buyerduden = JSON.stringify({ guid: buyerGUID, handle: buyerHandle, legal_address: buyerLegalAddress, pubkeys: {pgp: buyerPGPPubkey, secp256k1_uncompressed: buyerECPubkey}});
-            // console.log(buyerduden);
-            // clash.stage02_merchant = buyerduden;
+            $scope.display2 = JSON.stringify(clash, null, 4);
         };
-        $scope.duffverify = function () {
-            var duffpublickey = $("#duffpubkey").text();
-            var deduffpublickey = openpgp.key.readArmored(duffpublickey).keys[0];
-            console.log(deduffpublickey);
-            var duffsignature = $("#duffbuyersig").text();
-            var deduffsignature = openpgp.cleartext.readArmored(duffsignature);
-            console.log(deduffsignature);
-            openpgp.verifyClearSignedMessage(deduffpublickey, deduffsignature).then(function(sigCheck) {
-                $scope.duffcheck = sigCheck.signatures[0].valid;
+        $scope.stage02_verify = function () {
+            $scope.stage01hash = sha256_digest($("#buyerhash").text());
+            var stage02_publickey = $("#stage02_pubkey").text();
+            var publickey2 = openpgp.key.readArmored(stage02_publickey).keys[0];
+            console.log(publickey2);
+            var stage02_signature = $("#stage02_buyersig").text();
+            var signature2 = openpgp.cleartext.readArmored(stage02_signature);
+            console.log(signature2);
+            openpgp.verifyClearSignedMessage(publickey2, signature2).then(function(sigCheck) {
+                $scope.check2 = sigCheck.signatures[0].valid;
             });
         };
     });

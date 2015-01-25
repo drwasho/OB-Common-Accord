@@ -144,11 +144,8 @@
 	</div>
 
 	<div class="row">
-
 		<div class="well bs-component col-lg-12">
-
-		<form class="form-horizontal">
-
+			<form class="form-horizontal">
 			<fieldset>
 
 			<div ng-keyup="start()">
@@ -324,62 +321,62 @@
 
 				<br />
 
-			<!-- #### MERCHANT Digital Signatures #### -->
-			<h4>Digital Signatures</h4>
+				<!-- #### MERCHANT Digital Signatures #### -->
+				<h4>Digital Signatures</h4>
 
-			<div class="form-group">
+				<div class="form-group">
 
-				<div class="col-lg-3">
-					<label class="control-label">Merchant Digital Signature</label>
-				</div>
-
-				<div class="col-lg-9">
-
-					<p></p>
-
-					<!-- This is what you're supposed to digitally sign -->
-					<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-					<p></p>
-					<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
-					<br />
-
-					<!-- Enter Digital Signature -->
-					<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-					<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-					<br />
-					<div class="row">
-						<div class="col-lg-6">
-							<span class="help-block">Merchant's Public Key</span>
-							<pre id="daspubkey" style="font-size: 10px">{{newcontract.stage01_merchant.merchant.pgp_pubkey}}</pre>
-						</div>
-						<div class="col-lg-6">
-							<span class="help-block">Merchant's Digital Signature</span>
-							<pre id="dasmerchantsig" style="font-size: 10px">{{newcontract.signatures.merchant_sig}}</pre>
-						</div>
+					<div class="col-lg-3">
+						<label class="control-label">Merchant Digital Signature</label>
 					</div>
 
-					<p></p>
+					<div class="col-lg-9">
 
-					<!-- This is the hash of Stage 01 Merchant Part -->
-					<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
-					<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
+						<p></p>
 
-					<br />
+						<!-- This is what you're supposed to digitally sign -->
+						<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+						<p></p>
+						<pre id="merchanthash">{{newcontract.stage01_merchant}}</pre>
+						<br />
 
-				</div>
+						<!-- This is the hash of Stage 01 Merchant Part -->
+						<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
+						<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
+						<br />
 
-		</div> <!-- End of Form Group -->
-	</div> <!-- End of Start() -->
+						<!-- Enter Digital Signature -->
+						<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+						<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+						<br />
 
-		<div>
-			<p></p>
-			<button type="button" ng-click="dasverify()" class="btn btn-primary" >Verify</button>
-			<br />
-			<!-- TEMP: Check of success or failure -->
-			<h4>{{check}}</h4>
-		</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<span class="help-block">Merchant's Public Key</span>
+								<pre id="stage01_pubkey" style="font-size: 10px">{{newcontract.stage01_merchant.merchant.pubkeys.pgp}}</pre>
+							</div>
+							<div class="col-lg-6">
+								<span class="help-block">Merchant's Digital Signature</span>
+								<pre id="stage01_merchantsig" style="font-size: 10px">{{newcontract.signatures.merchant_sig}}</pre>
+							</div>
+						</div>
 
-				</fieldset> <!-- End of Fieldset -->
+						<p></p>
+
+					</div>
+
+				</div> <!-- End of Form Group -->
+			</div> <!-- End of Start() -->
+
+			<div>
+				<p></p>
+				<button type="button" ng-click="stage01_verify()" class="btn btn-primary" >Verify</button>
+				<br />
+				<!-- TEMP: Check of success or failure -->
+				<h4>{{check}}</h4>
+			</div>
+
+			</fieldset> <!-- End of Fieldset -->
 			</form> <!-- End of Form -->
 		</div> <!-- End of Well Component -->
 	</div> <!-- End of Row -->
@@ -388,13 +385,11 @@
 
 		<h2><i>OpenBazaar</i> Raw Contract</h2>
 		<br />
-
 		<pre id="createcontract" ng-model="createcontract" style="background-color:white;">{{display1}}</pre>
 
 	</div>
 
-<!-- End of Peek 1 -->
-</div>
+</div> <!-- End of Peek 1 -->
 
 <div ng-show="peek2">
 
@@ -406,8 +401,8 @@
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
+			<fieldset>
 
-				<fieldset>
 				<div ng-keyup="start2()">
 
 					<h3>Stage 02: The Buyer</h3>
@@ -524,11 +519,11 @@
 							<div class="row">
 								<div class="col-lg-6">
 									<span class="help-block">Buyer's Public Key</span>
-									<pre id="duffpubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
+									<pre id="stage02_pubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
 								</div>
 								<div class="col-lg-6">
 									<span class="help-block">Buyer's Digital Signature</span>
-									<pre id="duffbuyersig" style="font-size: 10px">{{buyercontract.signatures.buyersig}}</pre>
+									<pre id="stage02_buyersig" style="font-size: 10px">{{buyercontract.signatures.buyer_sig}}</pre>
 								</div>
 							</div>
 
@@ -542,14 +537,13 @@
 
 				<div>
 					<p></p>
-					<button type="button" ng-click="duffverify()" class="btn btn-primary" >Verify</button>
+					<button type="button" ng-click="stage02_verify()" class="btn btn-primary" >Verify</button>
 					<br />
 					<!-- TEMP: Check of success or failure -->
-					<h4>{{duffcheck}}</h4>
+					<h4>{{check2}}</h4>
 				</div>
 
-				</fieldset>
-
+			</fieldset>
 			</form>
 		</div>
 	</div>
@@ -558,8 +552,7 @@
 
 		<h2><i>OpenBazaar</i> Raw Contract</h2>
 		<br />
-
-		<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{buyercontract}}</pre>
+		<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display2}}</pre>
 
 	</div>
 
