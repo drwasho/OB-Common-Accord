@@ -62,6 +62,7 @@ part1.controller('Working',
             console.log(signature);
             openpgp.verifyClearSignedMessage(publickey, signature).then(function(sigCheck) {
                 $scope.check = sigCheck.signatures[0].valid;
+				console.log(sigCheck.signature[0].valid);
             });
         };
         $scope.start2 = function () {
