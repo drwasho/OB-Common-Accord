@@ -53,3 +53,84 @@ BQ+oamxGkyKqONX9+DLaxyHrt1YMWh4vbnt+ODYGbw2jCoRXPk5/d9ZxIzoj0xbG
 KgCcg7XhDm7rxPwfkljq
 =d2aO
 -----END PGP SIGNATURE-----
+
+
+{
+	"stage01_merchant": {
+		"metadata": {
+			"obcv": "0.0.2",
+			"category": "Physical item",
+			"subcategory": "Fixed Price",
+			"nonce": 120995778590441,
+			"expiration_date": "fsda"
+		},
+		"item_data": {
+			"title": "Yo",
+			"description": "Dude",
+			"price": {
+				"btc": "adfs",
+				"fiat": {
+					"price": "afds",
+					"currency": "fdsa"
+				}
+			},
+			"image_link": "fdsa",
+			"image_hash": "fdsa",
+			"condition": "fdsa",
+			"quantity": "fasd",
+			"keywords": "fdsa",
+			"region": "fdsa",
+			"estimated_delivery": "fdsa"
+		},
+		"merchant": {
+			"guid": "fsdaf",
+			"handle": "fda",
+			"legal_address": "fsad",
+			"pgp_pubkey": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v2.0.22 (MingW32)\n\nmQINBFMZcEIBEADJlq0oVgLfFDdW9WOBguskPdSSeAfHe4s9w8QlmRuO/Zj548gK\nfofbM84rtP3rHSOSkeOTsu5GwDt48V/md6gyJ69BTZJkJ6qmxFtGaWVRLP/UD4ma\nvW4EAn3PvWY6X7Z8x36U3j2I6vknH1Ufu5Dh5qvQC3WsMliul9ZxlJQZ1/TkQE+q\nI/gBPRmsMFZ/xV2VOEjMtM3qOPoemhYFzU39/ra0isk81sXrotySkvWw6zsrx8Nr\nkBaw9mxhs0kumF06AfKSrBjyt/FIdbJaWtNrCdxJ+NMfzQUHmq9bzpBI2VpNJzFQ\nI4WlO8eRYDS1Z88VxXOjMZchd70JfNNWcXwCUeOA/HUgHO4tWczvb/5/C5pfZRKu\nDqfOLntcMEzpPxbhAbXvU+K5TK394SGgu9ioXl3rdrFj1B1EBPH2BfnOdwCiOOr5\nccWVPUHdG34i4D98ARgeqEDxq9/WZwq8FG9rgSszqkmnGQtSZxz8aoW1kU1h1SQu\nmqs2ZUrEoLGACkNg16kRq2z7RBLc4MAm3/GW3ygeEFQxK0PMief0X2+l0oVo7a0A\nRMLLLx4ckuoX3DIJvBegFPvlp0rO3JihdzNmCqIBTDok7D0k2NiQsm3WDJHAYB+8\nG4ruHVPAOzPNxz5krF+u71jcWmZKO4FRAcXCrWTQCku7wLyzOF80sVEDlwARAQAB\ntGNEciBXYXNoaW5ndG9uIFlhbWFuZHUgU2FuY2hleiAoMjAxNCBLZXlwYWlyIGZv\nciBuZXcgZW1haWwgYWRkcmVzcykgPHdhc2hpbmd0b24uc2FuY2hlekBvdXRsb29r\nLmNvbT6JAjkEEwECACMFAlMZcEICGw8HCwkIBwMCAQYVCAIJCgsEFgIDAQIeAQIX\ngAAKCRDgeMiuv/IyzzaGEACiYWINH5utgquhNPIGl8oPXQwi3cdHbLROXk9s8K5j\numxO3qyzrZuag+M39eKrDOgMTteLcCuJV+9sgdmSJHsLuH9o9/PPwaKHsY995C0Y\n5ZRsvABRQbHoOJPsdq136gH2Z0kW/RJ2fqQfNrDiqyPJpWTkrnnRZF2XU8OlIAq+\nBsyeVqxOiht1vMIz2TX/LanbP6leas7Wah1GRuzhd68+NCyCUQJ4bnBDv6cbGwXR\nVi7kOOvXYoTilCENdbSuYfGWrq7z54DrefjTP3+0Y/YTWwUQr/yvXi915UCDVU+T\n6jaqCwtqmezr1VjkMrFQOOrOY7jWmYo4AwQfr4hW9iLdiggr6bPmz0YRfT83a9r9\nZ+SmU4zuLWmmJXARiUGBwhXUmyqFQa1yjCVI+50uW8Wx3iDot9qiO7gSB878Zq1s\nKtt3EXolTDGgpVIxZ78do42X02wD8gwGGOdDU3Dzywjy3qcIbVWreuT8tEvCU+Wx\nw0TGzeoBLcHezhLEbaAOmE5jAmKPL9EbRQBGS1nV3uwzW24vu9ftNqmseYXC2afW\nDCulmUHHAQEfleJA/mKii2mYV7Yxclib81+EzkzJBPijgUJBN9A1PxqliF8ZDXF/\nh/jQomASoDBAL8VWo7qwTQlc5CZKZ6xnUZGdUU9lFBmnclw0A6PrMBaZjm1zeKJr\n1Q==\n=7M1T\n-----END PGP PUBLIC KEY BLOCK-----",
+			"bitcoin_pubkey": ""
+		}
+	},
+	"signatures": {
+		"merchant_sig": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nHello\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.22 (MingW32)\n\niQIcBAEBAgAGBQJUvRKUAAoJEOB4yK6/8jLP+scP/RqnlEKQfTooVm8to7NsPS+m\ngo9QbNPTi+i4bYum1O1xOic55LR4/JLO8nZqFxxd/6dKYU7bWk1hrRAV/ALv6acU\nhXwxgSE2/WHOvlidoxGdfbF65kv9CsYPKpV4iU7EWtN9uiWgk2gGk6heaJS0Alo6\nip71eH24dTxClkraiPMhSi+Dwmr03tnzZ+Ioo/vDcS/DFov21oGnFTwa8S/H4yH4\nP66e+iAcRr4HrjcjajywlH0an+Q1+AWWtHxwUVu4FO5iFhXYRkChsgmaSJltPht1\nqdn11k8yNJhC3MqKUjcBfPHRGtIcWJDXOrPTTnudJE4zjQ0/0L0Od+o4Q96B3XNW\nMU6uPHMdMXm2GfXSs7DxzhwFB2TJc5jQy9DM9qURDeWaT5tulzqIwTOv9gngjvNf\n16LatC8CsqVhE5uRjd+oQKaXwwaGXLBJL9YZTTS2qgaUGA7esiQNfkHwE3nBra/D\njlgfMqxNuCyBRg1yS3Hqe/LmDNJodKZOb0HoJnnKEq//BWXDsYPFn8h8YKCW3nfc\n3LSjRj4MQzGEiauK1MJLZrQuLmSTJsZjloJxi+gklqr3cy/KPCsksPupXSXf8xYE\nBQ+oamxGkyKqONX9+DLaxyHrt1YMWh4vbnt+ODYGbw2jCoRXPk5/d9ZxIzoj0xbG\nKgCcg7XhDm7rxPwfkljq\n=d2aO\n-----END PGP SIGNATURE-----"
+	}
+}
+
+{
+	"stage01_merchant": {
+		"metadata": {
+			"obcv": "0.0.2",
+			"category": "Physical item",
+			"subcategory": "Fixed Price",
+			"nonce": 120995778590441,
+			"expiration_date": "fsda"
+		},
+		"item_data": {
+			"title": "Yo",
+			"description": "Dude",
+			"price": {
+				"btc": "adfs",
+				"fiat": {
+					"price": "afds",
+					"currency": "fdsa"
+				}
+			},
+			"image_link": "fdsa",
+			"image_hash": "fdsa",
+			"condition": "fdsa",
+			"quantity": "fasd",
+			"keywords": "fdsa",
+			"region": "fdsa",
+			"estimated_delivery": "fdsa"
+		},
+		"merchant": {
+			"guid": "fsdaf",
+			"handle": "fda",
+			"legal_address": "fsad",
+			"pgp_pubkey": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v2.0.22 (MingW32)\n\nmQINBFMZcEIBEADJlq0oVgLfFDdW9WOBguskPdSSeAfHe4s9w8QlmRuO/Zj548gK\nfofbM84rtP3rHSOSkeOTsu5GwDt48V/md6gyJ69BTZJkJ6qmxFtGaWVRLP/UD4ma\nvW4EAn3PvWY6X7Z8x36U3j2I6vknH1Ufu5Dh5qvQC3WsMliul9ZxlJQZ1/TkQE+q\nI/gBPRmsMFZ/xV2VOEjMtM3qOPoemhYFzU39/ra0isk81sXrotySkvWw6zsrx8Nr\nkBaw9mxhs0kumF06AfKSrBjyt/FIdbJaWtNrCdxJ+NMfzQUHmq9bzpBI2VpNJzFQ\nI4WlO8eRYDS1Z88VxXOjMZchd70JfNNWcXwCUeOA/HUgHO4tWczvb/5/C5pfZRKu\nDqfOLntcMEzpPxbhAbXvU+K5TK394SGgu9ioXl3rdrFj1B1EBPH2BfnOdwCiOOr5\nccWVPUHdG34i4D98ARgeqEDxq9/WZwq8FG9rgSszqkmnGQtSZxz8aoW1kU1h1SQu\nmqs2ZUrEoLGACkNg16kRq2z7RBLc4MAm3/GW3ygeEFQxK0PMief0X2+l0oVo7a0A\nRMLLLx4ckuoX3DIJvBegFPvlp0rO3JihdzNmCqIBTDok7D0k2NiQsm3WDJHAYB+8\nG4ruHVPAOzPNxz5krF+u71jcWmZKO4FRAcXCrWTQCku7wLyzOF80sVEDlwARAQAB\ntGNEciBXYXNoaW5ndG9uIFlhbWFuZHUgU2FuY2hleiAoMjAxNCBLZXlwYWlyIGZv\nciBuZXcgZW1haWwgYWRkcmVzcykgPHdhc2hpbmd0b24uc2FuY2hlekBvdXRsb29r\nLmNvbT6JAjkEEwECACMFAlMZcEICGw8HCwkIBwMCAQYVCAIJCgsEFgIDAQIeAQIX\ngAAKCRDgeMiuv/IyzzaGEACiYWINH5utgquhNPIGl8oPXQwi3cdHbLROXk9s8K5j\numxO3qyzrZuag+M39eKrDOgMTteLcCuJV+9sgdmSJHsLuH9o9/PPwaKHsY995C0Y\n5ZRsvABRQbHoOJPsdq136gH2Z0kW/RJ2fqQfNrDiqyPJpWTkrnnRZF2XU8OlIAq+\nBsyeVqxOiht1vMIz2TX/LanbP6leas7Wah1GRuzhd68+NCyCUQJ4bnBDv6cbGwXR\nVi7kOOvXYoTilCENdbSuYfGWrq7z54DrefjTP3+0Y/YTWwUQr/yvXi915UCDVU+T\n6jaqCwtqmezr1VjkMrFQOOrOY7jWmYo4AwQfr4hW9iLdiggr6bPmz0YRfT83a9r9\nZ+SmU4zuLWmmJXARiUGBwhXUmyqFQa1yjCVI+50uW8Wx3iDot9qiO7gSB878Zq1s\nKtt3EXolTDGgpVIxZ78do42X02wD8gwGGOdDU3Dzywjy3qcIbVWreuT8tEvCU+Wx\nw0TGzeoBLcHezhLEbaAOmE5jAmKPL9EbRQBGS1nV3uwzW24vu9ftNqmseYXC2afW\nDCulmUHHAQEfleJA/mKii2mYV7Yxclib81+EzkzJBPijgUJBN9A1PxqliF8ZDXF/\nh/jQomASoDBAL8VWo7qwTQlc5CZKZ6xnUZGdUU9lFBmnclw0A6PrMBaZjm1zeKJr\n1Q==\n=7M1T\n-----END PGP PUBLIC KEY BLOCK-----",
+			"bitcoin_pubkey": ""
+		}
+	},
+	"signatures": {
+		"merchant_sig": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nHello\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.22 (MingW32)\n\niQIcBAEBAgAGBQJUvRKUAAoJEOB4yK6/8jLP+scP/RqnlEKQfTooVm8to7NsPS+m\ngo9QbNPTi+i4bYum1O1xOic55LR4/JLO8nZqFxxd/6dKYU7bWk1hrRAV/ALv6acU\nhXwxgSE2/WHOvlidoxGdfbF65kv9CsYPKpV4iU7EWtN9uiWgk2gGk6heaJS0Alo6\nip71eH24dTxClkraiPMhSi+Dwmr03tnzZ+Ioo/vDcS/DFov21oGnFTwa8S/H4yH4\nP66e+iAcRr4HrjcjajywlH0an+Q1+AWWtHxwUVu4FO5iFhXYRkChsgmaSJltPht1\nqdn11k8yNJhC3MqKUjcBfPHRGtIcWJDXOrPTTnudJE4zjQ0/0L0Od+o4Q96B3XNW\nMU6uPHMdMXm2GfXSs7DxzhwFB2TJc5jQy9DM9qURDeWaT5tulzqIwTOv9gngjvNf\n16LatC8CsqVhE5uRjd+oQKaXwwaGXLBJL9YZTTS2qgaUGA7esiQNfkHwE3nBra/D\njlgfMqxNuCyBRg1yS3Hqe/LmDNJodKZOb0HoJnnKEq//BWXDsYPFn8h8YKCW3nfc\n3LSjRj4MQzGEiauK1MJLZrQuLmSTJsZjloJxi+gklqr3cy/KPCsksPupXSXf8xYE\nBQ+oamxGkyKqONX9+DLaxyHrt1YMWh4vbnt+ODYGbw2jCoRXPk5/d9ZxIzoj0xbG\nKgCcg7XhDm7rxPwfkljq\n=d2aO\n-----END PGP SIGNATURE-----"
+	}
+}
