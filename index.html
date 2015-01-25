@@ -27,6 +27,7 @@
 <meta property="og:image" content="http://s21.postimg.org/4x6gx7lyv/twitter.png" />
 <meta property="og:description" content="Client-side contract tools for viewing and creating OpenBazaar contracts. Compatibility with CommonAccord API for the creation of legally enforceable contracts." />
 
+<link rel="shortcut icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/bootstrap.css" />
 <link rel="stylesheet" href="assets/css/fonts.css" />
 
@@ -395,170 +396,365 @@
 <!-- # 2. Buy Contract # -->
 <div ng-show="peek2">
 
-	<div class="row">
-		<h2>Buy an <i>OpenBazaar</i> Ricardian Contract</h2>
-		<hr>
-	</div>
-
-	<div class="row">
-		<div class="well bs-component col-lg-12">
-			<form class="form-horizontal">
-			<fieldset>
-
-				<div ng-keyup="start2()">
-
-					<h3>Stage 02: The Buyer</h3>
-					<hr />
-
-					<!-- Import -->
-					<div>
-
-						<h4>Purchase Contract</h4>
-
-						<!-- Import contract -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">OpenBazaar Merchant Contract</label>
-							</div>
-							<div class="col-lg-9">
-								<textarea type="text" ng-model="buycontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to purchase" rows="12"></textarea>
-							</div>
-						</div>
-
-					</div>
-
-					<br />
-
-					<!-- ## Buyer ## -->
-					<div>
-
-						<h4>Buyer Details</h4>
-
-						<!-- Guid -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">Buyer GUID</label>
-							</div>
-							<div class="col-lg-9">
-								<input type="text" class="form-control " id="buyer_guid" ng-model="buyer_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
-							</div>
-						</div>
-
-						<!-- Handle -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">Buyer Handle</label>
-							</div>
-							<div class="col-lg-9">
-								<input type="text" class="form-control " id="buyer_handle" ng-model="buyer_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
-							</div>
-						</div>
-
-						<!-- Legal Address -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">Legal Address</label>
-							</div>
-							<div class="col-lg-9">
-								<input type="text" class="form-control " id="buyer_legaladdress" ng-model="buyer_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
-							</div>
-						</div>
-
-						<!-- PGP Public Key -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">PGP Pubkey</label>
-							</div>
-							<div class="col-lg-9">
-								<textarea type="text" class="form-control " id="buyer_pgp_pubkey" ng-model="buyer_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
-							</div>
-						</div>
-
-						<!-- Bitcoin Public Key -->
-						<div class="form-group">
-							<div class="col-lg-3">
-								<label class="control-label">Bitcoin Pubkey</label>
-							</div>
-							<div class="col-lg-9">
-								<input type="text" class="form-control " id="buyer_secp256k1_pubkey" ng-model="buyer_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
-							</div>
-						</div>
-
-						<br />
-
-					</div>
-					<!-- End of buyer div -->
-
-					<!-- #### BUYER Digital Signatures #### -->
-					<h4>Digital Signatures</h4>
-
-					<div class="form-group">
-
-						<div class="col-lg-3">
-							<label class="control-label">Buyer Digital Signature</label>
-						</div>
-
-						<div class="col-lg-9">
-
-							<p></p>
-
-							<!-- This is what you're supposed to digitally sign -->
-							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-							<p></p>
-							<pre id="buyerhash">{{buyercontract.stage01_merchant}}</pre> <!-- Stage 01 Merchant part to either digitally sign, or hash. -->
-							<br />
-
-							<!-- This is the hash of Stage 01 Merchant Part -->
-							<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to <b>buy</b>)</span></p>
-							<input class="form-control" type="text" value="{{stage02hash}}" disabled="">
-							<br />
-
-							<!-- Enter Digital Signature -->
-							<span class="help-block">By entering your digital signature, you are declaring your intention to <b>buy</b> the item in this contract!</span>
-							<textarea class="form-control" id="buyer_digisig" ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-							<br />
-
-							<div class="row">
-								<div class="col-lg-6">
-									<span class="help-block">Buyer's Public Key</span>
-									<pre id="stage02_pubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
-								</div>
-								<div class="col-lg-6">
-									<span class="help-block">Buyer's Digital Signature</span>
-									<pre id="stage02_buyersig" style="font-size: 10px">{{buyercontract.signatures.buyer_sig}}</pre>
-								</div>
-							</div>
-
-							<p></p>
-
-						</div>
-
-					</div> <!-- End of digital signatures -->
-
-				</div> <!-- End of start2() -->
-
-				<div>
-					<p></p>
-					<button type="button" ng-click="stage02_verify()" class="btn btn-primary" >Verify</button>
-					<br />
-					<!-- TEMP: Check of success or failure -->
-					<h4>{{check2}}</h4>
-				</div>
-
-			</fieldset>
-			</form>
+		<div class="row">
+			<h2>Buy an <i>OpenBazaar</i> Ricardian Contract</h2>
+			<hr>
 		</div>
-	</div>
 
-	<div class="row">
+		<div class="row">
+			<div class="well bs-component col-lg-12">
+				<form class="form-horizontal">
+					<fieldset>
 
-		<h2><i>OpenBazaar</i> Raw Contract</h2>
-		<br />
-		<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display2}}</pre>
+						<div ng-keyup="start2()">
 
-	</div>
+							<h3>Stage 02: The Buyer</h3>
+							<hr />
 
-</div> <!-- End of Peek2 -->
+							<!-- Import -->
+							<div>
+
+								<h4>Purchase Contract</h4>
+
+								<!-- Import contract -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">OpenBazaar Merchant Contract</label>
+									</div>
+									<div class="col-lg-9">
+										<textarea type="text" ng-model="buycontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to purchase" rows="12"></textarea>
+									</div>
+								</div>
+
+							</div>
+
+							<br />
+
+							<!-- ## Buyer ## -->
+							<div>
+
+								<h4>Buyer Details</h4>
+
+								<!-- Guid -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Buyer GUID</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="buyer_guid" ng-model="buyer_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
+									</div>
+								</div>
+
+								<!-- Handle -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Buyer Handle</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="buyer_handle" ng-model="buyer_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
+									</div>
+								</div>
+
+								<!-- Legal Address -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Legal Address</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="buyer_legaladdress" ng-model="buyer_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
+									</div>
+								</div>
+
+								<!-- PGP Public Key -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">PGP Pubkey</label>
+									</div>
+									<div class="col-lg-9">
+										<textarea type="text" class="form-control " id="buyer_pgp_pubkey" ng-model="buyer_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
+									</div>
+								</div>
+
+								<!-- Bitcoin Public Key -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Bitcoin Pubkey</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="buyer_secp256k1_pubkey" ng-model="buyer_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
+									</div>
+								</div>
+
+								<br />
+
+							</div>
+							<!-- End of buyer div -->
+
+							<!-- #### BUYER Digital Signatures #### -->
+							<h4>Digital Signatures</h4>
+
+							<div class="form-group">
+
+								<div class="col-lg-3">
+									<label class="control-label">Buyer Digital Signature</label>
+								</div>
+
+								<div class="col-lg-9">
+
+									<p></p>
+
+									<!-- This is what you're supposed to digitally sign -->
+									<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+									<p></p>
+									<pre id="buyerhash">{{buyercontract.stage01_merchant}}</pre> <!-- Stage 01 Merchant part to either digitally sign, or hash. -->
+									<br />
+
+									<!-- This is the hash of Stage 01 Merchant Part -->
+									<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to <b>buy</b>)</span></p>
+									<input class="form-control" type="text" value="{{stage02hash}}" disabled="">
+									<br />
+
+									<!-- Enter Digital Signature -->
+									<span class="help-block">By entering your digital signature, you are declaring your intention to <b>buy</b> the item in this contract!</span>
+									<textarea class="form-control" id="buyer_digisig" ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+									<br />
+
+									<div class="row">
+										<div class="col-lg-6">
+											<span class="help-block">Buyer's Public Key</span>
+											<pre id="stage02_pubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
+										</div>
+										<div class="col-lg-6">
+											<span class="help-block">Buyer's Digital Signature</span>
+											<pre id="stage02_buyersig" style="font-size: 10px">{{buyercontract.signatures.buyer_sig}}</pre>
+										</div>
+									</div>
+
+									<p></p>
+
+								</div>
+
+							</div> <!-- End of digital signatures -->
+
+						</div> <!-- End of start2() -->
+
+						<div>
+							<p></p>
+							<button type="button" ng-click="stage02_verify()" class="btn btn-primary" >Verify</button>
+							<br />
+							<!-- TEMP: Check of success or failure -->
+							<h4>{{check2}}</h4>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<h2><i>OpenBazaar</i> Raw Contract</h2>
+			<br />
+			<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display2}}</pre>
+
+		</div>
+
+	</div> <!-- End of Peek 2 -->
+
+	<!-- # 2. Buy Contract # -->
+<div ng-show="peek3">
+
+		<div class="row">
+			<h2>Notarise an <i>OpenBazaar</i> Ricardian Contract</h2>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="well bs-component col-lg-12">
+				<form class="form-horizontal">
+					<fieldset>
+
+						<div ng-keyup="start3()">
+
+							<h3>Stage 03: The Notary</h3>
+							<hr />
+
+							<!-- Import -->
+							<div>
+
+								<h4>Purchase Contract</h4>
+
+								<!-- Import contract -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">OpenBazaar Contract</label>
+									</div>
+									<div class="col-lg-9">
+										<textarea type="text" ng-model="notarisecontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to notarise" rows="12"></textarea>
+									</div>
+								</div>
+
+							</div>
+
+							<br />
+
+							<!-- ## Notary ## -->
+							<div>
+
+								<h4>Notary Details</h4>
+
+								<!-- Guid -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Notary GUID</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="notary_guid" ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
+									</div>
+								</div>
+
+								<!-- Handle -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Buyer Handle</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="notary_handle" ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
+									</div>
+								</div>
+
+								<!-- Legal Address -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Legal Address</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="notary_legaladdress" ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
+									</div>
+								</div>
+
+								<!-- PGP Public Key -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">PGP Pubkey</label>
+									</div>
+									<div class="col-lg-9">
+										<textarea type="text" class="form-control " id="notary_pgp_pubkey" ng-model="notary_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
+									</div>
+								</div>
+
+								<!-- Bitcoin Public Key -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Bitcoin Pubkey</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" class="form-control " id="notary_secp256k1_pubkey" ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
+									</div>
+								</div>
+
+								<br />
+
+							</div>
+							<!-- End of buyer div -->
+
+							<!-- Escrow -->
+							<div>
+
+								<h4>Multisignature Escrow Address</h4>
+
+								<!-- Multisig address -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Multisignature Address</label>
+									</div>
+									<div class="col-lg-9">
+										<input type="text" id="multisigaddr" ng-model="multisigaddr" class="form-control" autocomplete="off" placeholder="Enter the multisignature address"></input>
+									</div>
+								</div>
+
+								<!-- Multisig redemption script -->
+								<div class="form-group">
+									<div class="col-lg-3">
+										<label class="control-label">Multisignature Redemption Script</label>
+									</div>
+									<div class="col-lg-9">
+										<textarea type="text" id="multisigredeem" ng-model="multisigredeem" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" rows="6"></textarea>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- #### Notary Digital Signatures #### -->
+							<h4>Digital Signatures</h4>
+
+							<div class="form-group">
+
+								<div class="col-lg-3">
+									<label class="control-label">Notary Digital Signature</label>
+								</div>
+
+								<div class="col-lg-9">
+
+									<p></p>
+
+									<!-- This is what you're supposed to digitally sign -->
+									<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+									<p></p>
+									<pre id="notaryhash">{{notarycontract.stage01_merchant}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+									<br />
+
+									<!-- This is the hash of Stage 02 Buyer Part -->
+									<p><span class="help-block">SHA256 hash of "Stage 02: buyer Part" (i.e. this is a tamper-proof statement of what you want to <b>notarise</b>)</span></p>
+									<input class="form-control" type="text" value="{{stage03hash}}" disabled="">
+									<br />
+
+									<!-- Enter Digital Signature -->
+									<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
+									<textarea class="form-control" id="notary_digisig" ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+									<br />
+
+									<div class="row">
+										<div class="col-lg-6">
+											<span class="help-block">Notary's Public Key</span>
+											<pre id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_buyer.pubkeys.pgp}}</pre>
+										</div>
+										<div class="col-lg-6">
+											<span class="help-block">Buyer's Digital Signature</span>
+											<pre id="stage03_notarysig" style="font-size: 10px">{{notarycontract.signatures.notary_sig}}</pre>
+										</div>
+									</div>
+
+									<p></p>
+
+								</div>
+
+							</div> <!-- End of digital signatures -->
+
+						</div> <!-- End of start2() -->
+
+						<div>
+							<p></p>
+							<button type="button" ng-click="stage03_verify()" class="btn btn-primary" >Verify</button>
+							<br />
+							<!-- TEMP: Check of success or failure -->
+							<h4>{{check3}}</h4>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<h2><i>OpenBazaar</i> Raw Contract</h2>
+			<br />
+			<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display3}}</pre>
+
+		</div>
+
+	</div> <!-- End of Peek 2 -->
 
 <hr />
 

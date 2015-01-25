@@ -9,14 +9,23 @@ part1.controller('Working',
         $scope.peek2 = false;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
+            $scope.peek2 = false;
+            $scope.peek3 = false;
         };
         $scope.toggle1 = function () {
             $scope.peek1 = true;
             $scope.peek2 = false;
+            $scope.peek3 = false;
         };
         $scope.toggle2 = function () {
             $scope.peek1 = false;
             $scope.peek2 = true;
+            $scope.peek3 = false;
+        };
+        $scope.toggle3 = function () {
+            $scope.peek1 = false;
+            $scope.peek2 = false;
+            $scope.peek3 = true;
         };
         var nonce = Math.floor((Math.random() * 1000000000000000) + 1);
         $scope.start = function () {
@@ -79,6 +88,34 @@ part1.controller('Working',
             console.log(signature2);
             openpgp.verifyClearSignedMessage(publickey2, signature2).then(function(sigCheck) {
                 $scope.check2 = sigCheck.signatures[0].valid;
+            });
+        };
+        $scope.start3 = function () {
+            var thunder = JSON.parse($scope.notarisecontract);
+            console.log(thunder);
+            var notaryGUID = notary_guid.value;
+            var notaryHandle = notary_handle.value;
+            var notaryLegalAddress = notary_legaladdress.value;
+            var notaryPGPPubkey = notary_pgp_pubkey.value;
+            var notaryECPubkey = notary_secp256k1_pubkey.value;
+            var notaryDigiSig = notary_digisig.value;
+            var multisigescrow = multisigaddr.value;
+            var multisigredemption = multisigredeem.value;
+            thunder.stage03_buyer = { guid: notaryGUID, handle: notaryHandle, legal_address: notaryLegalAddress, pubkeys: {pgp: notaryPGPPubkey, secp256k1_uncompressed: notaryECPubkey}, escrow: {multisig_address: multisigescrow, multisig_redemption_script: multisigredemption}};
+            thunder.signatures.notary_sig = notaryDigiSig;
+            $scope.notarycontract = thunder;
+            $scope.display3 = JSON.stringify(thunder, null, 4);
+        };
+        $scope.stage03_verify = function () {
+            $scope.stage03hash = sha256_digest($("#notaryhash").text());
+            var stage03_publickey = $("#stage03_pubkey").text();
+            var publickey3 = openpgp.key.readArmored(stage03_publickey).keys[0];
+            console.log(publickey3);
+            var stage03_signature = $("#stage03_notarysig").text();
+            var signature3 = openpgp.cleartext.readArmored(stage03_signature);
+            console.log(signature3);
+            openpgp.verifyClearSignedMessage(publickey3, signature3).then(function(sigCheck) {
+                $scope.check3 = sigCheck.signatures[0].valid;
             });
         };
     });

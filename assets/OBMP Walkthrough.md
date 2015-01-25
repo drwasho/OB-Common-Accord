@@ -119,7 +119,8 @@ The merchant creates a contract, which will look something like this:
 
 The buyer purchases a contract by appending his details to the contract, which will look something like this:
 
-```JSON{
+```JSON
+{
     "stage01_merchant": {
         "metadata": {
             "obcv": "0.0.2",
@@ -170,6 +171,14 @@ The buyer purchases a contract by appending his details to the contract, which w
         }
     }
 }
+```
+
+### Stage 03: The Notary
+
+The notary appends their information and multisignature escrow details to the contract, like so:
+
+```JSON
+
 ```
 
 
