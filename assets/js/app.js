@@ -6,7 +6,7 @@ var part1 = angular.module('part1', []);
 part1.controller('Working',
     function ($scope) {
         $scope.peek1 = false;
-        $scope.peek2 = true;
+        $scope.peek2 = false;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
         };
@@ -42,7 +42,6 @@ part1.controller('Working',
             var dudeden = JSON.stringify({ stage01_merchant: { metadata: {obcv: "0.0.2", category: "Physical item", subcategory: "Fixed Price", nonce: nonce, expiration_date: metadataExpDate}, item_data: {title: itemTitle, description: itemDescription, price: {btc: itemPrice, fiat: {price: itemFiatPrice, currency: itemFiatXE}}, image_link: itemImage, image_hash: itemImageHash, condition: itemCondition, quantity: itemQuantity, keywords: itemKeywords, region: itemRegion, estimated_delivery: itemEstDelivery}, merchant: {guid: merchantGUID, handle: merchantHandle, legal_address: merchantLegalAddress, pubkeys: {pgp: merchantPGPPubkey, bitcoin_pubkey: merchantECPubkey}}}, signatures: {merchant_sig: merchantDigiSig, buyer_sig: ""}});
             $scope.newcontract = JSON.parse(dudeden);
             $scope.display1 = JSON.stringify($scope.newcontract, null, 4);
-            console.log($scope.stage01hash);
         };
         $scope.stage01_verify = function () {
             $scope.stage01hash = sha256_digest($("#merchanthash").text());
@@ -71,7 +70,7 @@ part1.controller('Working',
             $scope.display2 = JSON.stringify(clash, null, 4);
         };
         $scope.stage02_verify = function () {
-            $scope.stage01hash = sha256_digest($("#buyerhash").text());
+            $scope.stage02hash = sha256_digest($("#buyerhash").text());
             var stage02_publickey = $("#stage02_pubkey").text();
             var publickey2 = openpgp.key.readArmored(stage02_publickey).keys[0];
             console.log(publickey2);
