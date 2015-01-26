@@ -91,15 +91,15 @@
 		<ul class="nav navbar-nav">
 			<li><a href="#" ng-click="home()">Home</a></li>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">OpenBazaar Contracts <b class="caret"></b></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Physical Goods Contract <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li class="dropdown-header">Fixed Price</li>
-					<li><a href="#" ng-click="toggle1()">1. Create contract</a></li>
-					<li><a href="#" ng-click="toggle2()">2. Buy contract</a></li>
-					<li><a href="#" ng-click="toggle3()">3. Notarise contract</a></li>
-					<li><a href="#" ng-click="toggle5()">4. Notify escrow funding</a></li>
-					<li><a href="#" ng-click="toggle6()">5. Notify item shipped</a></li>
-					<li><a href="#" ng-click="toggle7()">6. Create receipt</a></li>
+					<li class="dropdown-header">Stages</li>
+					<li><a href="#" ng-click="toggle1()">1. <b>Merchant:</b>  Create contract</a></li>
+					<li><a href="#" ng-click="toggle2()">2. <b>Buyer:</b>  Buy contract</a></li>
+					<li><a href="#" ng-click="toggle3()">3. <b>Notary:</b>  Notarise contract</a></li>
+					<li><a href="#" ng-click="toggle5()">4. <b>Buyer:</b>  Fund escrow</a></li>
+					<li><a href="#" ng-click="toggle6()">5. <b>Merchant:</b>  Ship item</a></li>
+					<li><a href="#" ng-click="toggle7()">6. <b>Buyer:</b>  Release funds to merchant</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -229,7 +229,8 @@
 						<label class="control-label">Quantity</label>
 					</div>
 					<div class="col-lg-9">
-						<input type="text" class="form-control " id="item_quantity" ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling?" >
+						<input type="text" class="form-control " id="item_quantity" ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling in this contract?" >
+						<span class="help-block"><b>Note:</b> the contract the price is to purchase the total number of units of the item.</span>
 					</div>
 				</div>
 
@@ -386,7 +387,7 @@
 	<div class="row">
 
 		<h2><i>OpenBazaar</i> Raw Contract</h2>
-		<br />
+		<hr>
 		<pre id="createcontract" ng-model="createcontract" style="background-color:white;">{{display1}}</pre>
 
 	</div>
@@ -554,7 +555,7 @@
 		<div class="row">
 
 			<h2><i>OpenBazaar</i> Raw Contract</h2>
-			<br />
+			<hr>
 			<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display2}}</pre>
 
 		</div>
@@ -749,7 +750,7 @@
 		<div class="row">
 
 			<h2><i>OpenBazaar</i> Raw Contract</h2>
-			<br />
+			<hr>
 			<pre id="createcontract" ng-model="debuyercontract" style="background-color:white;">{{display3}}</pre>
 
 		</div>
