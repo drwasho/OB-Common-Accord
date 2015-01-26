@@ -327,48 +327,39 @@
 				<!-- #### MERCHANT Digital Signatures #### -->
 				<h4>Digital Signatures</h4>
 
-				<div class="form-group">
+				<label class="control-label">Merchant Digital Signature</label>
 
-					<div class="col-lg-3">
-						<label class="control-label">Merchant Digital Signature</label>
+				<p></p>
+
+				<!-- This is what you're supposed to digitally sign -->
+				<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+				<p></p>
+				<pre class="wordwrap" id="merchanthash">{{newcontract.stage01_merchant}}</pre>
+				<br />
+
+				<!-- This is the hash of Stage 01 Merchant Part -->
+				<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
+				<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
+				<br />
+
+				<!-- Enter Digital Signature -->
+				<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
+				<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+				<br />
+
+				<div class="row">
+					<div class="col-lg-6">
+						<span class="help-block">Merchant's Public Key</span>
+						<pre class="wordwrap" id="stage01_pubkey" style="font-size: 10px">{{newcontract.stage01_merchant.merchant.pubkeys.pgp}}</pre>
 					</div>
-
-					<div class="col-lg-9">
-
-						<p></p>
-
-						<!-- This is what you're supposed to digitally sign -->
-						<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-						<p></p>
-						<pre class="wordwrap" id="merchanthash">{{newcontract.stage01_merchant}}</pre>
-						<br />
-
-						<!-- This is the hash of Stage 01 Merchant Part -->
-						<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
-						<input class="form-control" type="text" value="{{stage01hash}}" disabled="">
-						<br />
-
-						<!-- Enter Digital Signature -->
-						<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
-						<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-						<br />
-
-						<div class="row">
-							<div class="col-lg-6">
-								<span class="help-block">Merchant's Public Key</span>
-								<pre class="wordwrap" id="stage01_pubkey" style="font-size: 10px">{{newcontract.stage01_merchant.merchant.pubkeys.pgp}}</pre>
-							</div>
-							<div class="col-lg-6">
-								<span class="help-block">Merchant's Digital Signature</span>
-								<pre class="wordwrap" id="stage01_merchantsig" style="font-size: 10px">{{newcontract.signatures.merchant_sig}}</pre>
-							</div>
-						</div>
-
-						<p></p>
-
+					<div class="col-lg-6">
+						<span class="help-block">Merchant's Digital Signature</span>
+						<pre class="wordwrap" id="stage01_merchantsig" style="font-size: 10px">{{newcontract.signatures.merchant_sig}}</pre>
 					</div>
+				</div>
 
-				</div> <!-- End of Form Group -->
+				<p></p>
+
 			</div> <!-- End of Start() -->
 
 			<div>
@@ -491,51 +482,44 @@
 							</div>
 							<!-- End of buyer div -->
 
+							<br />
+
 							<!-- #### BUYER Digital Signatures #### -->
 							<h4>Digital Signatures</h4>
 
-							<div class="form-group">
 
-								<div class="col-lg-3">
-									<label class="control-label">Buyer Digital Signature</label>
+							<label class="control-label">Buyer Digital Signature</label>
+
+							<p></p>
+
+							<!-- This is what you're supposed to digitally sign -->
+							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+							<p></p>
+							<pre class="wordwrap" id="buyerhash">{{buyercontract.stage01_merchant}}</pre> <!-- Stage 01 Merchant part to either digitally sign, or hash. -->
+							<br />
+
+							<!-- This is the hash of Stage 01 Merchant Part -->
+							<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to <b>buy</b>)</span></p>
+							<input class="form-control" type="text" value="{{stage02hash}}" disabled="">
+							<br />
+
+							<!-- Enter Digital Signature -->
+							<span class="help-block">By entering your digital signature, you are declaring your intention to <b>buy</b> the item in this contract!</span>
+							<textarea class="form-control" id="buyer_digisig" ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+							<br />
+
+							<div class="row">
+								<div class="col-lg-6">
+									<span class="help-block">Buyer's Public Key</span>
+									<pre class="wordwrap" id="stage02_pubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
 								</div>
-
-								<div class="col-lg-9">
-
-									<p></p>
-
-									<!-- This is what you're supposed to digitally sign -->
-									<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-									<p></p>
-									<pre class="wordwrap" id="buyerhash">{{buyercontract.stage01_merchant}}</pre> <!-- Stage 01 Merchant part to either digitally sign, or hash. -->
-									<br />
-
-									<!-- This is the hash of Stage 01 Merchant Part -->
-									<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to <b>buy</b>)</span></p>
-									<input class="form-control" type="text" value="{{stage02hash}}" disabled="">
-									<br />
-
-									<!-- Enter Digital Signature -->
-									<span class="help-block">By entering your digital signature, you are declaring your intention to <b>buy</b> the item in this contract!</span>
-									<textarea class="form-control" id="buyer_digisig" ng-model="buyer_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-									<br />
-
-									<div class="row">
-										<div class="col-lg-6">
-											<span class="help-block">Buyer's Public Key</span>
-											<pre class="wordwrap" id="stage02_pubkey" style="font-size: 10px">{{buyercontract.stage02_buyer.pubkeys.pgp}}</pre>
-										</div>
-										<div class="col-lg-6">
-											<span class="help-block">Buyer's Digital Signature</span>
-											<pre class="wordwrap" id="stage02_buyersig" style="font-size: 10px">{{buyercontract.signatures.buyer_sig}}</pre>
-										</div>
-									</div>
-
-									<p></p>
-
+								<div class="col-lg-6">
+									<span class="help-block">Buyer's Digital Signature</span>
+									<pre class="wordwrap" id="stage02_buyersig" style="font-size: 10px">{{buyercontract.signatures.buyer_sig}}</pre>
 								</div>
+							</div>
 
-							</div> <!-- End of digital signatures -->
+							<p></p>
 
 						</div> <!-- End of start2() -->
 
@@ -685,53 +669,48 @@
 
 							</div> <!-- End of Escrow Details Div -->
 
+							<br />
+
 							<!-- #### Notary Digital Signatures #### -->
 							<h4>Digital Signatures</h4>
 
-							<div class="form-group">
+							<div>
+								<label class="control-label">Notary Digital Signature</label>
 
-								<div class="col-lg-3">
-									<label class="control-label">Notary Digital Signature</label>
-								</div>
+								<p></p>
 
-								<div class="col-lg-9">
+								<!-- This is what you're supposed to digitally sign -->
+								<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+								<p></p>
+								<pre class="wordwrap" id="notaryhash">{{notarycontract.stage01_merchant}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+								<br />
 
-									<p></p>
+								<!-- This is the hash of Stage 02 Buyer Part -->
+								<p><span class="help-block">SHA256 hash of "Stage 02: buyer Part" (i.e. this is a tamper-proof statement of what you want to <b>notarise</b>)</span></p>
+								<input class="form-control" type="text" value="{{stage03hash}}" disabled="">
+								<br />
 
-									<!-- This is what you're supposed to digitally sign -->
-									<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-									<p></p>
-									<pre class="wordwrap" id="notaryhash">{{notarycontract.stage01_merchant}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
-									<br />
+								<!-- Enter Digital Signature -->
+								<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
+								<textarea class="form-control" id="notary_digisig" ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+								<br />
 
-									<!-- This is the hash of Stage 02 Buyer Part -->
-									<p><span class="help-block">SHA256 hash of "Stage 02: buyer Part" (i.e. this is a tamper-proof statement of what you want to <b>notarise</b>)</span></p>
-									<input class="form-control" type="text" value="{{stage03hash}}" disabled="">
-									<br />
-
-									<!-- Enter Digital Signature -->
-									<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
-									<textarea class="form-control" id="notary_digisig" ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-									<br />
-
-									<div class="row">
-										<div class="col-lg-6">
-											<span class="help-block">Notary's Public Key</span>
-											<pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_notary.pubkeys.pgp}}</pre>
-										</div>
-										<div class="col-lg-6">
-											<span class="help-block">Buyer's Digital Signature</span>
-											<pre class="wordwrap" id="stage03_notarysig" style="font-size: 10px">{{notarycontract.signatures.notary_sig}}</pre>
-										</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<span class="help-block">Notary's Public Key</span>
+										<pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_notary.pubkeys.pgp}}</pre>
 									</div>
-
-									<p></p>
-
+									<div class="col-lg-6">
+										<span class="help-block">Buyer's Digital Signature</span>
+										<pre class="wordwrap" id="stage03_notarysig" style="font-size: 10px">{{notarycontract.signatures.notary_sig}}</pre>
+									</div>
 								</div>
 
-							</div> <!-- End of digital signatures -->
+								<p></p>
 
-						</div> <!-- End of start2() -->
+							</div>
+
+						</div> <!-- End of Start3() -->
 
 						<div>
 							<p></p>
