@@ -97,9 +97,9 @@
 					<li><a href="#" ng-click="toggle1()">1. <b>Merchant:</b>  Create contract</a></li>
 					<li><a href="#" ng-click="toggle2()">2. <b>Buyer:</b>  Buy contract</a></li>
 					<li><a href="#" ng-click="toggle3()">3. <b>Notary:</b>  Notarise contract</a></li>
-					<li><a href="#" ng-click="toggle5()">4. <b>Buyer:</b>  Fund escrow</a></li>
-					<li><a href="#" ng-click="toggle6()">5. <b>Merchant:</b>  Ship item</a></li>
-					<li><a href="#" ng-click="toggle7()">6. <b>Buyer:</b>  Release funds to merchant</a></li>
+					<li><a href="#" ng-click="toggle4()">4. <b>Buyer:</b>  Fund escrow</a></li>
+					<li><a href="#" ng-click="toggle5()">5. <b>Merchant:</b>  Ship item</a></li>
+					<li><a href="#" ng-click="toggle6()">6. <b>Buyer:</b>  Release funds to merchant</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -562,7 +562,7 @@
 
 	</div> <!-- End of Peek 2 -->
 
-	<!-- # 2. Buy Contract # -->
+<!-- # 3. Notarise Contract # -->
 <div ng-show="peek3">
 
 		<div class="row">
@@ -656,8 +656,7 @@
 
 								<br />
 
-							</div>
-							<!-- End of buyer div -->
+							</div> <!-- End of Buyer Details Div -->
 
 							<!-- Escrow -->
 							<div>
@@ -684,7 +683,7 @@
 									</div>
 								</div>
 
-							</div>
+							</div> <!-- End of Escrow Details Div -->
 
 							<!-- #### Notary Digital Signatures #### -->
 							<h4>Digital Signatures</h4>
@@ -718,7 +717,7 @@
 									<div class="row">
 										<div class="col-lg-6">
 											<span class="help-block">Notary's Public Key</span>
-											<pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_buyer.pubkeys.pgp}}</pre>
+											<pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_notary.pubkeys.pgp}}</pre>
 										</div>
 										<div class="col-lg-6">
 											<span class="help-block">Buyer's Digital Signature</span>
@@ -755,9 +754,120 @@
 
 		</div>
 
-	</div> <!-- End of Peek 2 -->
+</div> <!-- End of Peek 3 -->
 
-<hr />
+<!-- # 4. Fund Escrow Contract # -->
+<div ng-show="peek4">
+
+	<div class="row">
+		<h2>Fund a Multisignature Escrow Address</h2>
+		<hr>
+	</div>
+
+	<div class="row">
+		<div class="well bs-component col-lg-12">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div ng-keyup="start4()">
+
+						<h3>Stage 04: Buyer Funds Escrow</h3>
+						<hr />
+
+						<!-- Escrow Funding Evidence -->
+						<div>
+
+							<h4>Reference Contract</h4>
+
+							<!-- Import contract -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label"><b>OpenBazaar Contract</b></label>
+									<span class="help-block" style="font-size:12px">Triple-signed contract (i.e. signed by merchant, buyer and notary)</span>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" ng-model="triplesignedcontract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
+								</div>
+							</div>
+
+							<!-- Transaction Evidence -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Block Header</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="block_header" ng-model="block_header"  autocomplete="off" placeholder="Paste in the block header" >
+									<span class="help-block" style="font-size:12px">This is the reference to the transaction demonstrating that the multisignature escrow address, indicated in <b>Stage 03: Notary</b> has been funded appropriately.</span>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Buyer Digital Signature -->
+						<div>
+
+							<h4>Digital Signature</h4>
+
+							<!-- This is what you're supposed to digitally sign -->
+							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+							<p></p>
+							<pre class="wordwrap" id="escrowhash">{{escrowfund.stage03_notary.escrow}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+							<br />
+
+							<!-- This is the SHA256 hash of escrow details -->
+							<p><span class="help-block">SHA256 hash of escrow details found in Stage 03 (i.e. this is a tamper-proof statement of what you <b>have funded</b>)</span></p>
+							<input class="form-control" type="text" value="{{stage04hash}}" disabled="">
+							<br />
+
+							<!-- Enter Digital Signature -->
+							<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
+							<textarea class="form-control" id="buyer_escrow_digisig" ng-model="buyer_escrow_digisig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+							<br />
+
+							<div class="row">
+								<div class="col-lg-6">
+									<span class="help-block">Buyer's Public Key</span>
+									<pre class="wordwrap" id="stage04_pubkey" style="font-size: 10px">{{escrowfund.stage02_buyer.pubkeys.pgp}}</pre>
+								</div>
+								<div class="col-lg-6">
+									<span class="help-block">Buyer's Digital Signature</span>
+									<pre class="wordwrap" id="stage04_buyersig" style="font-size: 10px">{{escrowfund.stage04_escrowfunding.signatures.pgp}}</pre>
+								</div>
+							</div>
+
+							<p></p>
+
+						</div>
+
+						<br />
+
+					</div> <!-- End of start4() -->
+
+					<div>
+						<p></p>
+						<button type="button" ng-click="stage04_verify()" class="btn btn-primary" >Verify</button>
+						<br />
+						<!-- TEMP: Check of success or failure -->
+						<h4>{{check4}}</h4>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<h2><i>OpenBazaar</i> Raw Contract</h2>
+		<hr>
+		<pre id="escrowfundcontract" ng-model="escrowfundcontract" style="background-color:white;">{{display4}}</pre>
+
+	</div>
+
+</div> <!-- End of Peek 4 -->
+
+
+<hr>
 
 <!-- Footer Image -->
 <div class="row">

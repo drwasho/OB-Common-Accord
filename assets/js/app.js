@@ -7,25 +7,37 @@ part1.controller('Working',
     function ($scope) {
         $scope.peek1 = false;
         $scope.peek2 = false;
+        $scope.peek3 = false;
+        $scope.peek4 = true;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = false;
+            $scope.peek4 = false;
         };
         $scope.toggle1 = function () {
             $scope.peek1 = true;
             $scope.peek2 = false;
             $scope.peek3 = false;
+            $scope.peek4 = false;
         };
         $scope.toggle2 = function () {
             $scope.peek1 = false;
             $scope.peek2 = true;
             $scope.peek3 = false;
+            $scope.peek4 = false;
         };
         $scope.toggle3 = function () {
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = true;
+            $scope.peek4 = false;
+        };
+        $scope.toggle4 = function () {
+            $scope.peek1 = false;
+            $scope.peek2 = false;
+            $scope.peek3 = false;
+            $scope.peek4 = true;
         };
         var nonce = Math.floor((Math.random() * 1000000000000000) + 1);
         $scope.start = function () {
@@ -102,7 +114,7 @@ part1.controller('Working',
             var notaryDigiSig = notary_digisig.value;
             var multisigescrow = multisigaddr.value;
             var multisigredemption = multisigredeem.value;
-            thunder.stage03_buyer = { guid: notaryGUID, handle: notaryHandle, legal_address: notaryLegalAddress, pubkeys: {pgp: notaryPGPPubkey, secp256k1_uncompressed: notaryECPubkey}, escrow: {multisig_address: multisigescrow, multisig_redemption_script: multisigredemption}};
+            thunder.stage03_notary = { guid: notaryGUID, handle: notaryHandle, legal_address: notaryLegalAddress, pubkeys: {pgp: notaryPGPPubkey, secp256k1_uncompressed: notaryECPubkey}, escrow: {multisig_address: multisigescrow, multisig_redemption_script: multisigredemption}};
             thunder.signatures.notary_sig = notaryDigiSig;
             $scope.notarycontract = thunder;
             $scope.display3 = JSON.stringify(thunder, null, 4);
@@ -117,6 +129,27 @@ part1.controller('Working',
             console.log(signature3);
             openpgp.verifyClearSignedMessage(publickey3, signature3).then(function(sigCheck) {
                 $scope.check3 = sigCheck.signatures[0].valid;
+            });
+        };
+        $scope.start4 = function () {
+            var stage04 = JSON.parse($scope.triplesignedcontract);
+            console.log(stage04);
+            var blockHeader = block_header.value;
+            var buyerDigitalSig = buyer_escrow_digisig.value;
+            stage04.stage04_escrowfunding = { funding_evidence: {block_header: blockHeader}, signatures: {pgp: buyerDigitalSig}};
+            $scope.escrowfund = stage04;
+            $scope.display4 = JSON.stringify(stage04, null, 4);
+        };
+        $scope.stage04_verify = function () {
+            $scope.stage04hash = sha256_digest($("#escrowhash").text());
+            var stage04_publickey = $("#stage04_pubkey").text();
+            var publickey4 = openpgp.key.readArmored(stage04_publickey).keys[0];
+            console.log(publickey4);
+            var stage04_signature = $("#stage04_buyersig").text();
+            var signature4 = openpgp.cleartext.readArmored(stage04_signature);
+            console.log(signature4);
+            openpgp.verifyClearSignedMessage(publickey4, signature4).then(function(sigCheck) {
+                $scope.check4 = sigCheck.signatures[0].valid;
             });
         };
     });
