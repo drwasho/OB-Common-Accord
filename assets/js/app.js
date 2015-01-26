@@ -8,7 +8,7 @@ part1.controller('Working',
         $scope.peek1 = false;
         $scope.peek2 = false;
         $scope.peek3 = false;
-        $scope.peek4 = true;
+        $scope.peek4 = false;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
             $scope.peek2 = false;
