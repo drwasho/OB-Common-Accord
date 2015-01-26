@@ -880,6 +880,7 @@
 							</div>
 
 							<br />
+
 							<h4>Shipping Details</h4>
 
 							<!-- Shipping details -->
@@ -913,6 +914,21 @@
 								</div>
 							</div>
 
+							<br />
+
+							<h4>Release funds to merchant</h4>
+
+							<!-- Tx details -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Signed Transaction</label>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" class="form-control " id="merchant_signed_tx" ng-model="merchant_signed_tx"  autocomplete="off" placeholder="Paste in signed transaction (Hex)." rows="8"></textarea>
+									<span class="help-block" style="font-size:12px">A signed transaction (in Hex format) releasing funds from the multisig to the merchant (assuming that the shippment goes well and the buyer is satisfied).</span>
+								</div>
+							</div>
+
 						</div>
 
 						<!-- Buyer Digital Signature -->
@@ -923,7 +939,7 @@
 							<!-- This is what you're supposed to digitally sign -->
 							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
 							<p></p>
-							<pre class="wordwrap" id="shippinghash">{{shipping.stage05_shippment.shipping_info}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+							<pre class="wordwrap" id="shippinghash">{{shipping.stage05_shipment.shipment.shipping_info}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
 							<br />
 
 							<!-- This is the SHA256 hash of escrow details -->
@@ -944,7 +960,7 @@
 								</div>
 								<div class="col-lg-6">
 									<span class="help-block">Merchant's Digital Signature</span>
-									<pre class="wordwrap" id="stage05_buyersig" style="font-size: 10px">{{shipping.stage05_shippment.signatures.pgp}}</pre>
+									<pre class="wordwrap" id="stage05_buyersig" style="font-size: 10px">{{shipping.stage05_shipment.signatures.pgp}}</pre>
 								</div>
 							</div>
 
