@@ -9,35 +9,53 @@ part1.controller('Working',
         $scope.peek2 = false;
         $scope.peek3 = false;
         $scope.peek4 = false;
+        $scope.peek5 = true;
+
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = false;
             $scope.peek4 = false;
+            $scope.peek5 = false;
+
         };
         $scope.toggle1 = function () {
             $scope.peek1 = true;
             $scope.peek2 = false;
             $scope.peek3 = false;
             $scope.peek4 = false;
+            $scope.peek5 = false;
+
         };
         $scope.toggle2 = function () {
             $scope.peek1 = false;
             $scope.peek2 = true;
             $scope.peek3 = false;
             $scope.peek4 = false;
+            $scope.peek5 = false;
+
         };
         $scope.toggle3 = function () {
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = true;
             $scope.peek4 = false;
+            $scope.peek5 = false;
+
         };
         $scope.toggle4 = function () {
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = false;
             $scope.peek4 = true;
+            $scope.peek5 = false;
+        };
+        $scope.toggle5 = function () {
+            $scope.peek1 = false;
+            $scope.peek2 = false;
+            $scope.peek3 = false;
+            $scope.peek4 = false;
+            $scope.peek5 = true;
         };
         var nonce = Math.floor((Math.random() * 1000000000000000) + 1);
         $scope.start = function () {
@@ -150,6 +168,29 @@ part1.controller('Working',
             console.log(signature4);
             openpgp.verifyClearSignedMessage(publickey4, signature4).then(function(sigCheck) {
                 $scope.check4 = sigCheck.signatures[0].valid;
+            });
+        };
+        $scope.start5 = function () {
+            var stage05 = JSON.parse($scope.stage04contract);
+            console.log(stage05);
+            var shipperID = shipper_id.value;
+            var shipperAddr = shipper_addr.value;
+            var shipperTracker = shipper_tracker.value;
+            var stage05_merchantDigitalSig = merchant_shipping_digisig.value;
+            stage05.stage05_shippment = { shipping_info: { shipper_ID: shipperID, shipper_address: shipperAddr, shipping_tracking_number: shipperTracker}, signatures: {pgp: stage05_merchantDigitalSig}};
+            $scope.shipping = stage05;
+            $scope.display5 = JSON.stringify(stage05, null, 4);
+        };
+        $scope.stage05_verify = function () {
+            $scope.stage05hash = sha256_digest($("#shippinghash").text());
+            var stage05_publickey = $("#stage05_pubkey").text();
+            var publickey5 = openpgp.key.readArmored(stage05_publickey).keys[0];
+            console.log(publickey5);
+            var stage05_signature = $("#stage05_buyersig").text();
+            var signature5 = openpgp.cleartext.readArmored(stage05_signature);
+            console.log(signature5);
+            openpgp.verifyClearSignedMessage(publickey5, signature5).then(function(sigCheck) {
+                $scope.check5 = sigCheck.signatures[0].valid;
             });
         };
     });

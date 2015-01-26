@@ -845,6 +845,139 @@
 
 </div> <!-- End of Peek 4 -->
 
+<!-- # 5. Ship Item # -->
+<div ng-show="peek5">
+
+	<div class="row">
+		<h2>Ship an Item</h2>
+		<hr>
+	</div>
+
+	<div class="row">
+		<div class="well bs-component col-lg-12">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div ng-keyup="start5()">
+
+						<h3>Stage 05: Merchant Ships and Item</h3>
+						<hr />
+
+						<!-- Escrow Funding Evidence -->
+						<div>
+
+							<h4>Reference Contract</h4>
+
+							<!-- Import contract -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label"><b>OpenBazaar Contract</b></label>
+									<span class="help-block" style="font-size:12px">Contract as of Stage 04</span>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" ng-model="stage04contract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
+								</div>
+							</div>
+
+							<br />
+							<h4>Shipping Details</h4>
+
+							<!-- Shipping details -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Shipper</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="shipper_id" ng-model="shipper_id"  autocomplete="off" placeholder="What shipping company did you use?" >
+									<span class="help-block" style="font-size:12px">What is the name of the shipping company?</span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Shipper Legal Address</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="shipper_addr" ng-model="shipper_addr"  autocomplete="off" placeholder="What is the shipper's legal address? (CommonAccord)" >
+									<span class="help-block" style="font-size:12px">What is the legal address of the shipping company?</span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Shipment Tracking Number</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="shipper_tracker" ng-model="shipper_tracker"  autocomplete="off" placeholder="What is the tracking number of the item?" >
+									<span class="help-block" style="font-size:12px">What is the tracking number of the item shipped?</span>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Buyer Digital Signature -->
+						<div>
+
+							<h4>Digital Signature</h4>
+
+							<!-- This is what you're supposed to digitally sign -->
+							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+							<p></p>
+							<pre class="wordwrap" id="shippinghash">{{shipping.stage05_shippment.shipping_info}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+							<br />
+
+							<!-- This is the SHA256 hash of escrow details -->
+							<p><span class="help-block">SHA256 hash of escrow details found in Stage 03 (i.e. this is a tamper-proof statement of what you <b>have shipped</b>)</span></p>
+							<input class="form-control" type="text" value="{{stage05hash}}" disabled="">
+							<br />
+
+							<!-- Enter Digital Signature -->
+							<span class="help-block">By entering your digital signature, you are declaring that you have <b>shipped the item</b> in this contract!</span>
+							<textarea class="form-control" id="merchant_shipping_digisig" ng-model="merchant_shipping_digisig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+							<br />
+
+							<!-- Signature Verification -->
+							<div class="row">
+								<div class="col-lg-6">
+									<span class="help-block">Merchant's Public Key</span>
+									<pre class="wordwrap" id="stage05_pubkey" style="font-size: 10px">{{shipping.stage01_merchant.merchant.pubkeys.pgp}}</pre>
+								</div>
+								<div class="col-lg-6">
+									<span class="help-block">Merchant's Digital Signature</span>
+									<pre class="wordwrap" id="stage05_buyersig" style="font-size: 10px">{{shipping.stage05_shippment.signatures.pgp}}</pre>
+								</div>
+							</div>
+
+							<p></p>
+
+						</div>
+
+						<br />
+
+					</div> <!-- End of start4() -->
+
+					<div>
+						<p></p>
+						<button type="button" ng-click="stage05_verify()" class="btn btn-primary" >Verify</button>
+						<br />
+						<!-- TEMP: Check of success or failure -->
+						<h4>{{check5}}</h4>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<h2><i>OpenBazaar</i> Raw Contract</h2>
+		<hr>
+		<pre id="shippingcontract" ng-model="shippingcontract" style="background-color:white;">{{display5}}</pre>
+
+	</div>
+
+</div> <!-- End of Peek 5 -->
 
 <hr>
 
