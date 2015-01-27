@@ -995,6 +995,168 @@
 
 </div> <!-- End of Peek 5 -->
 
+<!-- # 6. Ship Item # -->
+<div ng-show="peek6">
+
+	<div class="row">
+		<h2>Release Funds to the Merchant</h2>
+		<hr>
+	</div>
+
+	<div class="row">
+		<div class="well bs-component col-lg-12">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<div ng-keyup="start6()">
+
+						<h3>Stage 06: Buyer releases funds from escrow to merchant</h3>
+						<hr>
+
+						<!-- Escrow Funding Evidence -->
+						<div>
+
+							<h4>Reference Contract</h4>
+
+							<!-- Import contract -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label"><b>OpenBazaar Contract</b></label>
+									<span class="help-block" style="font-size:12px">Contract as of Stage 05</span>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" ng-model="stage05contract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
+								</div>
+							</div>
+
+							<br />
+
+							<h4>Complete Contract</h4>
+
+							<!-- Shipping details -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Status</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="contractstatus" ng-model="contractstatus"  autocomplete="off" placeholder="What is the status of the contract? Complete or Disputed?" />
+									<span class="help-block" style="font-size:12px">If the item arrived and everything looks good, set the status as 'Complete'. If there is a problem, set the status as 'Disputed'.</span>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Message</label>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" class="form-control " id="message" ng-model="message"  autocomplete="off" placeholder="Do you have a message for the merchant?" rows="3" ></textarea>
+									<span class="help-block" style="font-size:12px">Leave a simple message for the merchant..</span>
+								</div>
+							</div>
+
+							<br />
+
+							<h4>Release Funds to Merchant</h4>
+
+							<!-- 1 of 3 Tx details -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">1 of 3 Signed Tx</label>
+								</div>
+								<div class="col-lg-9">
+									<span class="help-block" style="font-size:12px">This is a signed transaction releasing funds from the multisignature escrow address to the merchant. It has 1 out of the minimum of 2 signatures required. Sign this transaction with your Bitcoin key, broadcast it to the network and paste it below.</span>
+									<textarea class="form-control wordwrap" rows="6" disabled="">{{release.stage05_shipment.shipment.releasefunds.signed_tx}}</textarea>
+								</div>
+							</div>
+
+							<!-- 2 of 3 Tx details -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Signed Transaction (2 of 3)</label>
+								</div>
+								<div class="col-lg-9">
+									<textarea type="text" class="form-control " id="buyer_signed_tx" ng-model="buyer_signed_tx"  autocomplete="off" placeholder="Paste in signed transaction (Hex)." rows="8"></textarea>
+									<span class="help-block" style="font-size:12px">A signed transaction (in Hex format) releasing funds from the multisig to the merchant (assuming that the shippment goes well and the buyer is satisfied).</span>
+								</div>
+							</div>
+
+							<!-- Blockheader -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Block Header</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="release_blockheader" ng-model="release_blockheader" autocomplete="off" placeholder="Paste in the block header for the transaction releasing funds back to the merchant." />
+									<span class="help-block" style="font-size:12px">If the contract is 'Complete', specific the block header that gives evidence to the release of funds from the multisignature escrow address to the merchant.</span>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- Buyer Digital Signature -->
+						<div>
+
+							<h4>Digital Signature</h4>
+
+							<!-- This is what you're supposed to digitally sign -->
+							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
+							<p></p>
+							<textarea class="form-control wordwrap" id="releasehash" disabled="" rows="6">{{release.stage06_release.release_funds}}</textarea> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+							<br />
+
+							<!-- This is the SHA256 hash of escrow details -->
+							<p><span class="help-block">SHA256 hash of releasing funds from escrow (i.e. this is a tamper-proof statement of <b>your transaction</b>)</span></p>
+							<input class="form-control" type="text" value="{{stage06hash}}" disabled="" />
+							<br />
+
+							<!-- Enter Digital Signature -->
+							<span class="help-block">By entering your digital signature, you are declaring that you have <b>shipped the item</b> in this contract!</span>
+							<textarea class="form-control" id="buyer_release_digisig" ng-model="buyer_release_digisig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+							<br />
+
+							<!-- Signature Verification -->
+							<div class="row">
+								<div class="col-lg-6">
+									<span class="help-block">Buyer's Public Key</span>
+									<pre class="wordwrap" id="stage06_pubkey" style="font-size: 10px">{{release.stage02_buyer.pubkeys.pgp}}</pre>
+								</div>
+								<div class="col-lg-6">
+									<span class="help-block">Merchant's Digital Signature</span>
+									<pre class="wordwrap" id="stage06_buyersig" style="font-size: 10px">{{release.stage06_release.signatures.pgp}}</pre>
+								</div>
+							</div>
+
+							<p></p>
+
+						</div>
+
+						<br />
+
+					</div> <!-- End of start6() -->
+
+					<div>
+						<p></p>
+						<button type="button" ng-click="stage06_verify()" class="btn btn-primary" >Verify</button>
+						<br />
+						<!-- TEMP: Check of success or failure -->
+						<h4>{{check6}}</h4>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<h2><i>OpenBazaar</i> Raw Contract</h2>
+		<hr>
+		<pre id="releasecontract" ng-model="releasecontract" style="background-color:white;">{{display6}}</pre>
+
+	</div>
+
+</div> <!-- End of Peek 6 -->
+
 <hr>
 
 <!-- Footer Image -->
@@ -1005,6 +1167,8 @@
 </div>
 
 <!-- End of second div container -->
+</div>
+</div>
 </div>
 
 <!-- Load my crap faster -->

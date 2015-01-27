@@ -10,12 +10,14 @@ part1.controller('Working',
         $scope.peek3 = false;
         $scope.peek4 = false;
         $scope.peek5 = false;
+        $scope.peek6 = true;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek1 = false;
             $scope.peek2 = false;
             $scope.peek3 = false;
             $scope.peek4 = false;
             $scope.peek5 = false;
+            $scope.peek6 = false;
         };
         $scope.toggle1 = function () {
             $scope.peek1 = true;
@@ -23,6 +25,7 @@ part1.controller('Working',
             $scope.peek3 = false;
             $scope.peek4 = false;
             $scope.peek5 = false;
+            $scope.peek6 = false;
         };
         $scope.toggle2 = function () {
             $scope.peek1 = false;
@@ -30,6 +33,7 @@ part1.controller('Working',
             $scope.peek3 = false;
             $scope.peek4 = false;
             $scope.peek5 = false;
+            $scope.peek6 = false;
         };
         $scope.toggle3 = function () {
             $scope.peek1 = false;
@@ -37,6 +41,7 @@ part1.controller('Working',
             $scope.peek3 = true;
             $scope.peek4 = false;
             $scope.peek5 = false;
+            $scope.peek6 = false;
         };
         $scope.toggle4 = function () {
             $scope.peek1 = false;
@@ -44,6 +49,7 @@ part1.controller('Working',
             $scope.peek3 = false;
             $scope.peek4 = true;
             $scope.peek5 = false;
+            $scope.peek6 = false;
         };
         $scope.toggle5 = function () {
             $scope.peek1 = false;
@@ -51,6 +57,15 @@ part1.controller('Working',
             $scope.peek3 = false;
             $scope.peek4 = false;
             $scope.peek5 = true;
+            $scope.peek6 = false;
+        };
+        $scope.toggle6 = function () {
+            $scope.peek1 = false;
+            $scope.peek2 = false;
+            $scope.peek3 = false;
+            $scope.peek4 = false;
+            $scope.peek5 = false;
+            $scope.peek6 = true;
         };
         var nonce = Math.floor((Math.random() * 1000000000000000) + 1);
         $scope.start = function () {
@@ -185,8 +200,32 @@ part1.controller('Working',
             var stage05_signature = $("#stage05_buyersig").text();
             var signature5 = openpgp.cleartext.readArmored(stage05_signature);
             console.log(signature5);
-            openpgp.verifyClearSignedMessage(publickey5, signature5).then(function(sigCheck) {
+            openpgp.verifyClearSignedMessage(publickey5, signature5).then(function (sigCheck) {
                 $scope.check5 = sigCheck.signatures[0].valid;
+            });
+        };
+        $scope.start6 = function () {
+            var stage06 = JSON.parse($scope.stage05contract);
+            console.log(stage06);
+            var contractStatus = contractstatus.value;
+            var message2 = message.value;
+            var buyerSignedTx = buyer_signed_tx.value;
+            var releaseBlockheader = release_blockheader.value;
+            var stage06_buyerDigitalSig = buyer_release_digisig.value;
+            stage06.stage06_release = { release_funds: { contract_status: contractStatus, message: message2, signed_tx: buyerSignedTx, block_header: releaseBlockheader}, signatures: {pgp: stage06_buyerDigitalSig}};
+            $scope.release = stage06;
+            $scope.display6 = JSON.stringify(stage06, null, 4);
+        };
+        $scope.stage06_verify = function () {
+            $scope.stage06hash = sha256_digest($("#releasehash").text());
+            var stage06_publickey = $("#stage06_pubkey").text();
+            var publickey6 = openpgp.key.readArmored(stage06_publickey).keys[0];
+            console.log(publickey6);
+            var stage06_signature = $("#stage06_buyersig").text();
+            var signature6 = openpgp.cleartext.readArmored(stage06_signature);
+            console.log(signature6);
+            openpgp.verifyClearSignedMessage(publickey6, signature6).then(function(sigCheck) {
+                $scope.check6 = sigCheck.signatures[0].valid;
             });
         };
     });
