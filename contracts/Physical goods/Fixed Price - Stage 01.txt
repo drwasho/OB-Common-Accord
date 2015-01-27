@@ -1,0 +1,63 @@
+{
+    "stage01_merchant": {
+        "genesis": {
+            "metadata": {
+                "obcv": "0.0.2",
+                "category": "Physical item",
+                "subcategory": "Fixed Price",
+                "nonce": 533087014453486,
+                "expiration_date": ""
+            },
+            "item_data": {
+                "title": "",
+                "description": "a",
+                "price": {
+                    "btc": "",
+                    "fiat": {
+                        "price": "",
+                        "currency": ""
+                    }
+                },
+                "images": {
+                    "image1": {
+                        "image_link1": "",
+                        "image_hash1": ""
+                    },
+                    "image2": {
+                        "image_link2": "",
+                        "image_hash2": ""
+                    },
+                    "image3": {
+                        "image_link3": "",
+                        "image_hash3": ""
+                    },
+                    "image4": {
+                        "image_link4": "",
+                        "image_hash4": ""
+                    },
+                    "image5": {
+                        "image_link5": "",
+                        "image_hash5": ""
+                    }
+                },
+                "condition": "",
+                "quantity": "",
+                "keywords": "",
+                "region": "",
+                "estimated_delivery": ""
+            },
+            "merchant": {
+                "guid": "",
+                "handle": "",
+                "legal_address": "",
+                "pubkeys": {
+                    "pgp": "",
+                    "bitcoin_pubkey": ""
+                }
+            }
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    }
+}

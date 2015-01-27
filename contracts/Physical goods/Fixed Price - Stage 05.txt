@@ -1,0 +1,122 @@
+{
+    "stage01_merchant": {
+        "genesis": {
+            "metadata": {
+                "obcv": "0.0.2",
+                "category": "Physical item",
+                "subcategory": "Fixed Price",
+                "nonce": 533087014453486,
+                "expiration_date": ""
+            },
+            "item_data": {
+                "title": "",
+                "description": "",
+                "price": {
+                    "btc": "",
+                    "fiat": {
+                        "price": "",
+                        "currency": ""
+                    }
+                },
+                "images": {
+                    "image1": {
+                        "image_link1": "",
+                        "image_hash1": ""
+                    },
+                    "image2": {
+                        "image_link2": "",
+                        "image_hash2": ""
+                    },
+                    "image3": {
+                        "image_link3": "",
+                        "image_hash3": ""
+                    },
+                    "image4": {
+                        "image_link4": "",
+                        "image_hash4": ""
+                    },
+                    "image5": {
+                        "image_link5": "",
+                        "image_hash5": ""
+                    }
+                },
+                "condition": "",
+                "quantity": "",
+                "keywords": "",
+                "region": "",
+                "estimated_delivery": ""
+            },
+            "merchant": {
+                "guid": "",
+                "handle": "",
+                "legal_address": "",
+                "pubkeys": {
+                    "pgp": "",
+                    "bitcoin_pubkey": ""
+                }
+            }
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    },
+    "stage02_buyer": {
+        "buyer": {
+            "contract_to_buy": "",
+            "guid": "",
+            "handle": "",
+            "legal_address": "",
+            "pubkeys": {
+                "pgp": "",
+                "secp256k1_uncompressed": ""
+            }
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    },
+    "stage03_notary": {
+        "notary": {
+            "contract_to_notarise": "",
+            "guid": "",
+            "handle": "",
+            "legal_address": "",
+            "pubkeys": {
+                "pgp": "",
+                "secp256k1_uncompressed": ""
+            },
+            "escrow": {
+                "multisig_address": "",
+                "multisig_redemption_script": ""
+            }
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    },
+    "stage04_escrowfunding": {
+        "funding_evidence": {
+            "contract_to_fund_escrow": "",
+            "block_header": ""
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    },
+    "stage05_shipment": {
+        "shipment": {
+            "contract_for_shipping": "",
+            "shipping_info": {
+                "shipper_ID": "",
+                "shipper_address": "",
+                "shipping_tracking_number": ""
+            },
+            "releasefunds": {
+                "signed_tx": ""
+            }
+        },
+        "signatures": {
+            "pgp": ""
+        }
+    }
+}

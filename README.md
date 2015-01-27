@@ -1,4 +1,4 @@
-<img src="https://drwasho.github.io/OB-Commond-Accord/assets/img/OBCA.png"></img>
+<img src="https://drwasho.github.io/OB-Common-Accord/assets/img/OBCA.png"></img>
 
 # Getting started
 
@@ -19,8 +19,9 @@ This experimental tool is an example of how you can implement OpenBazaar contrac
 
 # Special Thanks
 
-+ Primavera De Filippi
-+ James G. Hazard
-+ Regan Lawton
++ Samuel Reed (strml)
++ Regan Lawton (reganlawton)
 + Delain Markos
 + Itsnotlupus
++ Primavera De Filippi
++ James G. Hazard
