@@ -412,11 +412,6 @@
 				<textarea class="wordwrap form-control" id="merchanthash" rows="6" disabled="">{{newcontract.stage01_merchant.genesis}}</textarea>
 				<br />
 
-				<!-- This is the hash of Stage 01 Merchant Part -->
-				<p><span class="help-block">SHA256 hash of "Stage 01: Merchant Part" (i.e. this is a tamper-proof statement of what you want to sell)</span></p>
-				<input class="form-control" type="text" value="{{stage01hash}}" disabled="" />
-				<br />
-
 				<!-- Enter Digital Signature -->
 				<span class="help-block">By entering your digital signature, you are declaring your intention to <b>sell</b> the item in this contract!</span>
 				<textarea class="form-control" id="merchant_digisig" ng-model="merchant_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
