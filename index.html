@@ -35,6 +35,7 @@
 
 <body>
 
+
 <!-- Style data -->
 <style>
 	.strokeme
@@ -73,6 +74,8 @@
 
 <!-- Navbar -->
 <div class="navbar navbar-default">
+
+	<a href="https://github.com/drwasho/OB-Common-Accord"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" ></a>
 
 	<div class="navbar-header">
 
@@ -179,7 +182,7 @@
 				<!-- Item Title -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Title</label>
+						<label class="control-label">Title:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="item_title" ng-model="item_title" autocomplete="off" placeholder="What is your item called?" >
@@ -189,7 +192,7 @@
 				<!-- Item Description -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Description</label>
+						<label class="control-label">Description:</label>
 					</div>
 					<div class="col-lg-9">
 						<textarea type="text" class="form-control " id="item_description" ng-model="item_description" autocomplete="off" placeholder="Tell us about your item"  rows="4"></textarea>
@@ -199,7 +202,7 @@
 				<!-- Item Price -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Price (BTC)</label>
+						<label class="control-label">Price (BTC):</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="item_price" ng-model="item_price" autocomplete="off" placeholder="Price of the item in Bitcoin" >
@@ -209,7 +212,7 @@
 				<!-- Item Price Fiat -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Price (fiat)</label>
+						<label class="control-label">Price (fiat):</label>
 					</div>
 					<div class="col-lg-6">
 						<input type="text" class="form-control" id="item_fiat_price" ng-model="item_fiat_price" autocomplete="off" placeholder="Price in fiat?" >
@@ -224,12 +227,12 @@
 				<!-- Item Image1 -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Image 1</label>
+						<label class="control-label">Item Image 1:</label>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<input type="text" class="form-control " id="item_image1" ng-model="item_image1" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_image_hash1" ng-model="item_image_hash1" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
@@ -237,12 +240,12 @@
 				<!-- Item Image2 -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Image 2</label>
+						<label class="control-label">Item Image 2:</label>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<input type="text" class="form-control " id="item_image2" ng-model="item_image2" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_image_hash2" ng-model="item_image_hash2" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
@@ -250,12 +253,12 @@
 				<!-- Item Image3 -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Image 3</label>
+						<label class="control-label">Item Image 3:</label>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<input type="text" class="form-control " id="item_image3" ng-model="item_image3" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_image_hash3" ng-model="item_image_hash3" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
@@ -263,12 +266,12 @@
 				<!-- Item Image4 -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Image 4</label>
+						<label class="control-label">Item Image 4:</label>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<input type="text" class="form-control " id="item_image4" ng-model="item_image4" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_image_hash4" ng-model="item_image_hash4" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
@@ -276,12 +279,12 @@
 				<!-- Item Image5 -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Image 5</label>
+						<label class="control-label">Item Image 5:</label>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<input type="text" class="form-control " id="item_image5" ng-model="item_image5" autocomplete="off" placeholder="Enter direct URL here" >
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_image_hash5" ng-model="item_image_hash5" autocomplete="off" placeholder="Enter SHA256 hash of the image" >
 					</div>
 				</div>
@@ -291,7 +294,7 @@
 				<!-- Item Condition -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Item Condition</label>
+						<label class="control-label">Item Condition:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="item_condition" ng-model="item_condition" autocomplete="off" placeholder="What is the item's condition?" >
@@ -301,7 +304,7 @@
 				<!-- Item Quantity -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Quantity</label>
+						<label class="control-label">Quantity:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="item_quantity" ng-model="item_quantity" autocomplete="off" placeholder="How many units of the item are you selling in this contract?" >
@@ -312,7 +315,7 @@
 				<!-- Item Keywords -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Keywords</label>
+						<label class="control-label">Keywords:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="item_keywords" ng-model="item_keywords" autocomplete="off" placeholder="Separate keywords with a comma!" >
@@ -322,7 +325,7 @@
 				<!-- Item Region and Delivery -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Region and Estimated Delivery</label>
+						<label class="control-label">Region and Estimated Delivery:</label>
 					</div>
 					<div class="col-lg-5">
 						<input type="text" class="form-control " id="item_region" ng-model="item_region" autocomplete="off" placeholder="Regions you can ship to" >
@@ -335,7 +338,7 @@
 				<!-- Expiration date -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Contract Expiration Date</label>
+						<label class="control-label">Contract Expiration Date:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="metadata_expdate" ng-model="metadata_expdate" autocomplete="off" placeholder="When is this contract invalid?" >
@@ -350,7 +353,7 @@
 				<!-- Guid -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Merchant GUID</label>
+						<label class="control-label">Merchant GUID:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="merchant_guid" ng-model="merchant_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
@@ -360,7 +363,7 @@
 				<!-- Handle -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Merchant Handle</label>
+						<label class="control-label">Merchant Handle:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="merchant_handle" ng-model="merchant_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
@@ -370,7 +373,7 @@
 				<!-- Legal Address -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Legal Address</label>
+						<label class="control-label">Legal Address:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="merchant_legaladdress" ng-model="merchant_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
@@ -380,7 +383,7 @@
 				<!-- PGP Public Key -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">PGP Pubkey</label>
+						<label class="control-label">PGP Pubkey:</label>
 					</div>
 					<div class="col-lg-9">
 						<textarea type="text" class="form-control " id="merchant_pgp_pubkey" ng-model="merchant_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
@@ -390,7 +393,7 @@
 				<!-- Bitcoin Public Key -->
 				<div class="form-group">
 					<div class="col-lg-3">
-						<label class="control-label">Bitcoin Pubkey</label>
+						<label class="control-label">Bitcoin Pubkey:</label>
 					</div>
 					<div class="col-lg-9">
 						<input type="text" class="form-control " id="merchant_secp256k1_pubkey" ng-model="merchant_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
@@ -488,12 +491,12 @@
 						<!-- Import -->
 						<div>
 
-							<h4>Purchase Contract</h4>
+							<h4>Reference Contract</h4>
 
 							<!-- Import contract -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">OpenBazaar Merchant Contract</label>
+									<label class="control-label">Stage 01 Contract:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="buycontract" ng-model="buycontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to purchase" rows="12"></textarea>
@@ -515,7 +518,7 @@
 							<!-- Guid -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Buyer GUID</label>
+									<label class="control-label">Buyer GUID:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="buyer_guid" ng-model="buyer_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
@@ -525,7 +528,7 @@
 							<!-- Handle -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Buyer Handle</label>
+									<label class="control-label">Buyer Handle:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="buyer_handle" ng-model="buyer_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
@@ -535,7 +538,7 @@
 							<!-- Legal Address -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Legal Address</label>
+									<label class="control-label">Legal Address:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="buyer_legaladdress" ng-model="buyer_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
@@ -545,7 +548,7 @@
 							<!-- PGP Public Key -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">PGP Pubkey</label>
+									<label class="control-label">PGP Pubkey:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" class="form-control " id="buyer_pgp_pubkey" ng-model="buyer_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
@@ -555,7 +558,7 @@
 							<!-- Bitcoin Public Key -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Bitcoin Pubkey</label>
+									<label class="control-label">Bitcoin Pubkey:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="buyer_secp256k1_pubkey" ng-model="buyer_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
@@ -659,12 +662,12 @@
 						<!-- Import -->
 						<div>
 
-							<h4>Purchase Contract</h4>
+							<h4>Reference Contract</h4>
 
 							<!-- Import contract -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">OpenBazaar Contract</label>
+									<label class="control-label">Stage 03 Contract</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="notarisecontract" ng-model="notarisecontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to notarise" rows="12"></textarea>
@@ -686,7 +689,7 @@
 							<!-- Guid -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Notary GUID</label>
+									<label class="control-label">Notary GUID:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="notary_guid" ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
@@ -696,7 +699,7 @@
 							<!-- Handle -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Buyer Handle</label>
+									<label class="control-label">Notary Handle:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="notary_handle" ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
@@ -706,7 +709,7 @@
 							<!-- Legal Address -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Legal Address</label>
+									<label class="control-label">Legal Address:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="notary_legaladdress" ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
@@ -716,7 +719,7 @@
 							<!-- PGP Public Key -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">PGP Pubkey</label>
+									<label class="control-label">PGP Pubkey:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" class="form-control " id="notary_pgp_pubkey" ng-model="notary_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
@@ -726,7 +729,7 @@
 							<!-- Bitcoin Public Key -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Bitcoin Pubkey</label>
+									<label class="control-label">Bitcoin Pubkey:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="notary_secp256k1_pubkey" ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
@@ -745,7 +748,7 @@
 							<!-- Multisig address -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Multisignature Address</label>
+									<label class="control-label">Multisignature Address:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" id="multisigaddr" ng-model="multisigaddr" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" />
@@ -755,7 +758,7 @@
 							<!-- Multisig redemption script -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Multisignature Redemption Script</label>
+									<label class="control-label">Multisignature Redemption Script:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="multisigredeem" ng-model="multisigredeem" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" rows="6"></textarea>
@@ -868,8 +871,7 @@
 							<!-- Import contract -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label"><b>OpenBazaar Contract</b></label>
-									<span class="help-block" style="font-size:12px">Triple-signed contract (i.e. signed by merchant, buyer and notary)</span>
+									<label class="control-label"><b>Stage 03 Contract:</b></label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="triplesignedcontract" ng-model="triplesignedcontract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
@@ -879,16 +881,31 @@
 								</div>
 							</div>
 
+							<br />
+							<h4>Fund Escrow and Indicate Shipping Address</h4>
+
 							<!-- Transaction Evidence -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Block Header</label>
+									<label class="control-label">Transaction ID:</label>
 								</div>
 								<div class="col-lg-9">
-									<input type="text" class="form-control " id="block_header" ng-model="block_header"  autocomplete="off" placeholder="Paste in the block header" >
+									<input type="text" class="form-control " id="txid" ng-model="txid"  autocomplete="off" placeholder="Paste in the transaction ID" >
 									<span class="help-block" style="font-size:12px">This is the reference to the transaction demonstrating that the multisignature escrow address, indicated in <b>Stage 03: Notary</b> has been funded appropriately.</span>
 								</div>
 							</div>
+
+							<!-- Ship To This Address -->
+							<div class="form-group">
+								<div class="col-lg-3">
+									<label class="control-label">Ship to Address:</label>
+								</div>
+								<div class="col-lg-9">
+									<input type="text" class="form-control " id="ship_to_address" ng-model="ship_to_address"  autocomplete="off" placeholder="Paste in a shipping address." />
+									<span class="help-block" style="font-size:12px">What address should the merchant ship the item to?</span>
+								</div>
+							</div>
+
 
 						</div>
 
@@ -900,11 +917,11 @@
 							<!-- This is what you're supposed to digitally sign -->
 							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
 							<p></p>
-							<pre class="wordwrap" id="escrowhash">{{escrowfund.stage04_escrowfunding.funding_evidence}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+							<pre class="wordwrap" id="escrowhash">{{escrowfund.stage04_escrowfunding.funding_evidence}}</pre>
 							<br />
 
 							<!-- Enter Digital Signature -->
-							<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
+							<span class="help-block">By entering your digital signature, you are declaring you have <b>funded</b> this contract and indicated a shipping address for the item to be delivered!</span>
 							<textarea class="form-control" id="buyer_escrow_digisig" ng-model="buyer_escrow_digisig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
 							<br />
 
@@ -988,8 +1005,7 @@
 							<!-- Import contract -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label"><b>OpenBazaar Contract</b></label>
-									<span class="help-block" style="font-size:12px">Contract as of Stage 04</span>
+									<label class="control-label"><b>Stage 04 Contract</b></label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="stage04contract" ng-model="stage04contract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
@@ -1006,7 +1022,7 @@
 							<!-- Shipping details -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Shipper</label>
+									<label class="control-label">Shipper:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="shipper_id" ng-model="shipper_id"  autocomplete="off" placeholder="What shipping company did you use?" >
@@ -1016,7 +1032,7 @@
 
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Shipper Legal Address</label>
+									<label class="control-label">Shipper Legal Address:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="shipper_addr" ng-model="shipper_addr"  autocomplete="off" placeholder="What is the shipper's legal address? (CommonAccord)" >
@@ -1026,7 +1042,7 @@
 
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Shipment Tracking Number</label>
+									<label class="control-label">Shipment Tracking Number:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="shipper_tracker" ng-model="shipper_tracker"  autocomplete="off" placeholder="What is the tracking number of the item?" >
@@ -1041,7 +1057,7 @@
 							<!-- Tx details -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Signed Transaction</label>
+									<label class="control-label">Signed Transaction:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" class="form-control " id="merchant_signed_tx" ng-model="merchant_signed_tx"  autocomplete="off" placeholder="Paste in signed transaction (Hex)." rows="8"></textarea>
@@ -1148,8 +1164,7 @@
 							<!-- Import contract -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label"><b>OpenBazaar Contract</b></label>
-									<span class="help-block" style="font-size:12px">Contract as of Stage 05</span>
+									<label class="control-label"><b>Stage 05 Contract</b></label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" id="stage05contract" ng-model="stage05contract" class="form-control" autocomplete="off" placeholder="Paste in the OpenBazaar contract" rows="12"></textarea>
@@ -1166,7 +1181,7 @@
 							<!-- Shipping details -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Status</label>
+									<label class="control-label">Status:</label>
 								</div>
 								<div class="col-lg-9">
 									<input type="text" class="form-control " id="contractstatus" ng-model="contractstatus"  autocomplete="off" placeholder="What is the status of the contract? Complete or Disputed?" />
@@ -1176,7 +1191,7 @@
 
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Message</label>
+									<label class="control-label">Message:</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" class="form-control " id="message" ng-model="message"  autocomplete="off" placeholder="Do you have a message for the merchant?" rows="3" ></textarea>
@@ -1191,7 +1206,7 @@
 							<!-- 1 of 3 Tx details -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">1 of 3 Signed Tx</label>
+									<label class="control-label">Signed Transaction (1 of 3; min. 2 required):</label>
 								</div>
 								<div class="col-lg-9">
 									<span class="help-block" style="font-size:12px">This is a signed transaction releasing funds from the multisignature escrow address to the merchant. It has 1 out of the minimum of 2 signatures required. Sign this transaction with your Bitcoin key, broadcast it to the network and paste it below.</span>
@@ -1202,7 +1217,7 @@
 							<!-- 2 of 3 Tx details -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Signed Transaction (2 of 3)</label>
+									<label class="control-label">Signed Transaction (2 of 3; min. 2 required):</label>
 								</div>
 								<div class="col-lg-9">
 									<textarea type="text" class="form-control " id="buyer_signed_tx" ng-model="buyer_signed_tx"  autocomplete="off" placeholder="Paste in signed transaction (Hex)." rows="8"></textarea>
@@ -1210,14 +1225,14 @@
 								</div>
 							</div>
 
-							<!-- Blockheader -->
+							<!-- TxID -->
 							<div class="form-group">
 								<div class="col-lg-3">
-									<label class="control-label">Block Header</label>
+									<label class="control-label">Transaction ID:</label>
 								</div>
 								<div class="col-lg-9">
-									<input type="text" class="form-control " id="release_blockheader" ng-model="release_blockheader" autocomplete="off" placeholder="Paste in the block header for the transaction releasing funds back to the merchant." />
-									<span class="help-block" style="font-size:12px">If the contract is 'Complete', specific the block header that gives evidence to the release of funds from the multisignature escrow address to the merchant.</span>
+									<input type="text" class="form-control " id="release_txid" ng-model="release_txid" autocomplete="off" placeholder="Paste in the transaction ID for the transaction releasing funds back to the merchant." />
+									<span class="help-block" style="font-size:12px">If the contract is 'Complete', specific the transaction ID that gives evidence to the release of funds from the multisignature escrow address to the merchant.</span>
 								</div>
 							</div>
 
@@ -1299,7 +1314,7 @@
 <!-- Load my crap faster -->
 <script src="assets/js/angular.min.js"></script>
 <script src="assets/js/angular-route.js"></script>
-<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery-2.1.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/sha256.js"></script>
 <script src="assets/js/openpgp.min.js"></script>

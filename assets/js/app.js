@@ -177,9 +177,10 @@ part1.controller('Working',
             var stage04 = JSON.parse($scope.triplesignedcontract);
             console.log(stage04);
             var importconctractTriple = sha256_digest(triplesignedcontract.value);
-            var blockHeader = block_header.value;
+            var txID = txid.value;
+            var shiptoAddr = ship_to_address.value;
             var buyerDigitalSig = buyer_escrow_digisig.value;
-            stage04.stage04_escrowfunding = { funding_evidence: {contract_to_fund_escrow: importconctractTriple, block_header: blockHeader}, signatures: {pgp: buyerDigitalSig}};
+            stage04.stage04_escrowfunding = { funding_evidence: {contract_to_fund_escrow: importconctractTriple, transaction_id: txID, ship_to_this_address: shiptoAddr}, signatures: {pgp: buyerDigitalSig}};
             $scope.escrowfund = stage04;
             $scope.display4 = JSON.stringify(stage04, null, 4);
         };
@@ -225,9 +226,9 @@ part1.controller('Working',
             var contractStatus = contractstatus.value;
             var message2 = message.value;
             var buyerSignedTx = buyer_signed_tx.value;
-            var releaseBlockheader = release_blockheader.value;
+            var releaseTXID = release_txid.value;
             var stage06_buyerDigitalSig = buyer_release_digisig.value;
-            stage06.stage06_release = { release_funds: { contract_to_release_funds: stage05contractHash, contract_status: contractStatus, message: message2, signed_tx: buyerSignedTx, block_header: releaseBlockheader}, signatures: {pgp: stage06_buyerDigitalSig}};
+            stage06.stage06_release = { release_funds: { contract_to_release_funds: stage05contractHash, contract_status: contractStatus, message: message2, signed_tx: buyerSignedTx, transaction_id: releaseTXID}, signatures: {pgp: stage06_buyerDigitalSig}};
             $scope.release = stage06;
             $scope.display6 = JSON.stringify(stage06, null, 4);
         };
