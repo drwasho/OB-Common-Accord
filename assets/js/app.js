@@ -7,7 +7,7 @@ part1.controller('Working',
     function ($scope) {
         $scope.peek = true;
         $scope.peek1 = false;
-        $scope.peek2 = false;
+        $scope.peek2 = true;
         $scope.peek3 = false;
         $scope.peek4 = false;
         $scope.peek5 = false;
@@ -134,6 +134,22 @@ part1.controller('Working',
             stage02.stage02_buyer = { buyer: { contract_to_buy: importconctractHash, guid: buyerGUID, handle: buyerHandle, legal_address: buyerLegalAddress, pubkeys: {pgp: buyerPGPPubkey, secp256k1_uncompressed: buyerECPubkey}}, signatures: {pgp: buyerDigiSig}};
             $scope.buyercontract = stage02;
             $scope.display2 = JSON.stringify(stage02, null, 4);
+			$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image1.image_link1;
+			$scope.click1 = function () {
+				$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image1.image_link1;
+			};
+			$scope.click2 = function () {
+				$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image2.image_link2;
+			};
+			$scope.click3 = function () {
+				$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image3.image_link3;
+			};
+			$scope.click4 = function () {
+				$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image4.image_link4;
+			};
+			$scope.click5 = function () {
+				$scope.clickedimage = stage02.stage01_merchant.genesis.item_data.images.image5.image_link5;
+			};
         };
         $scope.stage02_verify = function () {
             var stage02_publickey = $("#stage02_pubkey").text();

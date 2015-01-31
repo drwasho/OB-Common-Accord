@@ -167,12 +167,13 @@
 		<hr>
 	</div>
 
+	<div ng-keyup="start()">
+	
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
 			<fieldset>
 
-			<div ng-keyup="start()">
 
 				<h3>Stage 01: The Merchant</h3>
 				<hr />
@@ -478,36 +479,71 @@
 		<hr>
 	</div>
 
+	<div ng-keyup="start2()">
+	
+	<div class="row"> <!-- Import -->
+	
+		<div class="well bs-component col-lg-12">
+		<form class="form-horizontal">
+		<fieldset>
+		
+			<div>
+
+				<h3>Import Contract</h3>
+
+				<!-- Import contract -->
+				<div class="form-group">
+					<div class="col-lg-3">
+						<label class="control-label">Stage 01 Contract:</label>
+					</div>
+					<div class="col-lg-9">
+						<textarea type="text" id="buycontract" ng-model="buycontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to purchase" rows="12"></textarea>
+						<br />
+						<span class="help-block" style="font-size:12px">Hash of the contract you're importing</span>
+						<input type="text" class="form-control wordwrap" value="{{buyercontract.stage02_buyer.buyer.contract_to_buy}}" autocomplete="off" disabled="" />
+					</div>
+				</div>
+
+			</div>
+		
+		</fieldset>
+		</form>
+		</div>
+		
+	</div>
+	
+	<div class="row"> <!-- Contract Viewer -->
+	
+		<div class="well bs-component col-lg-12" style="background-color:white;">
+				
+			<h1 style="text-align: center;">{{buyercontract.stage01_merchant.genesis.item_data.title}}</h1>
+			<hr>
+			
+			<div class="row">
+				<div class="col-lg-6">
+					<img ng-src="{{clickedimage}}" style="width: 100%" />
+					<p></p>
+					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image1.image_link1}}" ng-click="click1()" style="width: 10%" />
+					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image2.image_link2}}" ng-click="click2()" style="width: 10%" />
+					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image3.image_link3}}" ng-click="click3()" style="width: 10%" />
+					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image4.image_link4}}" ng-click="click4()" style="width: 10%" />
+					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image5.image_link5}}" ng-click="click5()" style="width: 10%" />
+				</div>	
+				<div class="col-lg-6">
+					<h4>{{buyercontract.stage01_merchant.genesis.item_data.description}}</h4>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
 				<fieldset>
 
-					<div ng-keyup="start2()">
-
 						<h3>Stage 02: The Buyer</h3>
-						<hr />
-
-						<!-- Import -->
-						<div>
-
-							<h4>Reference Contract</h4>
-
-							<!-- Import contract -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Stage 01 Contract:</label>
-								</div>
-								<div class="col-lg-9">
-									<textarea type="text" id="buycontract" ng-model="buycontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to purchase" rows="12"></textarea>
-									<br />
-									<span class="help-block" style="font-size:12px">Hash of the contract you're importing</span>
-									<input type="text" class="form-control wordwrap" value="{{buyercontract.stage02_buyer.buyer.contract_to_buy}}" autocomplete="off" disabled="" />
-								</div>
-							</div>
-
-						</div>
-
 						<br />
 
 						<!-- ## Buyer ## -->
