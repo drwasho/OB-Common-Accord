@@ -6,20 +6,8 @@ var part1 = angular.module('part1', []);
 part1.controller('Working',
     function ($scope) {
         $scope.peek = true;
-        $scope.peek1 = false;
-        $scope.peek2 = true;
-        $scope.peek3 = false;
-        $scope.peek4 = false;
-        $scope.peek5 = false;
-        $scope.peek6 = false;
         $scope.home = function () { // Takes you to a place where everybody knows your name
             $scope.peek = true;
-            $scope.peek1 = false;
-            $scope.peek2 = false;
-            $scope.peek3 = false;
-            $scope.peek4 = false;
-            $scope.peek5 = false;
-            $scope.peek6 = false;
         };
         $scope.toggle1 = function () {
             $scope.peek = false;
@@ -131,6 +119,7 @@ part1.controller('Working',
             var buyerPGPPubkey = buyer_pgp_pubkey.value;
             var buyerECPubkey = buyer_secp256k1_pubkey.value;
             var buyerDigiSig = buyer_digisig.value;
+            $scope.view2 = true;
             stage02.stage02_buyer = { buyer: { contract_to_buy: importconctractHash, guid: buyerGUID, handle: buyerHandle, legal_address: buyerLegalAddress, pubkeys: {pgp: buyerPGPPubkey, secp256k1_uncompressed: buyerECPubkey}}, signatures: {pgp: buyerDigiSig}};
             $scope.buyercontract = stage02;
             $scope.display2 = JSON.stringify(stage02, null, 4);

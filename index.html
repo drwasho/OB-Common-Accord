@@ -168,7 +168,7 @@
 	</div>
 
 	<div ng-keyup="start()">
-	
+
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
@@ -480,13 +480,13 @@
 	</div>
 
 	<div ng-keyup="start2()">
-	
+
 	<div class="row"> <!-- Import -->
-	
+
 		<div class="well bs-component col-lg-12">
 		<form class="form-horizontal">
 		<fieldset>
-		
+
 			<div>
 
 				<h3>Import Contract</h3>
@@ -505,39 +505,56 @@
 				</div>
 
 			</div>
-		
+
 		</fieldset>
 		</form>
 		</div>
-		
+
 	</div>
-	
-	<div class="row"> <!-- Contract Viewer -->
-	
-		<div class="well bs-component col-lg-12" style="background-color:white;">
-				
-			<h1 style="text-align: center;">{{buyercontract.stage01_merchant.genesis.item_data.title}}</h1>
-			<hr>
-			
-			<div class="row">
-				<div class="col-lg-6">
-					<img ng-src="{{clickedimage}}" style="width: 100%" />
-					<p></p>
-					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image1.image_link1}}" ng-click="click1()" style="width: 10%" />
-					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image2.image_link2}}" ng-click="click2()" style="width: 10%" />
-					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image3.image_link3}}" ng-click="click3()" style="width: 10%" />
-					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image4.image_link4}}" ng-click="click4()" style="width: 10%" />
-					<img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image5.image_link5}}" ng-click="click5()" style="width: 10%" />
-				</div>	
-				<div class="col-lg-6">
-					<h4>{{buyercontract.stage01_merchant.genesis.item_data.description}}</h4>
-				</div>
-			</div>
-			
-		</div>
-		
-	</div>
-	
+
+    <!-- Contract Viewer -->
+    <div ng-show="view2">
+        <div class="row">
+
+            <div class="well bs-component col-lg-12" style="background-color:white;">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 style="text-align: left;">{{buyercontract.stage01_merchant.genesis.item_data.title}}</h1>
+                        <h4>By <span style="color:blueviolet; font-size:23px">{{buyercontract.stage01_merchant.genesis.merchant.handle}}</span></h4>
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 style="text-align: right; color: green;">{{buyercontract.stage01_merchant.genesis.item_data.price.btc}} BTC</h1>
+                        <h1 style="text-align: right; color: red; font-size: 18px">({{buyercontract.stage01_merchant.genesis.item_data.price.fiat.price}} {{buyercontract.stage01_merchant.genesis.item_data.price.fiat.currency}})</h1>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div style="width: 800px; display: table-cell; text-align: center; vertical-align: middle; background-repeat: no-repeat; border: 1px solid">
+                            <img ng-src="{{clickedimage}}" style="width: 100%"/>
+                        </div>
+                        <p></p>
+                        <img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image1.image_link1}}" ng-click="click1()" style="width: 15%; border: 1px solid; cursor: pointer" />
+                        <img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image2.image_link2}}" ng-click="click2()" style="width: 15%; border: 1px solid; cursor: pointer" />
+                        <img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image3.image_link3}}" ng-click="click3()" style="width: 15%; border: 1px solid; cursor: pointer" />
+                        <img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image4.image_link4}}" ng-click="click4()" style="width: 15%; border: 1px solid; cursor: pointer" />
+                        <img ng-src="{{buyercontract.stage01_merchant.genesis.item_data.images.image5.image_link5}}" ng-click="click5()" style="width: 15%; border: 1px solid; cursor: pointer" />
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Description: </h3>
+                        <h4>{{buyercontract.stage01_merchant.genesis.item_data.description}}</h4>
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
@@ -685,166 +702,166 @@
 		<hr>
 	</div>
 
+    <div ng-keyup="start3()">
+
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
 				<fieldset>
 
-					<div ng-keyup="start3()">
+                    <h3>Stage 03: The Notary</h3>
+                    <hr />
 
-						<h3>Stage 03: The Notary</h3>
-						<hr />
+                    <!-- Import -->
+                    <div>
 
-						<!-- Import -->
-						<div>
+                        <h4>Reference Contract</h4>
 
-							<h4>Reference Contract</h4>
+                        <!-- Import contract -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Stage 03 Contract</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <textarea type="text" id="notarisecontract" ng-model="notarisecontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to notarise" rows="12"></textarea>
+                                <br />
+                                <span class="help-block" style="font-size:12px">Hash of the contract you're notarising</span>
+                                <input type="text" class="form-control wordwrap" value="{{notarycontract.stage03_notary.notary.contract_to_notarise}}" autocomplete="off" disabled="" />
+                            </div>
+                        </div>
 
-							<!-- Import contract -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Stage 03 Contract</label>
-								</div>
-								<div class="col-lg-9">
-									<textarea type="text" id="notarisecontract" ng-model="notarisecontract" class="form-control" autocomplete="off" placeholder="Enter in the contract you want to notarise" rows="12"></textarea>
-									<br />
-									<span class="help-block" style="font-size:12px">Hash of the contract you're notarising</span>
-									<input type="text" class="form-control wordwrap" value="{{notarycontract.stage03_notary.notary.contract_to_notarise}}" autocomplete="off" disabled="" />
-								</div>
-							</div>
+                    </div>
 
-						</div>
+                    <br />
 
-						<br />
+                    <!-- ## Notary ## -->
+                    <div>
 
-						<!-- ## Notary ## -->
-						<div>
+                        <h4>Notary Details</h4>
 
-							<h4>Notary Details</h4>
+                        <!-- Guid -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Notary GUID:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control " id="notary_guid" ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
+                            </div>
+                        </div>
 
-							<!-- Guid -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Notary GUID:</label>
-								</div>
-								<div class="col-lg-9">
-									<input type="text" class="form-control " id="notary_guid" ng-model="notary_guid"  autocomplete="off" placeholder="Should be lots of numbers" >
-								</div>
-							</div>
+                        <!-- Handle -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Notary Handle:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control " id="notary_handle" ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
+                            </div>
+                        </div>
 
-							<!-- Handle -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Notary Handle:</label>
-								</div>
-								<div class="col-lg-9">
-									<input type="text" class="form-control " id="notary_handle" ng-model="notary_handle"  autocomplete="off" placeholder="(e.g. drwasho)" >
-								</div>
-							</div>
+                        <!-- Legal Address -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Legal Address:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control " id="notary_legaladdress" ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
+                            </div>
+                        </div>
 
-							<!-- Legal Address -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Legal Address:</label>
-								</div>
-								<div class="col-lg-9">
-									<input type="text" class="form-control " id="notary_legaladdress" ng-model="notary_legaladdress"  autocomplete="off" placeholder="For CommonAccord escrow contracts only" >
-								</div>
-							</div>
+                        <!-- PGP Public Key -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">PGP Pubkey:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <textarea type="text" class="form-control " id="notary_pgp_pubkey" ng-model="notary_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
+                            </div>
+                        </div>
 
-							<!-- PGP Public Key -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">PGP Pubkey:</label>
-								</div>
-								<div class="col-lg-9">
-									<textarea type="text" class="form-control " id="notary_pgp_pubkey" ng-model="notary_pgp_pubkey" autocomplete="off" placeholder="Enter PGP public key" rows="4"></textarea>
-								</div>
-							</div>
+                        <!-- Bitcoin Public Key -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Bitcoin Pubkey:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control " id="notary_secp256k1_pubkey" ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
+                            </div>
+                        </div>
 
-							<!-- Bitcoin Public Key -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Bitcoin Pubkey:</label>
-								</div>
-								<div class="col-lg-9">
-									<input type="text" class="form-control " id="notary_secp256k1_pubkey" ng-model="notary_secp256k1_pubkey"  autocomplete="off" placeholder="Uncompressed pubkey; will create multisig escrow" >
-								</div>
-							</div>
+                        <br />
 
-							<br />
+                    </div> <!-- End of Buyer Details Div -->
 
-						</div> <!-- End of Buyer Details Div -->
+                    <!-- Escrow -->
+                    <div>
 
-						<!-- Escrow -->
-						<div>
+                        <h4>Multisignature Escrow Address</h4>
 
-							<h4>Multisignature Escrow Address</h4>
+                        <!-- Multisig address -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Multisignature Address:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" id="multisigaddr" ng-model="multisigaddr" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" />
+                            </div>
+                        </div>
 
-							<!-- Multisig address -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Multisignature Address:</label>
-								</div>
-								<div class="col-lg-9">
-									<input type="text" id="multisigaddr" ng-model="multisigaddr" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" />
-								</div>
-							</div>
+                        <!-- Multisig redemption script -->
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">Multisignature Redemption Script:</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <textarea type="text" id="multisigredeem" ng-model="multisigredeem" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" rows="6"></textarea>
+                            </div>
+                        </div>
 
-							<!-- Multisig redemption script -->
-							<div class="form-group">
-								<div class="col-lg-3">
-									<label class="control-label">Multisignature Redemption Script:</label>
-								</div>
-								<div class="col-lg-9">
-									<textarea type="text" id="multisigredeem" ng-model="multisigredeem" class="form-control" autocomplete="off" placeholder="Enter the multisignature address" rows="6"></textarea>
-								</div>
-							</div>
+                    </div> <!-- End of Escrow Details Div -->
 
-						</div> <!-- End of Escrow Details Div -->
+                    <br />
 
-						<br />
+                    <!-- #### Notary Digital Signatures #### -->
+                    <h4>Digital Signatures</h4>
 
-						<!-- #### Notary Digital Signatures #### -->
-						<h4>Digital Signatures</h4>
+                    <div>
+                        <label class="control-label">Notary Digital Signature</label>
 
-						<div>
-							<label class="control-label">Notary Digital Signature</label>
+                        <p></p>
 
-							<p></p>
+                        <!-- This is what you're supposed to digitally sign -->
+                        <span class="help-block">Digitally sign what appears below with your PGP key!</span>
+                        <p></p>
+                        <pre class="wordwrap" id="notaryhash">{{notarycontract.stage03_notary.notary}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
+                        <br />
 
-							<!-- This is what you're supposed to digitally sign -->
-							<span class="help-block">Digitally sign what appears below with your PGP key!</span>
-							<p></p>
-							<pre class="wordwrap" id="notaryhash">{{notarycontract.stage03_notary.notary}}</pre> <!-- Stage 02 Buyer part to either digitally sign, or hash. -->
-							<br />
+                        <!-- This is the hash of Stage 02 Buyer Part -->
+                        <p><span class="help-block">SHA256 hash of "Stage 02: buyer Part" (i.e. this is a tamper-proof statement of what you want to <b>notarise</b>)</span></p>
+                        <input class="form-control" type="text" value="{{stage03hash}}" disabled="">
+                        <br />
 
-							<!-- This is the hash of Stage 02 Buyer Part -->
-							<p><span class="help-block">SHA256 hash of "Stage 02: buyer Part" (i.e. this is a tamper-proof statement of what you want to <b>notarise</b>)</span></p>
-							<input class="form-control" type="text" value="{{stage03hash}}" disabled="">
-							<br />
+                        <!-- Enter Digital Signature -->
+                        <span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
+                        <textarea class="form-control" id="notary_digisig" ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
+                        <br />
 
-							<!-- Enter Digital Signature -->
-							<span class="help-block">By entering your digital signature, you are declaring your intention to <b>notarise</b> this contract!</span>
-							<textarea class="form-control" id="notary_digisig" ng-model="notary_sig" autocomplete="off" placeholder="Enter digital signature"  rows="6"></textarea>
-							<br />
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span class="help-block">Notary's Public Key</span>
+                                <pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_notary.notary.pubkeys.pgp}}</pre>
+                            </div>
+                            <div class="col-lg-6">
+                                <span class="help-block">Buyer's Digital Signature</span>
+                                <pre class="wordwrap" id="stage03_notarysig" style="font-size: 10px">{{notarycontract.stage03_notary.signatures.pgp}}</pre>
+                            </div>
+                        </div>
 
-							<div class="row">
-								<div class="col-lg-6">
-									<span class="help-block">Notary's Public Key</span>
-									<pre class="wordwrap" id="stage03_pubkey" style="font-size: 10px">{{notarycontract.stage03_notary.notary.pubkeys.pgp}}</pre>
-								</div>
-								<div class="col-lg-6">
-									<span class="help-block">Buyer's Digital Signature</span>
-									<pre class="wordwrap" id="stage03_notarysig" style="font-size: 10px">{{notarycontract.stage03_notary.signatures.pgp}}</pre>
-								</div>
-							</div>
+                        <p></p>
 
-							<p></p>
+                    </div>
 
-						</div>
-
-					</div> <!-- End of Start3() -->
+        </div>
 
 					<div>
 						<p></p>
@@ -857,7 +874,7 @@
 				</fieldset>
 			</form>
 		</div>
-	</div>
+	</div> <!-- End of Start3() -->
 
 	<div class="row">
 
