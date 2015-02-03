@@ -481,7 +481,8 @@
 
 	<div ng-keyup="start2()">
 
-	<div class="row"> <!-- Import -->
+	<!-- Import -->
+	<div class="row"> 
 
 		<div class="well bs-component col-lg-12">
 		<form class="form-horizontal">
@@ -517,19 +518,16 @@
         <div class="row">
 
             <div class="well bs-component col-lg-12" style="background-color:white;">
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h1 style="text-align: left;">{{buyercontract.stage01_merchant.genesis.item_data.title}}</h1>
-                        <h4>By <span style="color:blueviolet; font-size:23px">{{buyercontract.stage01_merchant.genesis.merchant.handle}}</span></h4>
-                    </div>
-                    <div class="col-lg-6">
-                        <h1 style="text-align: right; color: green;">{{buyercontract.stage01_merchant.genesis.item_data.price.btc}} BTC</h1>
-                        <h1 style="text-align: right; color: red; font-size: 18px">({{buyercontract.stage01_merchant.genesis.item_data.price.fiat.price}} {{buyercontract.stage01_merchant.genesis.item_data.price.fiat.currency}})</h1>
-                    </div>
+				
+				<div class="col-lg-12">
+	                <div class="row">
+	                	<h1>{{buyercontract.stage01_merchant.genesis.item_data.title}}<span style="float: right"><span><button class="btn btn-success btn-lg" style="font-size:22px" ng-click="test = !test"><span ng-show="!test">{{buyercontract.stage01_merchant.genesis.item_data.price.btc}} <span class="badge">BTC</span></span><span ng-show="test">{{buyercontract.stage01_merchant.genesis.item_data.price.fiat.price}} <span class="badge">{{buyercontract.stage01_merchant.genesis.item_data.price.fiat.currency}}</span></span></button></span></span></h1>
+						<h4>By <span style="color:blueviolet; font-size:23px">{{buyercontract.stage01_merchant.genesis.merchant.handle}}</span></h4>
+						<hr>
+	                </div>
                 </div>
-
-                <hr>
+                
+                
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -555,6 +553,7 @@
         </div>
     </div>
 
+	<!-- Buyer Details -->
 	<div class="row">
 		<div class="well bs-component col-lg-12">
 			<form class="form-horizontal">
@@ -672,6 +671,7 @@
 		</div>
 	</div>
 
+	<!-- Complete Stage 02 Contract -->
 	<div class="row">
 
 		<h2><i>OpenBazaar</i> Raw Contract</h2>
