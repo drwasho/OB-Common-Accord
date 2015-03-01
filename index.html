@@ -98,6 +98,20 @@
 					<li><a href="#" ng-click="toggle6()">6. <b>Buyer:</b>  Release funds to merchant</a></li>
 				</ul>
 			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Bounded Futures<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="https://gist.github.com/drwasho/04dbaf19da4f4a8ae512" target="_blank">What is this?</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Stages</li>
+					<li><a href="#" ng-click="toggle1()">1. <b>Merchant:</b>  Create futures contract</a></li>
+					<li><a href="#" ng-click="toggle2()">2. <b>Buyer:</b>  Buy futures contract</a></li>
+					<li><a href="#" ng-click="toggle3()">3. <b>Notary:</b>  Notarise futures contract</a></li>
+					<li><a href="#" ng-click="toggle4()">4. <b>Buyer:</b>  Fund escrow</a></li>
+					<li><a href="#" ng-click="toggle5()">5. <b>Merchant:</b>  Ship item</a></li>
+					<li><a href="#" ng-click="toggle6()">6. <b>Buyer:</b>  Release funds to merchant</a></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -386,6 +400,9 @@
 					<div>
 						<p></p>
 						<button type="button" ng-click="stage01_verify()" class="btn btn-primary" >Verify</button>
+						<input type="button" ng-click="save_stage01()" class="btn btn-success" value="Save">
+						<p></p>
+						<div id="container"></div>
 						<br />
 						<!-- TEMP: Check of success or failure -->
 						<h4>{{check}}</h4>
@@ -433,7 +450,7 @@
 							<span class="help-block" style="font-size:14px">Used for the multisignature escrow address</span>
 							<pre class="wordwrap" disabled="" rows="2" style="background-color:white;">{{newcontract.stage01_merchant.genesis.merchant.pubkeys.bitcoin_pubkey}}</pre>
 						  </div>
-						  
+
 						  <div class="modal-footer">
 							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 						  </div>
